@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.conf import settings
 from django.views.generic.simple import direct_to_template
 from django.views.generic.simple import redirect_to
 from django.contrib import admin
@@ -42,3 +43,10 @@ urlpatterns += patterns('',
     (r'^profiles/', include('profiles.urls')),
 
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.STATIC_ROOT}),
+   )
+
