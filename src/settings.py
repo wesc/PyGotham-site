@@ -77,7 +77,7 @@ SSL_MEDIA_URL = 'https://pygotham.org'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),'../static'))
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -104,7 +104,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'g0--vl+z-iu*6wr3f-im$qi94y^58rxx_s6=3qymc64a@xq2c3'
+SECRET_KEY = 'see local_settings'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
