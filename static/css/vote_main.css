@@ -1,0 +1,86 @@
+
+body, html {
+margin:0;
+padding:0;
+color:#FFF;
+background-color:#000;
+}
+div.vote_content {
+width: 850px;
+margin: auto;
+position: relative;
+}
+
+div.vote_header
+{
+margin:10px 0px 10px 0px;
+padding:20px 0px 20px 0px;
+font-size:40px;
+height: 60px;
+width: 850px;
+color:#CCC;
+background-color:#666;
+text-align:center;
+}
+div.vote_description
+{
+position:absolute;
+left:430px;
+margin:0px 0px 10px 0px;
+padding:10px 5px 10px 5px;
+height: 80px;
+width: 410px;
+color: #000;
+font-size: 16px;
+background-color:#BBB;
+overflow:auto;
+}
+
+div.voteline
+{
+margin:0px 0px 10px 0px;
+padding:0px 5px 20px 5px;
+height: 80px;
+width: 410px;
+background-color:#777;
+}
+
+div.voteline div.vote_titles
+  {
+  position:absolute;
+  left: 10px;
+  margin:2px;
+  padding: 10px 0px 10px 0px; 
+  height:auto;
+  width:378px;
+  color: #000;
+  text-align:left;
+  font-size: 19px;
+  }
+  
+div.voteline  div.vote_img1
+  {
+  position:absolute;
+  left: 300px;
+  padding: 10px 0px 10px 0px; 
+  height:auto;
+  width:auto;
+  }
+div.voteline  div.vote_img2
+  {
+  position:absolute;
+  left: 350px;
+  padding: 10px 0px 10px 0px; 
+  height:auto;
+  width:auto;
+  }  
+  
+div.voteline  div.vote_scores
+  {
+  position:absolute;
+  right: 0px;
+  margin:2px;
+  padding: 40px 20px 40px 20px; 
+  height:auto;
+  width:auto;
+  }

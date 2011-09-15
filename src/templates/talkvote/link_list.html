@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+{% load voting_tags %}
+{% votes_by_user user on talks as vote_dict %}
+{% scores_for_objects talks as score_dict %}
+
+<div class="vote_content">
+<div class="vote_header">
+Vote up / down on Talks
+</div>
+	{% for talk in talks %}<!--tr class="{% cycle odd, even %} >-->
+		<!--class="vote"-->
+{% dict_entry_for_item talk from vote_dict as VoteRecord %}
+{% dict_entry_for_item talk from score_dict as score %}
+<!--<div class="item">-->
+
+<div class="vote_description">
+{{ talk.desc|escape }}
+</div>
+<div class="voteline">
+<div class="vote_titles">
+{{talk.title|escape }}
+</div>
+<div class="vote_img1">
+<form class="linkvote" id="linkup{{ talk.id }}" action="/talkvote/{{ talk.id}}/{% if VoteRecord and VoteRecord.is_upvote %}no_repeat{% else %}up{% endif %}vote/" method="POST">{% csrf_token %}
+<input type="image" id="linkuparrow{{ talk.id }}" src="{{MEDIA_URL}}/static/images/thumbs_up{% if VoteRecord and VoteRecord.is_upvote %}mod{% else %}grey{% endif %}.png">
+</form></div>
+<div class="vote_img2">
+<form class="linkvote" id="linkdown{{ talk.id}}" action="/talkvote/{{ talk.id }}/{% if VoteRecord and VoteRecord.is_downvote %}no_repeat{% else %}down{% endif %}vote/" method="POST"> {% csrf_token %}
+<input type="image" id="linkdownarrow{{ talk.id }}" src="{{MEDIA_URL}}/static/images/thumbs_down{% if VoteRecord and VoteRecord.is_downvote %}mod{% else %}grey{% endif %}.png">
+</form>
+</div>
+<!--<div class="scores">
+	<span class="score" id="linkscore{{talk.id}}"
+		title="after {{ score.num_votes|default:0 }} VoteRecord{{ score.num_votes|default:0|pluralize }}">
+{{ score.score|default:0 }} point{{score.score|default:0|pluralize }}
+num votes: {{ score.num_votes|default:0}}
+</div>-->
+</div>
+{% endfor %}
+</div>
+
+</div>
+</div>
+{% endblock %}
+

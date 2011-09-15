@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+<h3>You're in!</h3>
+{% csrf_token %}
+{% if amount %}
+We've received a record of your payment for ${{ amount }}. Once it clears we will send you a receipt for tax exemption.
+<br/>
+<br/>
+{% endif %}
+Thanks for registering. If you wish to submit a talk or class, please contract the organizers directly at pygotham at thepeoplesconference dot com.
+</div>
+</div>
+
+
+{% endblock %}

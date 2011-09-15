@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+<h3>Activation is Required:</h3>
+
+Check your email for an activation link. Once you're activated, you can <a href="{{ SSL_MEDIA_URL }}/accounts/login">log in</a> and register.
+
+{% if key %}
+<br/>
+<br/>
+If email fails for some reason (on this system our email is being throttled),
+click <a href="{{ SSL_MEDIA_URL }}/{% url registration_activate key %}">here instead:{{ SSL_MEDIA_URL }}/{% url registration_activate key %}</a>
+{% endif %}
+</div>
+</div>
+
+
+{% endblock %}

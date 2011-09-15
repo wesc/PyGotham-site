@@ -1,0 +1,89 @@
+{% extends "schedule_base.html" %}
+
+{% block additional_header %}
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<script type="text/javascript" src="{{ MEDIA_URL }}/static/js/sorttable.js"></script>
+
+{% endblock %}
+
+{% block content %}
+<h3>This schedule is incomplete, and will update live as rooms are assigned to submitted talks.</h3>
+<p>
+<h3> Sept 16th: </h3>
+  <table class="sortable" width=100%>
+    <thead> <tr class="row1">   
+    <td></td>
+    
+      <td>Title</td>
+
+      <td>Speaker</td>
+    
+      <td>Day & Time</td>
+    
+      <td>Duration minutes</td>
+
+      <td>End Time</td>
+    
+      <td>Room</td>
+
+      <td>Detail</td>
+    
+    </tr></thead> 
+    
+    {% for r in day_1 %}
+	<tr class="{% cycle 'row2' 'row1' %}">
+        <td></td>
+        <td>{{r.talk.title|escape }}</td>
+        <td>{{ r.talk.full_name|escape }}</td>
+        <td>{{ r.talk_day_time|escape }}</td>
+        <td>{{ r.duration_minutes|escape }}</td>
+        <td>{{ r.end_time|escape }}</td>
+        <td>{{ r.room|escape }}</td>
+        <td>{{ r.talk.desc|escape }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+ 
+<p>
+<h3> Sept 17th: </h3>
+  <table class="sortable" width=100%>
+    <thead> <tr class="row1">   
+    <td></td>
+    
+      <td>Title</td>
+
+      <td>Speaker</td>
+    
+      <td>Day & Time</td>
+    
+      <td>Duration minutes</td>
+
+      <td>End Time</td>
+    
+      <td>Room</td>
+
+      <td>Detail</td>
+    
+    </tr></thead> 
+    
+    {% for r in day_2 %}
+	<tr class="{% cycle 'row2' 'row1' %}">
+        <td></td>
+        <td>{{r.talk.title|escape }}</td>
+        <td>{{ r.talk.full_name|escape }}</td>
+        <td>{{ r.talk_day_time|escape }}</td>
+        <td>{{ r.duration_minutes|escape }}</td>
+        <td>{{ r.end_time|escape }}</td>
+        <td>{{ r.room|escape }}</td>
+        <td>{{ r.talk.desc|escape }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+ 
+{% endblock %}
+
+
+
+</head>
+<body>
+

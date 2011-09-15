@@ -1,0 +1,35 @@
+{% extends "base_nobottom.html" %}
+
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+{% load voting_tags %}
+{% votes_by_user user on talks as vote_dict %}
+{% scores_for_objects talks as score_dict %}
+
+<div class="vote_content">
+<div class="vote_header">
+{{ desc_title }}
+</div>
+	{% for talk in talks %}<!--tr class="{% cycle odd, even %} >-->
+		<!--class="vote"-->
+<!--<div class="item">-->
+
+<div class="vote_description">
+{{ talk.desc|escape }}
+</div>
+<div class="voteline">
+<div class="vote_titles">
+{{talk.title|escape }} : 
+{{talk.full_name|escape }}
+</div>
+</div>
+{% endfor %}
+</div>
+
+</div>
+</div>
+{% endblock %}
+

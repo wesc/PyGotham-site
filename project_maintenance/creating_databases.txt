@@ -1,0 +1,5 @@
+(1) In Postgresql:
+
+psql -U pygotham --port=5200 template1
+
+(2) In Mysql: There is no mysql

@@ -1,0 +1,8 @@
+[{
+"pk": 1,
+"model": "sites.site",
+"fields": {
+"name": "pygotham.org",
+"domain":"pygotham.org"
+}
+}]

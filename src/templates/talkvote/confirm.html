@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+<link rel="stylesheet" href="{{MEDIA_URL}}/static/css/vote_main.css" type="text/css" media="screen">
+
+{% block content %}
+
+
+<body>
+<div class="header">
+Vote up / down on Talks
+</div>
+
+Your vote has been logged!
+</br>
+<a href='{{ ROOT_URLCONF}}/talkvote'> Back to Talk List </a>
+</body>
+
+{% end block %}

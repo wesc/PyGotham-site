@@ -1,0 +1,1 @@
+sudo -u postgres pg_ctl -D /usr/local/projects/splidit/postgres_database/ stop

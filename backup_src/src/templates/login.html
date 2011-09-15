@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block title %}Welcome to Pygotham{% endblock %}
+{%block head %}Welcome to Pygotham{% endblock %}
+
+{%block content %}
+		{% if user.username %}
+			<p>Welcome {{ user.username }}!!!
+			Here you can manage your account profile and vote for classes</p>
+		{% else %}
+			<p>Welcome anonymous user!
+			You need to <a href="/accounts/login/">login</a>
+			before you can enter Pygotham.</p>
+			{% endif %}
+{% endblock %}

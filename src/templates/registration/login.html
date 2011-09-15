@@ -1,0 +1,27 @@
+{% extends "ssl_safe_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+Use either email address or username to log in.
+<br>
+After email is validated, you will need to register for the conference to complete this process.
+<br>
+<br>
+<form action="" method="post">{% csrf_token %}
+  {{ form.as_p }}
+
+  <input type="submit" value="{% trans 'Log in' %}" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+<p>{% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Don\'t have a login" %}? <a href="{% url registration_register %}">{% trans "Create one" %}</a>!</p>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+#psql -U postgres -p 5800
+#psql -U splidit_session -p 5800 template1
+psql -U splidit_session -p 5800 splidit_front_end
+

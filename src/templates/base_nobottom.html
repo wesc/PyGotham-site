@@ -1,0 +1,147 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<HEAD>
+<title>PyGotham: Mostly Python, some random, all awesome</title>
+<link href="{{ MEDIA_URL }}/static/css/frames.css" rel="stylesheet" type="text/css" />
+<link href="{{ MEDIA_URL }}/static/css/s3Slider.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{MEDIA_URL}}/static/css/vote_main.css" type="text/css" media="screen">
+<script type="text/javascript" src="{{ MEDIA_URL }}/static/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}/static/js/s3Slider.js"></script>
+
+<script>
+$(document).ready(function() {
+   $('#s3slider').s3Slider({
+      timeOut: 4000
+   });
+}); 
+</script>
+
+</HEAD>
+<BODY>
+
+<div id="leftcorner-wrapper">
+<div id="leftcorner">
+
+<img src="{{ MEDIA_URL }}/static/images/graybar-building-rat.jpg"/>
+
+</div>
+</div>
+
+<div id="header-wrapper">
+<div id="header">
+<div id="logo-text">
+PYGOTHAM: Sept 16th & 17th, 2011 (a non-profit conference)<br/>
+Executive Conference Center: 1601 Broadway - 8th Floor<br/>
+Entrance on 48th Street, New York, NY 10019<br/>
+Student with valid ID: $100, Individual: $200, Corporate: $300<br/>
+(Building entry requires advance registration)<br/>
+</div>
+
+</div>
+</div>
+
+<div id="sidebar-wrapper">
+<div id="sidebar">
+{% if user.username %}
+Welcome {{ user.username }}!
+<br/>
+<br/>
+{% else %}
+Welcome,<br/>not-logged-in user!
+<br/>
+<br/>
+{% endif %}
+<a href="{{ MEDIA_URL }}/" style="text-decoration: none; color:#666666">Home</a><br/>
+<br/>
+<a href="{{ MEDIA_URL }}/full_schedule/" style="text-decoration: none; color:#666666">Scheduled Talks So Far</a><br/>
+<!---a href="{{ MEDIA_URL }}/to_be_voted_talks/" style="text-decoration: none; color:#666666">Talks Proposed For Vote</a><br/--->
+<br/>
+<a href="{{ MEDIA_URL }}/accessibility/" style="text-decoration: none; color:#666666">Accessibility</a><br/>
+<!---a href="{{ MEDIA_URL }}/babysitting/" style="text-decoration: none; color:#666666">Babysitting</a><br/--->
+<a href="{{ MEDIA_URL }}/diversity/" style="text-decoration: none; color:#666666">Diversity</a><br/>
+<br/>
+{% if not user.username %}
+<a href="{{ MEDIA_URL }}/accounts/register/" style="text-decoration: none; color:#666666">Register</a><br/>
+{% else %}
+<a href="{{ MEDIA_URL }}/confreg/user_state/" style="text-decoration: none; color:#666666">Your Current State</a><br/>
+{% endif %}
+<br>
+{% if not user.username %}
+<a href="{{ MEDIA_URL }}/login/" style="text-decoration: none; color:#666666">Log in</a><br/>
+{% else %}
+<a href="{{ MEDIA_URL }}/logout/" style="text-decoration: none; color:#666666">Log out</a><br/>
+{% endif %}
+<a href="{{ MEDIA_URL }}/talksub/" style="text-decoration: none; color:#666666">Offer a talk or class</a><br/>
+<!---a href="{{ MEDIA_URL }}/talkvote/" style="text-decoration: none; color:#666666">Vote on talks and classes</a><br/--->
+<a href="{{ MEDIA_URL }}/howto_sponsor/" style="text-decoration: none; color:#666666">Be a sponsor</a><br/>
+<a href="{{ MEDIA_URL }}/get_sponsored/" style="text-decoration: none; color:#666666">Be sponsored</a><br/>
+<a href="{{ MEDIA_URL }}/contact_us/" style="text-decoration: none; color:#666666">Contact Us</a><br/>
+<br/>
+<a href="{{ MEDIA_URL }}/floor_plan/" style="text-decoration: none; color:#666666">Floor Plan</a><br/>
+<br/>
+<a href="{{ MEDIA_URL }}/prog_contest/" style="text-decoration: none; color:#666666">SingPath Tournament</a><br/>
+<a href="{{ MEDIA_URL }}/scav_hunt/" style="text-decoration: none; color:#666666">Scavenger hunt</a><br/>
+<a href="{{ MEDIA_URL }}/afterparty/" style="text-decoration: none; color:#666666">Afterparty</a><br/>
+<br/>
+Swag Sponsors:<br/>
+<br/>
+<img src="{{ MEDIA_URL }}/static/images/wingware-sponsor-110x50-1.png"/>
+<br/>
+<br/>
+<img src="{{ MEDIA_URL }}/static/images/orielly.png"/>
+<br/>
+<br/>
+<img src="{{ MEDIA_URL }}/static/images/ActiveStateLogo.png"/>
+<br/>
+<br/>
+Friends Of PyGotham:<br/>
+<br/>
+<a href="http://nwc.co/" title="New Work City"><img src="{{ MEDIA_URL }}/static/images/nwc-icon-90.gif"; border="0"; alt="New Work City"></a>
+<br/>
+<br/>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: 'PyGotham',
+  interval: 4000,
+  title: '',
+  subject: '',
+  width: 'auto',
+  height: 300,
+  theme: {
+    shell: {
+      background: '#4a3a3d',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#c4c4c4',
+      links: '#cc785a'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+<br/>
+<br/>
+<a href="http://djangopony.com/" class="ponybadge" title="Magic! Ponies! Django! Whee!"><img src="{{ MEDIA_URL }}/static/images/ponybadge.png" width="210" height="65" border="0"; alt="pony powered"></a>
+</div>
+</div>
+
+{% block content %}{% endblock %}
+
+</BODY>
+</HTML>

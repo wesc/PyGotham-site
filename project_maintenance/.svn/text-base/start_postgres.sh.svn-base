@@ -1,0 +1,1 @@
+sudo -u postgres postmaster -D /usr/local/projects/splidit/postgres_database/ -p 5800 >>/var/log/splidit/pg.log &

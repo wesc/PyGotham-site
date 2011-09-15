@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+<h3>Your Proposed Talks/Classes</h3>
+
+{% if generic_error %}
+<font color="red">{{ generic_error }}</font>
+<p>
+<p>
+{% endif %}
+
+
+{% if form %}
+    {% if edit_id %}
+    <form action="{{ MEDIA_URL }}/talksub/edit/{{ edit_id }}" method="post">{% csrf_token %}
+    
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Add a talk/class' %}" />
+    
+    </form>
+    {% else %}
+    <form action="{{ MEDIA_URL }}/talksub/add/" method="post">{% csrf_token %}
+    
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Add a talk/class' %}" />
+    
+    </form>
+    {% endif %}
+{% else %}
+    {% if talks %}
+        {% for t in talks %}
+        Edit talk/class: <a href="{{ MEDIA_URL }}/talksub/edit/{{ t.id }}/" style="color:#666666">{{ t.title }}</a>
+        <br/>
+        <br/>
+        {% endfor %}
+    {% else %}
+        You currently have no talks/classes entered.
+        <br/>
+        <br/>
+{% endif %}
+
+{% if addtalks %}
+<a href="{{ MEDIA_URL }}/talksub/add/" style="color:#666666">Click here to add a talk/class</a>
+{% endif %}
+
+{% endif %}
+
+</div>
+</div>
+
+{% endblock %}

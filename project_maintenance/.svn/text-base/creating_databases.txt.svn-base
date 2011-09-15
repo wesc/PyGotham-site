@@ -1,0 +1,5 @@
+(1) In Postgresql:
+
+psql -U splidit --port=5800 template1
+
+(2) In Mysql: There is no mysql

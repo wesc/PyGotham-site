@@ -1,0 +1,22 @@
+unix group name: splidit
+
+svn: 
+Uses port 4321, so this much be done:
+
+svn checkout svn+ssh://username@pythonpeople.org/usr/local/projects/splidit/splidit_repo/trunk splidit_trunk
+
+It will fail, then this must be done:
+vi ~/.subversion/config
+[tunnels]
+gsh = ssh -p 4321
+
+Then do:
+
+svn checkout svn+gsh://username@pythonpeople.org/usr/local/projects/splidit/splidit_repo/trunk splidit_trunk
+
+Mysql port: None, Postgresql port: 5800
+
+Database super user and password: splidit/splidit
+Database names: splidit_front_end, splidit_back_end, and myongodb encrypted records.
+
+

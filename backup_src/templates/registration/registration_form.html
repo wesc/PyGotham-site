@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div id="content-wrapper">
+<div id="content">
+
+<p>Already registered? <a href="{{ MEDIA_URL }}/accounts/login">Log in</a>.
+<p>
+
+<form action="{{ MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
+
+  {{ form.as_p }}
+
+   <script type="text/javascript"
+   src="https://www.google.com/recaptcha/api/challenge?k=6LcD9MQSAAAAABuBKmhnM_tOiVNWhUDhpwZLJmB9"
+   </script>
+ <noscript>
+   <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcD9MQSAAAAABuBKmhnM_tOiVNWhUDhpwZLJmB9"
+       height="300" width="500" frameborder="0"></iframe><br>
+ </noscript>
+<p>
+<p>
+  <input type="submit" value="{% trans 'Submit' %}" />
+</form>
+
+</div>
+</div>
+
+{% endblock %}
