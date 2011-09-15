@@ -21,7 +21,7 @@ CACHES = {
     }
 }
 
-AUTHENTICATION_BACKENDS = ('custom_auth.cutsom_auth.EmailOrUsernameModelBackend',)
+AUTHENTICATION_BACKENDS = ('custom_auth.custom_auth.EmailOrUsernameModelBackend',)
 
 
 
