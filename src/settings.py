@@ -2,6 +2,8 @@ import os
 
 RECAPTCHA_PRIVATE_KEY='6LcD9MQSAAAAAAD26iRITwm083gElTsK-Ep3d3g6'
 
+DOMAIN="http://localhost:8000"
+
 # Django settings for mysite project.
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -19,7 +21,7 @@ CACHES = {
     }
 }
 
-AUTHENTICATION_BACKENDS = ('custom_auth.custom_auth.EmailOrUsernameModelBackend',)
+AUTHENTICATION_BACKENDS = ('custom_auth.cutsom_auth.EmailOrUsernameModelBackend',)
 
 
 
@@ -81,7 +83,8 @@ STATIC_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),'../static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+# NO!!! JOIN MISBEHAVES: STATIC_URL = os.path.join(DOMAIN,'/static')
+STATIC_URL = os.path.join(DOMAIN,'static')
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.

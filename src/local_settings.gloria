@@ -16,7 +16,7 @@ DATABASES = {
 SECRET_KEY="aspfdvu98 4985y[928y43rhfsdvn ahg9 9834pyrhg pwjrf[pjq]mc4 of["
 
 MEDIA_URL = 'http://localhost:8000'
-SSL_MEDIA_URL = 'https://localhost:8000'
+SSL_MEDIA_URL = 'http://localhost:8000'
 
 DEBUG = True
 
