@@ -2,3 +2,4 @@
 local_settings.py
 *~
 src/test.db
+.sass-cache*

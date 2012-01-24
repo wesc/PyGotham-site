@@ -3,6 +3,8 @@ import os
 RECAPTCHA_PRIVATE_KEY='6LcD9MQSAAAAAAD26iRITwm083gElTsK-Ep3d3g6'
 
 DOMAIN="http://localhost:8000"
+BASE_DIR = os.path.dirname(__file__)
+
 
 # Django settings for mysite project.
 DEBUG = False
@@ -79,12 +81,11 @@ SSL_MEDIA_URL = 'https://pygotham.org'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),'../static'))
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..', 'static'))
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-# NO!!! JOIN MISBEHAVES: STATIC_URL = os.path.join(DOMAIN,'/static')
-STATIC_URL = os.path.join(DOMAIN,'static')
+STATIC_URL = '/static'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -96,6 +97,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'compass', 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -137,7 +140,7 @@ ROOT_URLCONF = 'urls'
 AUTH_PROFILE_MODULE = 'profiles.UserProfile'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__),'templates'),
+    os.path.join(BASE_DIR, 'templates'),
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
@@ -202,7 +205,7 @@ LOGGING = {
 #EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_BACKEND='custom_email_backend.logging_smtp.LoggingSmtp'
 
-EMAIL_FILE_PATH = os.path.join(os.path.dirname(__file__),'emaildata')
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emaildata')
 EMAIL_HOST='smtp-auth.no-ip.com'
 EMAIL_HOST_PASSWORD='see_local_settings_file'
 EMAIL_HOST_USER='pygotham@thepeoplesconference.com'
