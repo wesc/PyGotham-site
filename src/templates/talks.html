@@ -1,17 +1,88 @@
 {% extends "base.html" %}
-{% block content %}
 
-<div id="content-wrapper">
-<div id="content">
+{% block main_content %}
+<div id="talks">
+  <h2>Talks</h2>
 
-<h3>Talk Voting:</h3>
+  <ul id="items">
+    <li>
+      <div class="i-profile">
+        <img src="/static/images/profile.jpg" />
+      </div>
 
-The highest voted talks/classes will fill 80% of the slots. The remaining 20% of talk/class slots will be chosen at random.<br/>
-<br/>
-Once talk/class submission closes (when registration closes), you will have an opportunity to vote up/down on all submissions. 
-Watch the web site, or sign up for email notifications to be alerted when these events occur.
+      <div class="i-blurb">
+        <div class="i-title">
+          Extracting musical information from sound
+        </div>
+
+        <div class="i-when">
+          <span>Sept 16 // 1pm // Room 104</span>
+        </div>
+
+        <div class="i-author">
+          <a href="#">Johnny B. Goode</a>
+        </div>
+
+        <div class="i-abstract">
+          Ham hock t-bone pancetta biltong strip steak swine, short ribs
+          flank tongue salami frankfurter shank meatball pig.
+        </div>
+      </div>
+    </li>
+
+
+    <li>
+      <div class="i-profile">
+        <img src="/static/images/profile.jpg" />
+      </div>
+
+      <div class="i-blurb">
+        <div class="i-title">
+          Cross-Compiling Python & C Extensions for Embedded Systems
+        </div>
+
+        <div class="i-when">
+          <span>Sept 16 // 2pm // Room 104</span>
+        </div>
+
+        <div class="i-author">
+          <a href="#">Harry Potter</a>
+        </div>
+
+        <div class="i-abstract">
+          Pork belly pastrami meatball shoulder, ham hock strip steak
+          drumstick brisket filet mignon.
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <div class="i-profile">
+        <img src="/static/images/profile.jpg" />
+      </div>
+
+      <div class="i-blurb">
+        <div class="i-title">
+          The Pyed Piper: A Modern Python Alternative to awk, sed and
+          Other Unix Text Manipulation Utilities
+        </div>
+
+        <div class="i-when">
+          <span>Sept 16 // 3pm // Room 104</span>
+        </div>
+
+        <div class="i-author">
+          <a href="#">Grace Potter</a>
+        </div>
+
+        <div class="i-abstract">
+          Jowl meatloaf ball tip ham, pork loin turducken short ribs
+          biltong flank frankfurter pancetta.
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
 </div>
-</div>
-
-
 {% endblock %}

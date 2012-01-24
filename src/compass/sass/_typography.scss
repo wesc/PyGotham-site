@@ -1,0 +1,40 @@
+//@include font-face("DejaVu Sans", font-files("../ttf/DejaVuSans-Bold.ttf", truetype));
+
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url('../ttf/DejaVuSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "DejaVu Sans Bold";
+  src: url('../ttf/DejaVuSans-Bold.ttf') format('truetype');
+}
+
+
+$ink-normal: rgb(255, 255, 255);
+$ink-normal-t: rgba(255, 255, 255, 0.85);
+$ink-soft: darken($ink-normal, 25%);
+
+$smokey-gray: rgb(59, 55, 55);
+$bg-color: rgb(59, 55, 55);
+$bg-color-t: rgba(59, 55, 55, 0.85);
+
+$highlight-color: darken(#f4a73d, 25%);
+
+
+/* fixme: rgba won't work in IE < 9, so we need to make IE
+   compatability styles for the following mixins */
+
+@mixin std-colors {
+    background-color: $bg-color-t;
+    color: $ink-normal;
+}
+
+@mixin reverse-colors {
+    background-color: $ink-normal-t;
+    color: black;
+}
+
+
+$std-font: "Helvetica Neue", Helvetica, sans-serif;
+$logo-font: "DejaVu Sans Bold", sans-serif;

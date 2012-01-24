@@ -1,151 +1,70 @@
 {% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<HEAD>
-<title>PyGotham: Mostly Python, some random, all awesome</title>
-<link href="{{ MEDIA_URL }}/static/css/frames.css" rel="stylesheet" type="text/css" />
-<link href="{{ MEDIA_URL }}/static/css/s3Slider.css" rel="stylesheet" type="text/css" media="screen" />
-<link rel="stylesheet" href="{{MEDIA_URL}}/static/css/vote_main.css" type="text/css" media="screen">
-<script type="text/javascript" src="{{ MEDIA_URL }}/static/js/jquery-1.6.1.min.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}/static/js/s3Slider.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>PyGotham: Mostly Python, some random, all awesome</title>
 
-<script>
-$(document).ready(function() {
-   $('#s3slider').s3Slider({
-      timeOut: 4000
-   });
-}); 
-</script>
+    <link href="{{ STATIC_URL }}css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}css/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="{{ STATIC_URL }}css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
 
-</HEAD>
-<BODY>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.6.1.min.js"></script>
+{% block main_js_includes %}
+{% endblock %}
 
-<div id="leftcorner-wrapper">
-<div id="leftcorner">
+    <script type="text/javascript">
+{% block main_js %}{% endblock %}
+    </script>
 
-<img src="{{ MEDIA_URL }}/static/images/graybar-building-rat.jpg"/>
+  </head>
 
-</div>
-</div>
+  <body>
+    <div id="bp-container">
+      <div id="main-header">
+        <h1>PyGotham // Sept 16th & 17th 2011 // New York NY</h1>
+      </div>
 
-<div id="header-wrapper">
-<div id="header">
-<div id="logo-text">
-PYGOTHAM: Sept 16th & 17th, 2011 (a non-profit conference)<br/>
-Executive Conference Center: 1601 Broadway - 8th Floor<br/>
-Entrance on 48th Street, New York, NY 10019<br/>
-Student with valid ID: $100, Individual: $200, Corporate: $300<br/>
-(Building entry requires advance registration)<br/>
-</div>
+      <div id="main-nav">
+        <ul>
+          <li>
+            <a href="/">home</a>
+          </li>
 
-</div>
-</div>
+          <li>
+            <a href="{% url talks %}">scheduled talks // floor plan</a>
+          </li>
 
-<div id="sidebar-wrapper">
-<div id="sidebar">
-{% if user.username %}
-Welcome {{ user.username }}!
-<br/>
-<br/>
-{% else %}
-Welcome,<br/>not-logged-in user!
-<br/>
-<br/>
-{% endif %}
-<a href="{{ MEDIA_URL }}/" style="text-decoration: none; color:#666666">Home</a><br/>
-<br/>
-<a href="{{ MEDIA_URL }}/full_schedule/" style="text-decoration: none; color:#666666">Scheduled Talks So Far</a><br/>
-<!---a href="{{ MEDIA_URL }}/to_be_voted_talks/" style="text-decoration: none; color:#666666">Talks Proposed For Vote</a><br/--->
-<br/>
-<a href="{{ MEDIA_URL }}/accessibility/" style="text-decoration: none; color:#666666">Accessibility</a><br/>
-<!---a href="{{ MEDIA_URL }}/babysitting/" style="text-decoration: none; color:#666666">Babysitting</a><br/--->
-<a href="{{ MEDIA_URL }}/diversity/" style="text-decoration: none; color:#666666">Diversity</a><br/>
-<br/>
-{% if not user.username %}
-<a href="{{ MEDIA_URL }}/accounts/register/" style="text-decoration: none; color:#666666">Register</a><br/>
-{% else %}
-<a href="{{ MEDIA_URL }}/confreg/user_state/" style="text-decoration: none; color:#666666">Your Current State</a><br/>
-{% endif %}
-<br>
-{% if not user.username %}
-<a href="{{ MEDIA_URL }}/login/" style="text-decoration: none; color:#666666">Log in</a><br/>
-{% else %}
-<a href="{{ MEDIA_URL }}/logout/" style="text-decoration: none; color:#666666">Log out</a><br/>
-{% endif %}
-<a href="{{ MEDIA_URL }}/talksub/" style="text-decoration: none; color:#666666">Offer a talk or class</a><br/>
-<!---a href="{{ MEDIA_URL }}/talkvote/" style="text-decoration: none; color:#666666">Vote on talks and classes</a><br/--->
-<a href="{{ MEDIA_URL }}/howto_sponsor/" style="text-decoration: none; color:#666666">Be a sponsor</a><br/>
-<a href="{{ MEDIA_URL }}/get_sponsored/" style="text-decoration: none; color:#666666">Be sponsored</a><br/>
-<a href="{{ MEDIA_URL }}/contact_us/" style="text-decoration: none; color:#666666">Contact Us</a><br/>
-<br/>
-<a href="{{ MEDIA_URL }}/floor_plan/" style="text-decoration: none; color:#666666">Floor Plan</a><br/>
-<br/>
-<a href="{{ MEDIA_URL }}/prog_contest/" style="text-decoration: none; color:#666666">SingPath Tournament</a><br/>
-<a href="{{ MEDIA_URL }}/scav_hunt/" style="text-decoration: none; color:#666666">Scavenger hunt</a><br/>
-<a href="{{ MEDIA_URL }}/afterparty/" style="text-decoration: none; color:#666666">Afterparty</a><br/>
-<br/>
-Swag Sponsors:<br/>
-<br/>
-<img src="{{ MEDIA_URL }}/static/images/wingware-sponsor-110x50-1.png"/>
-<br/>
-<br/>
-<img src="{{ MEDIA_URL }}/static/images/orielly.png"/>
-<br/>
-<br/>
-<img src="{{ MEDIA_URL }}/static/images/ActiveStateLogo.png"/>
-<br/>
-<br/>
-Friends Of PyGotham:<br/>
-<br/>
-<a href="http://nwc.co/" title="New Work City"><img src="{{ MEDIA_URL }}/static/images/nwc-icon-90.gif"; border="0"; alt="New Work City"></a>
-<br/>
-<br/>
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'search',
-  search: 'PyGotham',
-  interval: 4000,
-  title: '',
-  subject: '',
-  width: 'auto',
-  height: 300,
-  theme: {
-    shell: {
-      background: '#4a3a3d',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#000000',
-      color: '#c4c4c4',
-      links: '#cc785a'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    toptweets: true,
-    behavior: 'default'
-  }
-}).render().start();
-</script>
-<br/>
-<iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?oe=utf-8&amp;client=firefox-a&amp;ie=UTF8&amp;q=hotels&amp;fb=1&amp;gl=us&amp;sll=40.789152,-74.046671&amp;sspn=0.008253,0.013239&amp;st=115968771510351694523&amp;rq=1&amp;ev=p&amp;split=1&amp;radius=0.42&amp;hq=hotels&amp;hnear=&amp;ll=40.785676,-74.04695&amp;spn=0.015597,0.027466&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?oe=utf-8&amp;client=firefox-a&amp;ie=UTF8&amp;q=hotels&amp;fb=1&amp;gl=us&amp;sll=40.789152,-74.046671&amp;sspn=0.008253,0.013239&amp;st=115968771510351694523&amp;rq=1&amp;ev=p&amp;split=1&amp;radius=0.42&amp;hq=hotels&amp;hnear=&amp;ll=40.785676,-74.04695&amp;spn=0.015597,0.027466&amp;z=15&amp;source=embed" style="color:#666666;text-align:left">The cheapest hotels near Manhattan (about $150 per night), accessible by the 320 bus</a></small>
-<br/>
-<br/>
-<a href="http://www.njtransit.com/pdf/bus/T0320.pdf" title="The 320 bus" style="color:#666666;text-align:left">320 bus schedule (approx 20 minutes to Manhattan, then walking distance to the conference)</a>
-<br/>
-<a href="http://djangopony.com/" class="ponybadge" title="Magic! Ponies! Django! Whee!"><img src="{{ MEDIA_URL }}/static/images/ponybadge.png" width="210" height="65" border="0"; alt="pony powered"></a>
-</div>
-</div>
+          <li>
+            <a href="{% url registration_register %}">register</a>
+          </li>
 
-{% block content %}{% endblock %}
+          <li>
+            <a href="{% url login %}">login</a>
+          </li>
 
-</BODY>
-</HTML>
+          <li>
+            <a href="{% url sponsors %}">sponsor // be sponsored</a>
+          </li>
+
+          <li>
+            <a href="{% url access %}">access // diversity</a>
+          </li>
+
+          <li>
+            <a href="{% url contact_us %}">contact</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div id="main-content">
+        {% block main_content %}{% endblock %}
+      </div>
+
+    </div>
+
+  </body>
+</html>

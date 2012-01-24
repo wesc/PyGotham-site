@@ -1,0 +1,87 @@
+
+body {
+/*
+
+background image processed with imagemagick like so:
+
+convert -sepia-tone 80% -sketch 100 -brightness-contrast -20 inp.jpg out.jpg
+
+(this thing takes a while to run, primarily because of -sketch)
+
+Note: we should expose images of different sizes for different
+clients, ie smaller image for mobile
+
+*/
+
+
+    // cribbed from: http://css-tricks.com/perfect-full-page-background-image/ (has other methods that aren't CSS3 dependent
+
+    background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#bp-container {
+    @include container;
+}
+
+
+#main-header {
+    @include column(24, true);
+
+    margin-top: span(1) / 2;
+    @include std-colors;
+
+    h1 {
+        padding: 16px 24px 16px 24px;
+        border: 8px solid $ink-normal;
+
+        // fix these styles
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-family: $logo-font;
+    }
+}
+
+#main-nav {
+    @include column(24, true);
+
+    font-family: $std-font;
+    font-size: 16px;
+    font-weight: bold;
+
+    ul {
+        margin: span(1)/2 0 span(1)/2 0;
+    }
+
+    li {
+        display: inline;
+
+        a {
+            @include fade-in;
+            @include reverse-colors;
+
+            margin-right: 8px;
+            padding: 4px 6px 4px 6px;
+            text-decoration: none;
+
+            &:hover {
+                @include std-colors;
+            } 
+        } 
+   }
+
+    @include clearfix;
+}
+
+
+#main-content {
+    @include column(24, true);
+    //@include std-colors;
+
+    margin-top: span(1);
+}

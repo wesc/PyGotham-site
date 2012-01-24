@@ -1,22 +1,20 @@
-{% extends "ssl_safe_base.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 
-{% block content %}
+{% block main_content %}
+<div id="registration-page">
+  <h2>Registration</h2>
 
-<div id="content-wrapper">
-<div id="content">
+  <p>
+    Already created a login? Already activated it via email
+    link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
+  </p>
 
-<p>Already created a login? Already activated it via email link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
-<p>
-
-<form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
-
-  {{ form.as_p }}
-
-  <input type="submit" value="{% trans 'Submit' %}" />
-</form>
-
+  <p>
+    <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="{% trans 'Submit' %}" />
+    </form>
+  </p>
 </div>
-</div>
-
 {% endblock %}
