@@ -79,28 +79,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* fixme: rgba won't work in IE < 9, so we need to make IE
    compatability styles for the following mixins */
-/* line 2, ../../sass/_base.scss */
+/*
+
+background image processed with imagemagick like so:
+
+convert -sepia-tone 80% -sketch 100 -brightness-contrast -20 inp.jpg out.jpg
+
+(this thing takes a while to run, primarily because of -sketch)
+
+
+We're using a compress quality of 75, so:
+convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
+
+We've produced an image for displays smaller and greater than 500px.
+*/
+/* line 20, ../../sass/_base.scss */
 body {
-  /*
-  
-  background image processed with imagemagick like so:
-  
-  convert -sepia-tone 80% -sketch 100 -brightness-contrast -20 inp.jpg out.jpg
-  
-  (this thing takes a while to run, primarily because of -sketch)
-  
-  Note: we should expose images of different sizes for different
-  clients, ie smaller image for mobile
-  
-  */
-  background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+  background: url(../images/q-bg-500.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-/* line 26, ../../sass/_base.scss */
+@media (min-width: 500px) {
+  /* line 29, ../../sass/_base.scss */
+  body {
+    background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+/* line 39, ../../sass/_base.scss */
 #bp-container {
   width: 950px;
   margin: 0 auto;
@@ -108,7 +120,7 @@ body {
   *zoom: 1;
 }
 
-/* line 31, ../../sass/_base.scss */
+/* line 44, ../../sass/_base.scss */
 #main-header {
   display: inline;
   float: left;
@@ -122,7 +134,7 @@ body {
 * html #main-header {
   overflow-x: hidden;
 }
-/* line 37, ../../sass/_base.scss */
+/* line 50, ../../sass/_base.scss */
 #main-header h1 {
   padding: 16px 24px 16px 24px;
   border: 8px solid white;
@@ -133,7 +145,7 @@ body {
   font-family: "DejaVu Sans Bold", sans-serif;
 }
 
-/* line 50, ../../sass/_base.scss */
+/* line 63, ../../sass/_base.scss */
 #main-nav {
   display: inline;
   float: left;
@@ -149,15 +161,15 @@ body {
 * html #main-nav {
   overflow-x: hidden;
 }
-/* line 57, ../../sass/_base.scss */
+/* line 70, ../../sass/_base.scss */
 #main-nav ul {
   margin: 15px 0 15px 0;
 }
-/* line 61, ../../sass/_base.scss */
+/* line 74, ../../sass/_base.scss */
 #main-nav li {
   display: inline;
 }
-/* line 64, ../../sass/_base.scss */
+/* line 77, ../../sass/_base.scss */
 #main-nav li a {
   -moz-transition-property: background-color color;
   -webkit-transition-property: background-color color;
@@ -177,13 +189,13 @@ body {
   padding: 4px 6px 4px 6px;
   text-decoration: none;
 }
-/* line 72, ../../sass/_base.scss */
+/* line 85, ../../sass/_base.scss */
 #main-nav li a:hover {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
 }
 
-/* line 82, ../../sass/_base.scss */
+/* line 95, ../../sass/_base.scss */
 #main-content {
   display: inline;
   float: left;
@@ -612,4 +624,13 @@ body {
 #sponsors-page form input[type=submit], #access-page form input[type=submit], #registration-page form input[type=submit], #login-page form input[type=submit],
 #contact-page form input[type=submit], #password-reset-page form input[type=submit] {
   font-size: 16px;
+}
+/* line 74, ../../sass/_general.scss */
+#sponsors-page form ul.errorlist li, #access-page form ul.errorlist li, #registration-page form ul.errorlist li, #login-page form ul.errorlist li,
+#contact-page form ul.errorlist li, #password-reset-page form ul.errorlist li {
+  padding: 2px 2px 3px 2px;
+  margin: 10px 0 2px 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: white;
+  background-color: #a8650a;
 }

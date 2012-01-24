@@ -1,5 +1,5 @@
 
-body {
+
 /*
 
 background image processed with imagemagick like so:
@@ -8,20 +8,33 @@ convert -sepia-tone 80% -sketch 100 -brightness-contrast -20 inp.jpg out.jpg
 
 (this thing takes a while to run, primarily because of -sketch)
 
-Note: we should expose images of different sizes for different
-clients, ie smaller image for mobile
 
+We're using a compress quality of 75, so:
+convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
+
+We've produced an image for displays smaller and greater than 500px.
 */
 
 
-    // cribbed from: http://css-tricks.com/perfect-full-page-background-image/ (has other methods that aren't CSS3 dependent
-
-    background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+// cribbed from: http://css-tricks.com/perfect-full-page-background-image/ (has other methods that aren't CSS3 dependent
+body {
+    background: url(../images/q-bg-500.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
+@media (min-width: 500px) {
+    body {
+        background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
 
 #bp-container {
     @include container;
