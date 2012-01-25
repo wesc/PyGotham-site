@@ -447,7 +447,7 @@ body {
 }
 /* line 38, ../../sass/_common.scss */
 #main-content #news #news-items li:hover {
-  background-color: black;
+  background-color: white;
 }
 /* line 41, ../../sass/_index.scss */
 #main-content #news #news-items li .i-date {
@@ -478,7 +478,7 @@ body {
   overflow-x: hidden;
 }
 
-/* line 6, ../../sass/_talks.scss */
+/* line 8, ../../sass/_talks.scss */
 #talks {
   display: inline;
   float: left;
@@ -492,7 +492,7 @@ body {
 * html #talks {
   overflow-x: hidden;
 }
-/* line 13, ../../sass/_talks.scss */
+/* line 15, ../../sass/_talks.scss */
 #talks h2 {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
@@ -502,7 +502,7 @@ body {
   text-transform: uppercase;
   padding: 2px 2px 1px 2px;
 }
-/* line 17, ../../sass/_talks.scss */
+/* line 19, ../../sass/_talks.scss */
 #talks #items li {
   -moz-transition-property: background-color color;
   -webkit-transition-property: background-color color;
@@ -543,9 +543,9 @@ body {
 }
 /* line 38, ../../sass/_common.scss */
 #talks #items li:hover {
-  background-color: black;
+  background-color: white;
 }
-/* line 20, ../../sass/_talks.scss */
+/* line 22, ../../sass/_talks.scss */
 #talks #items li .i-profile {
   display: inline;
   float: left;
@@ -556,7 +556,7 @@ body {
 * html #talks #items li .i-profile {
   overflow-x: hidden;
 }
-/* line 23, ../../sass/_talks.scss */
+/* line 25, ../../sass/_talks.scss */
 #talks #items li .i-profile img {
                 /* image should be roughly 65 pixels across:
 
@@ -567,7 +567,7 @@ body {
   margin-right: auto;
   border: 2px solid white;
 }
-/* line 38, ../../sass/_talks.scss */
+/* line 40, ../../sass/_talks.scss */
 #talks #items li .i-blurb {
   display: inline;
   float: left;
@@ -581,19 +581,75 @@ body {
 * html #talks #items li .i-blurb {
   overflow-x: hidden;
 }
-/* line 46, ../../sass/_talks.scss */
+/* line 48, ../../sass/_talks.scss */
 #talks #items li .i-blurb .i-title {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 670px;
+  width: 590px;
   font-weight: bold;
 }
 /* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks #items li .i-blurb .i-title {
   overflow-x: hidden;
 }
-/* line 51, ../../sass/_talks.scss */
+/* line 53, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 70px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-blurb .i-thumbs {
+  overflow-x: hidden;
+}
+/* line 56, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-up, #talks #items li .i-blurb .i-thumbs .i-down {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  text-indent: -1000000px;
+  left: -1000000px;
+}
+/* line 65, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-up {
+  margin-right: 8px;
+}
+/* line 71, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-up {
+  background-image: url(../images/thumbs-up.png);
+}
+/* line 73, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-up:hover {
+  background-image: url(../images/thumbs-up-neg.png);
+}
+/* line 78, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-up.selected {
+  background-image: url(../images/thumbs-up-neg.png);
+}
+/* line 80, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-up.selected:hover {
+  background-image: url(../images/thumbs-up.png);
+}
+/* line 85, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-down {
+  background-image: url(../images/thumbs-down.png);
+}
+/* line 87, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-down:hover {
+  background-image: url(../images/thumbs-down-neg.png);
+}
+/* line 92, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-down.selected {
+  background-image: url(../images/thumbs-down-neg.png);
+}
+/* line 94, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-thumbs .i-down.selected:hover {
+  background-image: url(../images/thumbs-down.png);
+}
+/* line 100, ../../sass/_talks.scss */
 #talks #items li .i-blurb .i-when {
   display: inline;
   float: left;
@@ -607,11 +663,11 @@ body {
 * html #talks #items li .i-blurb .i-when {
   overflow-x: hidden;
 }
-/* line 58, ../../sass/_talks.scss */
+/* line 107, ../../sass/_talks.scss */
 #talks #items li .i-blurb .i-when span {
   padding-right: 4px;
 }
-/* line 63, ../../sass/_talks.scss */
+/* line 112, ../../sass/_talks.scss */
 #talks #items li .i-blurb .i-author {
   display: inline;
   float: left;
@@ -624,12 +680,12 @@ body {
 * html #talks #items li .i-blurb .i-author {
   overflow-x: hidden;
 }
-/* line 69, ../../sass/_talks.scss */
+/* line 118, ../../sass/_talks.scss */
 #talks #items li .i-blurb .i-author a {
   color: #a8650a;
   text-decoration: none;
 }
-/* line 75, ../../sass/_talks.scss */
+/* line 124, ../../sass/_talks.scss */
 #talks #items li .i-blurb .i-abstract {
   display: inline;
   float: left;
