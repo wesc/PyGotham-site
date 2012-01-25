@@ -1,0 +1,30 @@
+#sponsors-page-tabs {
+    background-color: transparent;
+    margin-bottom: 14px;
+
+    li {
+        display: inline;
+
+        a {
+            padding: 4px 4px 4px 4px;
+            color: $ink-normal;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: $std-font;
+            font-size: 16px;
+
+            &:hover, &.selected {
+                @include reverse-colors;
+            }
+        }
+    }
+}
+
+#sponsors-page {
+    #i-sponsor-half, #i-sponsored-half {
+        &.selected {
+            display: block;
+        }
+        display: none;
+    }
+}
