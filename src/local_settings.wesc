@@ -1,0 +1,32 @@
+import os
+EMAIL_HOST_PASSWORD='no_way'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': os.path.join(os.path.dirname(__file__),'test.db'),# Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',              # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
+SECRET_KEY="aspfdvu98 4985y[928y43rhfsdvn ahg9 9834pyrhg pwjrf[pjq]mc4 of["
+
+MEDIA_URL = 'http://localhost:8080'
+SSL_MEDIA_URL = 'http://localhost:8080'
+
+DEBUG = True
+
+EMAIL_BACKEND='django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH='/tmp/email/'
+

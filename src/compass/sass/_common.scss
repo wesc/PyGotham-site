@@ -1,0 +1,43 @@
+
+@mixin heading {
+    @include std-colors;
+
+    font-family: $std-font;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding: 2px 2px 1px 2px;
+}
+
+@mixin fade-in {
+    @include transition-property(background-color color);
+    @include transition-duration(0.1s);
+    @include transition-timing-function(ease-in);
+}
+
+@mixin fade-hover {
+    @include fade-in;
+
+    &:hover {
+        @include fade-in;
+    }
+}
+
+
+@mixin striped-list {
+    @include fade-hover;
+
+    padding-bottom: span(1)/2;
+    padding-top: span(1)/2;
+    border-bottom: 1px solid $bg-color-t;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background-color: black;
+    }
+
+    @include clearfix;
+}

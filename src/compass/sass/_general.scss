@@ -1,0 +1,87 @@
+
+// general styles to apply to static pages.
+
+#sponsors-page, #access-page, #registration-page, #login-page,
+#contact-page, #password-reset-page {
+    @include column(18, true);
+    @include reverse-colors;
+
+    h2 {
+        @include heading;
+        margin-bottom: span(1);
+
+        margin-top: span(1.5);
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    p, form {
+        margin: 0 2px 12px 2px;
+    }
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        font-family: $std-font;
+        font-size: 22px;
+        line-height: 22px * 1.3;
+    }
+
+    a {
+        @include fade-hover;
+
+        color: $highlight-color;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: 1px dashed $highlight-color;
+        }
+    }
+
+    form {
+        p {
+            width: span(12);
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+            color: $bg-color;
+            font-size: 16px;
+            font-family: $std-font;
+
+            label {
+                font-weight: bold;
+                display: block;
+                float: left;
+                width: span(6);
+            }
+
+            input {
+                display: block;
+                float: right;
+                width: span(6);
+            }
+
+            @include clearfix;
+        }
+
+        input[type=submit] {
+            font-size: 16px;
+        }
+
+        ul.errorlist li {
+            padding: 2px 2px 3px 2px;
+            margin: 10px 0 2px 0;
+            font-family: $std-font;
+            color: white;
+            background-color: $highlight-color;
+        }
+
+    }
+
+    #login-page-extra {
+        //@include column(16, true);
+    }
+}

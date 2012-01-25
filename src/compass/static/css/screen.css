@@ -1,0 +1,636 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("../ttf/DejaVuSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DejaVu Sans Bold";
+  src: url("../ttf/DejaVuSans-Bold.ttf") format("truetype");
+}
+
+/* fixme: rgba won't work in IE < 9, so we need to make IE
+   compatability styles for the following mixins */
+/*
+
+background image processed with imagemagick like so:
+
+convert -sepia-tone 80% -sketch 100 -brightness-contrast -20 inp.jpg out.jpg
+
+(this thing takes a while to run, primarily because of -sketch)
+
+
+We're using a compress quality of 75, so:
+convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
+
+We've produced an image for displays smaller and greater than 500px.
+*/
+/* line 20, ../../sass/_base.scss */
+body {
+  background: url(../images/q-bg-500.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (min-width: 500px) {
+  /* line 29, ../../sass/_base.scss */
+  body {
+    background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+/* line 39, ../../sass/_base.scss */
+#bp-container {
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 44, ../../sass/_base.scss */
+#main-header {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  margin-top: 15px;
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-header {
+  overflow-x: hidden;
+}
+/* line 50, ../../sass/_base.scss */
+#main-header h1 {
+  padding: 16px 24px 16px 24px;
+  border: 8px solid white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: "DejaVu Sans Bold", sans-serif;
+}
+
+/* line 63, ../../sass/_base.scss */
+#main-nav {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-nav {
+  overflow-x: hidden;
+}
+/* line 70, ../../sass/_base.scss */
+#main-nav ul {
+  margin: 15px 0 15px 0;
+}
+/* line 74, ../../sass/_base.scss */
+#main-nav li {
+  display: inline;
+}
+/* line 77, ../../sass/_base.scss */
+#main-nav li a {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  margin-right: 8px;
+  padding: 4px 6px 4px 6px;
+  text-decoration: none;
+}
+/* line 85, ../../sass/_base.scss */
+#main-nav li a:hover {
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+}
+
+/* line 95, ../../sass/_base.scss */
+#main-content {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  margin-top: 30px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-content {
+  overflow-x: hidden;
+}
+
+/* line 8, ../../sass/_index.scss */
+#main-content #sponsors {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 270px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-content #sponsors {
+  overflow-x: hidden;
+}
+/* line 12, ../../sass/_index.scss */
+#main-content #sponsors h2 {
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  text-transform: uppercase;
+  padding: 2px 2px 1px 2px;
+}
+/* line 16, ../../sass/_index.scss */
+#main-content #sponsors ul li {
+  display: none;
+}
+/* line 19, ../../sass/_index.scss */
+#main-content #sponsors ul li img {
+  padding: 4px 8px 4px 8px;
+  width: 230px;
+}
+/* line 26, ../../sass/_index.scss */
+#main-content #news {
+  display: inline;
+  float: left;
+  position: relative;
+  margin: 0 -40px 1.5em 40px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 630px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-content #news {
+  overflow-x: hidden;
+}
+/* line 34, ../../sass/_index.scss */
+#main-content #news h2 {
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  text-transform: uppercase;
+  padding: 2px 2px 1px 2px;
+}
+/* line 38, ../../sass/_index.scss */
+#main-content #news #news-items li {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid rgba(59, 55, 55, 0.85);
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 21, ../../sass/_common.scss */
+#main-content #news #news-items li:hover {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 34, ../../sass/_common.scss */
+#main-content #news #news-items li:last-child {
+  border-bottom: none;
+}
+/* line 38, ../../sass/_common.scss */
+#main-content #news #news-items li:hover {
+  background-color: black;
+}
+/* line 41, ../../sass/_index.scss */
+#main-content #news #news-items li .i-date {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 110px;
+  font-weight: bold;
+  color: #a8650a;
+  text-align: center;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-content #news #news-items li .i-date {
+  overflow-x: hidden;
+}
+/* line 48, ../../sass/_index.scss */
+#main-content #news #news-items li .i-blurb {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 510px;
+  color: #3b3737;
+  font-size: 18px;
+  line-height: 21.6px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #main-content #news #news-items li .i-blurb {
+  overflow-x: hidden;
+}
+
+/* line 6, ../../sass/_talks.scss */
+#talks {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks {
+  overflow-x: hidden;
+}
+/* line 13, ../../sass/_talks.scss */
+#talks h2 {
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  text-transform: uppercase;
+  padding: 2px 2px 1px 2px;
+}
+/* line 17, ../../sass/_talks.scss */
+#talks #items li {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid rgba(59, 55, 55, 0.85);
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 21, ../../sass/_common.scss */
+#talks #items li:hover {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 34, ../../sass/_common.scss */
+#talks #items li:last-child {
+  border-bottom: none;
+}
+/* line 38, ../../sass/_common.scss */
+#talks #items li:hover {
+  background-color: black;
+}
+/* line 20, ../../sass/_talks.scss */
+#talks #items li .i-profile {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 70px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-profile {
+  overflow-x: hidden;
+}
+/* line 23, ../../sass/_talks.scss */
+#talks #items li .i-profile img {
+                /* image should be roughly 65 pixels across:
+
+                   convert -resize 65x 247.png -background gray -mosaic profile.jpg
+                   */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid white;
+}
+/* line 38, ../../sass/_talks.scss */
+#talks #items li .i-blurb {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 870px;
+  color: #3b3737;
+  font-size: 18px;
+  line-height: 21.6px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-blurb {
+  overflow-x: hidden;
+}
+/* line 46, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-title {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 670px;
+  font-weight: bold;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-blurb .i-title {
+  overflow-x: hidden;
+}
+/* line 51, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-when {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 190px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: right;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-blurb .i-when {
+  overflow-x: hidden;
+}
+/* line 58, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-when span {
+  padding-right: 4px;
+}
+/* line 63, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-author {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 870px;
+  color: #a8650a;
+  margin-bottom: 8px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-blurb .i-author {
+  overflow-x: hidden;
+}
+/* line 69, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-author a {
+  color: #a8650a;
+  text-decoration: none;
+}
+/* line 75, ../../sass/_talks.scss */
+#talks #items li .i-blurb .i-abstract {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 870px;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #talks #items li .i-blurb .i-abstract {
+  overflow-x: hidden;
+}
+
+/* line 5, ../../sass/_general.scss */
+#sponsors-page, #access-page, #registration-page, #login-page,
+#contact-page, #password-reset-page {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 710px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+}
+/* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #sponsors-page, * html #access-page, * html #registration-page, * html #login-page, * html
+#contact-page, * html #password-reset-page {
+  overflow-x: hidden;
+}
+/* line 9, ../../sass/_general.scss */
+#sponsors-page h2, #access-page h2, #registration-page h2, #login-page h2,
+#contact-page h2, #password-reset-page h2 {
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  text-transform: uppercase;
+  padding: 2px 2px 1px 2px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+/* line 14, ../../sass/_general.scss */
+#sponsors-page h2:first-child, #access-page h2:first-child, #registration-page h2:first-child, #login-page h2:first-child,
+#contact-page h2:first-child, #password-reset-page h2:first-child {
+  margin-top: 0;
+}
+/* line 19, ../../sass/_general.scss */
+#sponsors-page p, #sponsors-page form, #access-page p, #access-page form, #registration-page p, #registration-page form, #login-page p, #login-page form,
+#contact-page p,
+#contact-page form, #password-reset-page p, #password-reset-page form {
+  margin: 0 2px 12px 2px;
+}
+/* line 23, ../../sass/_general.scss */
+#sponsors-page p, #access-page p, #registration-page p, #login-page p,
+#contact-page p, #password-reset-page p {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 28.6px;
+}
+/* line 24, ../../sass/_general.scss */
+#sponsors-page p:last-child, #access-page p:last-child, #registration-page p:last-child, #login-page p:last-child,
+#contact-page p:last-child, #password-reset-page p:last-child {
+  margin-bottom: 0;
+}
+/* line 33, ../../sass/_general.scss */
+#sponsors-page a, #access-page a, #registration-page a, #login-page a,
+#contact-page a, #password-reset-page a {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  color: #a8650a;
+  text-decoration: none;
+}
+/* line 21, ../../sass/_common.scss */
+#sponsors-page a:hover, #access-page a:hover, #registration-page a:hover, #login-page a:hover,
+#contact-page a:hover, #password-reset-page a:hover {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 39, ../../sass/_general.scss */
+#sponsors-page a:hover, #access-page a:hover, #registration-page a:hover, #login-page a:hover,
+#contact-page a:hover, #password-reset-page a:hover {
+  border-bottom: 1px dashed #a8650a;
+}
+/* line 45, ../../sass/_general.scss */
+#sponsors-page form p, #access-page form p, #registration-page form p, #login-page form p,
+#contact-page form p, #password-reset-page form p {
+  width: 470px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #3b3737;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 54, ../../sass/_general.scss */
+#sponsors-page form p label, #access-page form p label, #registration-page form p label, #login-page form p label,
+#contact-page form p label, #password-reset-page form p label {
+  font-weight: bold;
+  display: block;
+  float: left;
+  width: 230px;
+}
+/* line 61, ../../sass/_general.scss */
+#sponsors-page form p input, #access-page form p input, #registration-page form p input, #login-page form p input,
+#contact-page form p input, #password-reset-page form p input {
+  display: block;
+  float: right;
+  width: 230px;
+}
+/* line 70, ../../sass/_general.scss */
+#sponsors-page form input[type=submit], #access-page form input[type=submit], #registration-page form input[type=submit], #login-page form input[type=submit],
+#contact-page form input[type=submit], #password-reset-page form input[type=submit] {
+  font-size: 16px;
+}
+/* line 74, ../../sass/_general.scss */
+#sponsors-page form ul.errorlist li, #access-page form ul.errorlist li, #registration-page form ul.errorlist li, #login-page form ul.errorlist li,
+#contact-page form ul.errorlist li, #password-reset-page form ul.errorlist li {
+  padding: 2px 2px 3px 2px;
+  margin: 10px 0 2px 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: white;
+  background-color: #a8650a;
+}

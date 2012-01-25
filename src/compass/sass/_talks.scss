@@ -1,0 +1,80 @@
+
+$talks-profile-width: 2;
+$talks-title-width: 17;
+$talks-blurb-width: 24 - $talks-profile-width;
+
+#talks {
+    @include column(24, true);
+
+    @include reverse-colors;
+
+    font-family: $std-font;
+
+    h2 {
+        @include heading;
+    }
+
+    #items li {
+        @include striped-list;
+
+        .i-profile {
+            @include column($talks-profile-width);
+
+            img {
+
+                /* image should be roughly 65 pixels across:
+
+                   convert -resize 65x 247.png -background gray -mosaic profile.jpg
+                   */
+
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+
+                border: 2px solid white;
+            }
+        }
+
+        .i-blurb {
+            @include column($talks-blurb-width, true);
+
+
+            color: $bg-color;
+            font-size: 18px;
+            line-height: 18px * 1.2;
+
+            .i-title {
+                @include column($talks-title-width);
+                font-weight: bold;
+            }
+
+            .i-when {
+                @include column($talks-blurb-width - $talks-title-width,
+                                true);
+
+                font-size: 12px;
+                font-weight: bold;
+                text-align: right;
+                span {
+                    padding-right: 4px;
+                }
+            }
+
+            .i-author {
+                @include column($talks-blurb-width, true);
+
+                color: $highlight-color;
+                margin-bottom: 8px;
+
+                a {
+                    color: $highlight-color;
+                    text-decoration: none;
+                }
+            }
+
+            .i-abstract {
+                @include column($talks-blurb-width, true);
+            }
+        }
+    }
+}
