@@ -6,12 +6,7 @@
         display: inline;
 
         a {
-            padding: 4px 4px 4px 4px;
-            color: $ink-normal;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: $std-font;
-            font-size: 16px;
+            @include nav-decoration;
 
             &:hover, &.selected {
                 @include reverse-colors;

@@ -17,18 +17,14 @@
     }
 
     p, form {
-        padding: 0 2px 0 2px;
+        padding: 0 span(1) 0 span(1);
         margin: 0 2px 12px 2px;
     }
 
     p {
-        &:last-child {
-            margin-bottom: 0;
-        }
-
         font-family: $std-font;
-        font-size: 22px;
-        line-height: 22px * 1.3;
+        font-size: 17px;
+        line-height: 17px * 1.3;
     }
 
     a {
@@ -49,7 +45,7 @@
             margin-bottom: 0px;
 
             color: $bg-color;
-            font-size: 16px;
+            font-size: 12px;
             font-family: $std-font;
 
             label {
@@ -69,7 +65,7 @@
         }
 
         input[type=submit] {
-            font-size: 16px;
+            font-size: 12px;
         }
 
         ul.errorlist li {
@@ -80,9 +76,5 @@
             background-color: $highlight-color;
         }
 
-    }
-
-    #login-page-extra {
-        //@include column(16, true);
     }
 }

@@ -156,9 +156,11 @@ body {
   float: left;
   margin-right: 0;
   width: 950px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+    /*
+    font-family: $std-font;
+    font-size: 14px;
+    font-weight: bold;
+*/
   overflow: hidden;
   *zoom: 1;
 }
@@ -166,16 +168,28 @@ body {
 * html #main-nav {
   overflow-x: hidden;
 }
-/* line 74, ../../sass/_base.scss */
+/* line 76, ../../sass/_base.scss */
 #main-nav ul {
   margin: 15px 0 15px 0;
 }
-/* line 78, ../../sass/_base.scss */
+/* line 80, ../../sass/_base.scss */
 #main-nav li {
   display: inline;
 }
-/* line 81, ../../sass/_base.scss */
+/* line 83, ../../sass/_base.scss */
 #main-nav li a {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  padding: 2px 6px 2px 6px;
+  color: white;
+  text-decoration: none;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
   -moz-transition-property: background-color color;
   -webkit-transition-property: background-color color;
   -o-transition-property: background-color color;
@@ -191,16 +205,29 @@ body {
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
   margin-right: 8px;
-  padding: 4px 6px 4px 6px;
-  text-decoration: none;
 }
-/* line 89, ../../sass/_base.scss */
+/* line 38, ../../sass/_common.scss */
+#main-nav li a:hover {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 88, ../../sass/_base.scss */
 #main-nav li a:hover {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
 }
 
-/* line 99, ../../sass/_base.scss */
+/* line 98, ../../sass/_base.scss */
 #main-content {
   display: inline;
   float: left;
@@ -233,11 +260,11 @@ body {
 #contact-page h2, #password-reset-page h2 {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 20px;
   text-transform: uppercase;
-  padding: 2px 2px 1px 2px;
+  padding: 1px 2px 2px 3px;
   margin-bottom: 30px;
   margin-top: 50px;
 }
@@ -250,22 +277,17 @@ body {
 #sponsors-page p, #sponsors-page form, #access-page p, #access-page form, #registration-page p, #registration-page form, #login-page p, #login-page form,
 #contact-page p,
 #contact-page form, #password-reset-page p, #password-reset-page form {
-  padding: 0 2px 0 2px;
+  padding: 0 30px 0 30px;
   margin: 0 2px 12px 2px;
 }
 /* line 24, ../../sass/_general.scss */
 #sponsors-page p, #access-page p, #registration-page p, #login-page p,
 #contact-page p, #password-reset-page p {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 22px;
-  line-height: 28.6px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 22.1px;
 }
-/* line 25, ../../sass/_general.scss */
-#sponsors-page p:last-child, #access-page p:last-child, #registration-page p:last-child, #login-page p:last-child,
-#contact-page p:last-child, #password-reset-page p:last-child {
-  margin-bottom: 0;
-}
-/* line 34, ../../sass/_general.scss */
+/* line 30, ../../sass/_general.scss */
 #sponsors-page a, #access-page a, #registration-page a, #login-page a,
 #contact-page a, #password-reset-page a {
   -moz-transition-property: background-color color;
@@ -299,24 +321,24 @@ body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 40, ../../sass/_general.scss */
+/* line 36, ../../sass/_general.scss */
 #sponsors-page a:hover, #access-page a:hover, #registration-page a:hover, #login-page a:hover,
 #contact-page a:hover, #password-reset-page a:hover {
   border-bottom: 1px dashed #a8650a;
 }
-/* line 46, ../../sass/_general.scss */
+/* line 42, ../../sass/_general.scss */
 #sponsors-page form p, #access-page form p, #registration-page form p, #login-page form p,
 #contact-page form p, #password-reset-page form p {
   width: 470px;
   margin-top: 0px;
   margin-bottom: 0px;
   color: #3b3737;
-  font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 12px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 55, ../../sass/_general.scss */
+/* line 51, ../../sass/_general.scss */
 #sponsors-page form p label, #access-page form p label, #registration-page form p label, #login-page form p label,
 #contact-page form p label, #password-reset-page form p label {
   font-weight: bold;
@@ -324,24 +346,24 @@ body {
   float: left;
   width: 230px;
 }
-/* line 62, ../../sass/_general.scss */
+/* line 58, ../../sass/_general.scss */
 #sponsors-page form p input, #access-page form p input, #registration-page form p input, #login-page form p input,
 #contact-page form p input, #password-reset-page form p input {
   display: block;
   float: right;
   width: 230px;
 }
-/* line 71, ../../sass/_general.scss */
+/* line 67, ../../sass/_general.scss */
 #sponsors-page form input[type=submit], #access-page form input[type=submit], #registration-page form input[type=submit], #login-page form input[type=submit],
 #contact-page form input[type=submit], #password-reset-page form input[type=submit] {
-  font-size: 16px;
+  font-size: 12px;
 }
-/* line 75, ../../sass/_general.scss */
+/* line 71, ../../sass/_general.scss */
 #sponsors-page form ul.errorlist li, #access-page form ul.errorlist li, #registration-page form ul.errorlist li, #login-page form ul.errorlist li,
 #contact-page form ul.errorlist li, #password-reset-page form ul.errorlist li {
   padding: 2px 2px 3px 2px;
   margin: 10px 0 2px 0;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   color: white;
   background-color: #a8650a;
 }
@@ -363,11 +385,11 @@ body {
 #main-content #sponsors h2 {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 20px;
   text-transform: uppercase;
-  padding: 2px 2px 1px 2px;
+  padding: 1px 2px 2px 3px;
 }
 /* line 16, ../../sass/_index.scss */
 #main-content #sponsors ul li {
@@ -390,7 +412,7 @@ body {
   width: 630px;
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 /* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-content #news {
@@ -400,11 +422,11 @@ body {
 #main-content #news h2 {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 20px;
   text-transform: uppercase;
-  padding: 2px 2px 1px 2px;
+  padding: 1px 2px 2px 3px;
 }
 /* line 38, ../../sass/_index.scss */
 #main-content #news #news-items li {
@@ -441,11 +463,11 @@ body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 34, ../../sass/_common.scss */
+/* line 51, ../../sass/_common.scss */
 #main-content #news #news-items li:last-child {
   border-bottom: none;
 }
-/* line 38, ../../sass/_common.scss */
+/* line 55, ../../sass/_common.scss */
 #main-content #news #news-items li:hover {
   background-color: white;
 }
@@ -486,7 +508,7 @@ body {
   width: 950px;
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 /* line 147, ../../../../../../.gem/ruby/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks {
@@ -496,11 +518,11 @@ body {
 #talks h2 {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 20px;
   text-transform: uppercase;
-  padding: 2px 2px 1px 2px;
+  padding: 1px 2px 2px 3px;
 }
 /* line 19, ../../sass/_talks.scss */
 #talks #items li {
@@ -537,11 +559,11 @@ body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 34, ../../sass/_common.scss */
+/* line 51, ../../sass/_common.scss */
 #talks #items li:last-child {
   border-bottom: none;
 }
-/* line 38, ../../sass/_common.scss */
+/* line 55, ../../sass/_common.scss */
 #talks #items li:hover {
   background-color: white;
 }
@@ -708,24 +730,57 @@ body {
 }
 /* line 8, ../../sass/_sponsors.scss */
 #sponsors-page-tabs li a {
-  padding: 4px 4px 4px 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  padding: 2px 6px 2px 6px;
   color: white;
   text-decoration: none;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
   font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
-/* line 16, ../../sass/_sponsors.scss */
+/* line 38, ../../sass/_common.scss */
+#sponsors-page-tabs li a:hover {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 11, ../../sass/_sponsors.scss */
 #sponsors-page-tabs li a:hover, #sponsors-page-tabs li a.selected {
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
 }
 
-/* line 24, ../../sass/_sponsors.scss */
+/* line 19, ../../sass/_sponsors.scss */
 #sponsors-page #i-sponsor-half, #sponsors-page #i-sponsored-half {
   display: none;
 }
-/* line 25, ../../sass/_sponsors.scss */
+/* line 20, ../../sass/_sponsors.scss */
 #sponsors-page #i-sponsor-half.selected, #sponsors-page #i-sponsored-half.selected {
   display: block;
 }

@@ -67,9 +67,11 @@ body {
 #main-nav {
     @include column(24, true);
 
+    /*
     font-family: $std-font;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
+*/
 
     ul {
         margin: span(1)/2 0 span(1)/2 0;
@@ -79,16 +81,13 @@ body {
         display: inline;
 
         a {
-            @include fade-in;
+            @include nav-decoration;
             @include reverse-colors;
-
             margin-right: 8px;
-            padding: 4px 6px 4px 6px;
-            text-decoration: none;
 
             &:hover {
                 @include std-colors;
-            } 
+            }
         } 
    }
 
