@@ -7,6 +7,7 @@
 
         a {
             @include nav-decoration;
+            @include std-colors;
 
             &:hover, &.selected {
                 @include reverse-colors;

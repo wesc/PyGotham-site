@@ -144,7 +144,7 @@ body {
   padding: 16px 24px 16px 24px;
   border: 8px solid white;
   text-align: center;
-  font-size: 28px;
+  font-size: 27px;
   font-weight: bold;
   letter-spacing: 1px;
   font-family: "DejaVu Sans Bold", sans-serif;
@@ -156,11 +156,6 @@ body {
   float: left;
   margin-right: 0;
   width: 950px;
-    /*
-    font-family: $std-font;
-    font-size: 14px;
-    font-weight: bold;
-*/
   overflow: hidden;
   *zoom: 1;
 }
@@ -168,15 +163,15 @@ body {
 * html #main-nav {
   overflow-x: hidden;
 }
-/* line 76, ../../sass/_base.scss */
+/* line 70, ../../sass/_base.scss */
 #main-nav ul {
   margin: 15px 0 15px 0;
 }
-/* line 80, ../../sass/_base.scss */
+/* line 74, ../../sass/_base.scss */
 #main-nav li {
   display: inline;
 }
-/* line 83, ../../sass/_base.scss */
+/* line 77, ../../sass/_base.scss */
 #main-nav li a {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -221,13 +216,13 @@ body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 88, ../../sass/_base.scss */
+/* line 82, ../../sass/_base.scss */
 #main-nav li a:hover {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
 }
 
-/* line 98, ../../sass/_base.scss */
+/* line 92, ../../sass/_base.scss */
 #main-content {
   display: inline;
   float: left;
@@ -754,6 +749,8 @@ body {
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
 }
 /* line 38, ../../sass/_common.scss */
 #sponsors-page-tabs li a:hover {
@@ -770,17 +767,17 @@ body {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-/* line 11, ../../sass/_sponsors.scss */
+/* line 12, ../../sass/_sponsors.scss */
 #sponsors-page-tabs li a:hover, #sponsors-page-tabs li a.selected {
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
 }
 
-/* line 19, ../../sass/_sponsors.scss */
+/* line 20, ../../sass/_sponsors.scss */
 #sponsors-page #i-sponsor-half, #sponsors-page #i-sponsored-half {
   display: none;
 }
-/* line 20, ../../sass/_sponsors.scss */
+/* line 21, ../../sass/_sponsors.scss */
 #sponsors-page #i-sponsor-half.selected, #sponsors-page #i-sponsored-half.selected {
   display: block;
 }
