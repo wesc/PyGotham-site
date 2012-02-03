@@ -5,7 +5,7 @@ $talks-thumbs-width: 2;
 $talks-when-width: 5;
 $talks-blurb-width: 24 - $talks-profile-width;
 
-#talks {
+#talks-page {
     @include column(24, true);
 
     @include reverse-colors;

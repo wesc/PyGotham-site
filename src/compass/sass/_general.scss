@@ -2,13 +2,13 @@
 // general styles to apply to static pages.
 
 #sponsors-page, #access-page, #registration-page, #login-page,
-#contact-page, #password-reset-page {
+#contact-page, #password-reset-page, #talks-page {
     @include column(18, true);
     @include reverse-colors;
 
     h2 {
         @include heading;
-        margin-bottom: span(1);
+        margin-bottom: span(0.5);
 
         margin-top: span(1.5);
         &:first-child {
