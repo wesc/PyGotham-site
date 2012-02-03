@@ -76,3 +76,29 @@
 
     }
 }
+
+
+.general-page-tabs {
+    background-color: transparent;
+    margin-bottom: 14px;
+
+    li {
+        display: inline;
+
+        a {
+            @include nav-decoration;
+            @include std-colors;
+
+            &:hover, &.selected {
+                @include reverse-colors;
+            }
+        }
+    }
+}
+
+.general-page-tab-content {
+    &.selected {
+        display: block;
+    }
+    display: none;
+}

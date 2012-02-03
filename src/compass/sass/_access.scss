@@ -2,4 +2,12 @@
 #access-diversity-page {
     @extend .general-page;
     @include column(18, true);
+
+    #accessibility-content, #diversity-content {
+        @extend .general-page-tab-content;
+    }
+}
+
+#access-page-tabs {
+    @extend .general-page-tabs;
 }

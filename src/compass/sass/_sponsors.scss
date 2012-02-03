@@ -3,30 +3,13 @@
     @extend .general-page;
     @include column(18, true);
 
-    #i-sponsor-half, #i-sponsored-half {
-        &.selected {
-            display: block;
-        }
-        display: none;
+    #sponsors-content, #sponsored-content {
+        @extend .general-page-tab-content;
     }
 }
 
 
 #sponsors-page-tabs {
-    background-color: transparent;
-    margin-bottom: 14px;
-
-    li {
-        display: inline;
-
-        a {
-            @include nav-decoration;
-            @include std-colors;
-
-            &:hover, &.selected {
-                @include reverse-colors;
-            }
-        }
-    }
+    @extend .general-page-tabs;
 }
 

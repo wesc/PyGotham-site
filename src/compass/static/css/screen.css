@@ -384,6 +384,74 @@ body {
   background-color: #a8650a;
 }
 
+/* line 81, ../../sass/_general.scss */
+.general-page-tabs, #sponsors-page-tabs, #access-page-tabs {
+  background-color: transparent;
+  margin-bottom: 14px;
+}
+/* line 85, ../../sass/_general.scss */
+.general-page-tabs li, #sponsors-page-tabs li, #access-page-tabs li {
+  display: inline;
+}
+/* line 88, ../../sass/_general.scss */
+.general-page-tabs li a, #sponsors-page-tabs li a, #access-page-tabs li a {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  padding: 2px 6px 2px 6px;
+  color: white;
+  text-decoration: none;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  background-color: rgba(59, 55, 55, 0.85);
+  color: white;
+}
+/* line 38, ../../sass/_common.scss */
+.general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover {
+  -moz-transition-property: background-color color;
+  -webkit-transition-property: background-color color;
+  -o-transition-property: background-color color;
+  transition-property: background-color color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 92, ../../sass/_general.scss */
+.general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, .general-page-tabs li a.selected, #sponsors-page-tabs li a.selected, #access-page-tabs li a.selected {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+}
+
+/* line 99, ../../sass/_general.scss */
+.general-page-tab-content, #sponsors-page #sponsors-content, #sponsors-page #sponsored-content, #access-diversity-page #accessibility-content, #access-diversity-page #diversity-content {
+  display: none;
+}
+/* line 100, ../../sass/_general.scss */
+.general-page-tab-content.selected, #sponsors-page .selected#sponsors-content, #sponsors-page .selected#sponsored-content, #access-diversity-page .selected#accessibility-content, #access-diversity-page .selected#diversity-content {
+  display: block;
+}
+
 /* line 8, ../../sass/_index.scss */
 #main-content #sponsors {
   display: inline;
@@ -651,73 +719,6 @@ body {
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #sponsors-page {
   overflow-x: hidden;
-}
-/* line 6, ../../sass/_sponsors.scss */
-#sponsors-page #i-sponsor-half, #sponsors-page #i-sponsored-half {
-  display: none;
-}
-/* line 7, ../../sass/_sponsors.scss */
-#sponsors-page #i-sponsor-half.selected, #sponsors-page #i-sponsored-half.selected {
-  display: block;
-}
-
-/* line 15, ../../sass/_sponsors.scss */
-#sponsors-page-tabs {
-  background-color: transparent;
-  margin-bottom: 14px;
-}
-/* line 19, ../../sass/_sponsors.scss */
-#sponsors-page-tabs li {
-  display: inline;
-}
-/* line 22, ../../sass/_sponsors.scss */
-#sponsors-page-tabs li a {
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  border-radius: 2px;
-  padding: 2px 6px 2px 6px;
-  color: white;
-  text-decoration: none;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  -moz-transition-property: background-color color;
-  -webkit-transition-property: background-color color;
-  -o-transition-property: background-color color;
-  transition-property: background-color color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  background-color: rgba(59, 55, 55, 0.85);
-  color: white;
-}
-/* line 38, ../../sass/_common.scss */
-#sponsors-page-tabs li a:hover {
-  -moz-transition-property: background-color color;
-  -webkit-transition-property: background-color color;
-  -o-transition-property: background-color color;
-  transition-property: background-color color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-}
-/* line 26, ../../sass/_sponsors.scss */
-#sponsors-page-tabs li a:hover, #sponsors-page-tabs li a.selected {
-  background-color: rgba(255, 255, 255, 0.85);
-  color: black;
 }
 
 /* line 2, ../../sass/_access.scss */

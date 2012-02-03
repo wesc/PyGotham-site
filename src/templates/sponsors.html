@@ -3,13 +3,13 @@
 {% block main_content %}
 
 <ul id="sponsors-page-tabs">
-  <li><a href="#i-sponsor-half" class="selected">sponsors</a></li>
-  <li><a href="#i-sponsored-half">be sponsored</a></li>
+  <li><a href="#sponsors-content" class="selected">sponsors</a></li>
+  <li><a href="#sponsored-content">be sponsored</a></li>
 </ul>
 
 <div id="sponsors-page">
 
-  <div id="i-sponsor-half" class="selected">
+  <div id="sponsors-content" class="selected">
 
     <h2>Sponsors</h2>
 
@@ -25,7 +25,7 @@
     </p>
 
     <p>
-      We are accepting donations >= $3K in exchange for corporate logo
+      We are accepting donations &gt;= $3K in exchange for corporate logo
       placement on our slideshow page.
     </p>
 
@@ -41,7 +41,7 @@
 
   </div>
 
-  <div id="i-sponsored-half">
+  <div id="sponsored-content">
 
     <h2>Be Sponsored</h2>
 
@@ -85,16 +85,6 @@
 
 {% block main_js %}
 $(function() {
-    $("#sponsors-page-tabs li a").click(function() {
-        $("#sponsors-page-tabs li a").removeClass();
-        $(this).addClass("selected");
-
-        var sel = $(this).attr('href');
-        $("#i-sponsor-half").removeClass();
-        $("#i-sponsored-half").removeClass();
-        $(sel).addClass("selected");
-
-        return false;
-    });
+    $("#sponsors-page-tabs li a").pgtabs();
 });
 {% endblock %}
