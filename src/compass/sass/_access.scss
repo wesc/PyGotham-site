@@ -1,0 +1,5 @@
+
+#access-diversity-page {
+    @extend .general-page;
+    @include column(18, true);
+}

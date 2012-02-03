@@ -41,7 +41,7 @@
 }
 
 
-@mixin striped-list {
+.striped-list {
     @include fade-hover;
 
     padding-bottom: span(1)/2;

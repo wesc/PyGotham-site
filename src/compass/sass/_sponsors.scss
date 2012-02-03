@@ -1,3 +1,17 @@
+
+#sponsors-page {
+    @extend .general-page;
+    @include column(18, true);
+
+    #i-sponsor-half, #i-sponsored-half {
+        &.selected {
+            display: block;
+        }
+        display: none;
+    }
+}
+
+
 #sponsors-page-tabs {
     background-color: transparent;
     margin-bottom: 14px;
@@ -16,11 +30,3 @@
     }
 }
 
-#sponsors-page {
-    #i-sponsor-half, #i-sponsored-half {
-        &.selected {
-            display: block;
-        }
-        display: none;
-    }
-}

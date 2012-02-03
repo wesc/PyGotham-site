@@ -36,7 +36,7 @@ $news-col-width: 24 - $sponsor-col-width - 1;
         }
 
         #news-items li {
-            @include striped-list;
+            @extend .striped-list;
 
             .i-date {
                 @include column(3);

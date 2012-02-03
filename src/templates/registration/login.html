@@ -2,7 +2,6 @@
 {% load i18n %}
 
 {% block main_content %}
-
 <div id="login-page">
   <h2>Login</h2>
 
@@ -21,13 +20,17 @@
     {{ form.as_p }}
 
     <input type="submit" value="{% trans 'Log in' %}" />
+
+    {% if next %}
     <input type="hidden" name="next" value="{{ next }}" />
+    {% endif %}
   </form>
 
   <div id="login-page-extra">
-    <p>{% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a>!</p>
-
-    <p>{% trans "Don\'t have a login" %}? <a href="{% url registration_register %}">{% trans "Create one" %}</a>!</p>
+    <p>
+      {% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}!</a>
+      {% trans "Don\'t have a login" %}? <a href="{% url registration_register %}">{% trans "Create one" %}!</a>
+    </p>
   </div>
 </div>
 {% endblock %}

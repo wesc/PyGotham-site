@@ -1,9 +1,7 @@
 
-// general styles to apply to static pages.
+// general styles for pages.
 
-#sponsors-page, #access-page, #registration-page, #login-page,
-#contact-page, #password-reset-page, #talks-page {
-    @include column(18, true);
+.general-page {
     @include reverse-colors;
 
     h2 {
@@ -40,9 +38,8 @@
 
     form {
         p {
-            width: span(12);
-            margin-top: 0px;
-            margin-bottom: 0px;
+            padding: 0 0 0 span(1);
+            margin: 0 0 4px 0;
 
             color: $bg-color;
             font-size: 12px;
@@ -52,19 +49,20 @@
                 font-weight: bold;
                 display: block;
                 float: left;
-                width: span(6);
+                width: 30%;
             }
 
             input {
                 display: block;
                 float: right;
-                width: span(6);
+                width: 45%;
             }
 
             @include clearfix;
         }
 
         input[type=submit] {
+            margin-left: span(1);
             font-size: 12px;
         }
 
