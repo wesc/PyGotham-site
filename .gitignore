@@ -3,5 +3,5 @@ local_settings.py
 *~
 src/test.db
 .sass-cache*
-^pygotham_keys/
-^static/
+/pygotham_keys/
+/static/
