@@ -1,5 +1,5 @@
 
-$sponsor-col-width: 7;
+$sponsor-col-width: 9;
 $news-col-width: 24 - $sponsor-col-width - 1;
 
 
@@ -14,12 +14,10 @@ $news-col-width: 24 - $sponsor-col-width - 1;
         }
 
         ul li {
-            display: none;
+            // display:none should be set when we put the slide back in
+            //display: none;
 
-            img {
-                padding: 4px 8px 4px 8px;
-                width: span(6);
-            }
+            background-color: white;
         }
     }
 
