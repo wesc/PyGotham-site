@@ -13,9 +13,14 @@ $news-col-width: 24 - $sponsor-col-width - 1;
             @include heading;
         }
 
+        ul {
+            height: 95px;
+            background-color: white;
+        }
+
         ul li {
             // display:none should be set when we put the slide back in
-            //display: none;
+            display: none;
 
             background-color: white;
         }
