@@ -22,7 +22,7 @@ We've produced an image for displays smaller and greater than 500px.
 
 // cribbed from: http://css-tricks.com/perfect-full-page-background-image/ (has other methods that aren't CSS3 dependent
 body {
-    background: url(../images/q-bg-500.jpg) no-repeat center center fixed;
+    background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -31,7 +31,17 @@ body {
 
 @media (min-width: 500px) {
     body {
-        background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+        background: url(../images/cityscape-800.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -64,13 +74,16 @@ body {
         color: white;
         padding: 0 0 0 0;
         margin: 0 0 0 0;
+
+        span {
+            display: block;
+        }
     }
 
 }
 
 #main-nav {
-    @include push(1);
-    @include column(17, true);
+    @include column(24, true);
 
     ul {
         margin: span(1)/2 0 span(1)/2 0;
@@ -85,7 +98,6 @@ body {
         a {
             @include nav-decoration;
             @include reverse-colors;
-            font-size: 11px;
 
             margin-right: 6px;
 

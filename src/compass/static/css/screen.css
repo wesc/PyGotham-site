@@ -152,7 +152,7 @@ We've produced an image for displays smaller and greater than 500px.
 */
 /* line 24, ../../sass/_base.scss */
 body {
-  background: url(../images/q-bg-500.jpg) no-repeat center center fixed;
+  background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -162,14 +162,24 @@ body {
 @media (min-width: 500px) {
   /* line 33, ../../sass/_base.scss */
   body {
-    background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+    background: url(../images/cityscape-800.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
 }
-/* line 43, ../../sass/_base.scss */
+@media (min-width: 1024px) {
+  /* line 43, ../../sass/_base.scss */
+  body {
+    background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+/* line 53, ../../sass/_base.scss */
 #bp-container {
   width: 950px;
   margin: 0 auto;
@@ -177,7 +187,7 @@ body {
   *zoom: 1;
 }
 
-/* line 48, ../../sass/_base.scss */
+/* line 58, ../../sass/_base.scss */
 #main-header {
   display: inline;
   float: left;
@@ -189,7 +199,7 @@ body {
 * html #main-header {
   overflow-x: hidden;
 }
-/* line 53, ../../sass/_base.scss */
+/* line 63, ../../sass/_base.scss */
 #main-header #logo {
   display: inline;
   float: left;
@@ -200,7 +210,7 @@ body {
 * html #main-header #logo {
   overflow-x: hidden;
 }
-/* line 57, ../../sass/_base.scss */
+/* line 67, ../../sass/_base.scss */
 #main-header h1 {
   text-align: right;
   font-size: 27px;
@@ -211,17 +221,17 @@ body {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
+/* line 78, ../../sass/_base.scss */
+#main-header h1 span {
+  display: block;
+}
 
-/* line 71, ../../sass/_base.scss */
+/* line 85, ../../sass/_base.scss */
 #main-nav {
   display: inline;
   float: left;
-  position: relative;
-  margin: 0 -40px 1.5em 40px;
-  display: inline;
-  float: left;
   margin-right: 0;
-  width: 670px;
+  width: 950px;
   overflow: hidden;
   *zoom: 1;
 }
@@ -229,17 +239,17 @@ body {
 * html #main-nav {
   overflow-x: hidden;
 }
-/* line 75, ../../sass/_base.scss */
+/* line 88, ../../sass/_base.scss */
 #main-nav ul {
   margin: 15px 0 15px 0;
   text-align: right;
   line-height: 28px;
 }
-/* line 82, ../../sass/_base.scss */
+/* line 95, ../../sass/_base.scss */
 #main-nav li {
   display: inline;
 }
-/* line 85, ../../sass/_base.scss */
+/* line 98, ../../sass/_base.scss */
 #main-nav li a {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -272,7 +282,6 @@ body {
   transition-delay: 0s;
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
-  font-size: 11px;
   margin-right: 6px;
 }
 /* line 37, ../../sass/_common.scss */
@@ -294,17 +303,17 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 92, ../../sass/_base.scss */
+/* line 104, ../../sass/_base.scss */
 #main-nav li a:last-child {
   margin-right: 0;
 }
-/* line 96, ../../sass/_base.scss */
+/* line 108, ../../sass/_base.scss */
 #main-nav li a:hover {
   background-color: rgba(59, 55, 55, 0.85);
   color: white;
 }
 
-/* line 106, ../../sass/_base.scss */
+/* line 118, ../../sass/_base.scss */
 #main-content {
   display: inline;
   float: left;

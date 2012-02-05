@@ -32,47 +32,48 @@
           <img src="{{ STATIC_URL }}/images/logo-small.png" />
         </div>
 
-        <div id="main-nav">
-          <h1>June 8th &amp; 9th, 2012 // New York NY</h1>
-
-          <ul>
-            <li>
-              <a href="/">home</a>
-            </li>
-
-            <li>
-              <a href="{% url talks %}">scheduled talks // floor plan</a>
-            </li>
-
-            <li>
-              <a href="{% url registration_register %}">register</a>
-            </li>
-
-            <!--
-                <li>
-                  <a href="{% url login %}">login</a>
-                </li>
-                -->
-
-            <li>
-              <a href="{% url sponsors %}">sponsorship</a>
-            </li>
-
-            <li>
-              <a href="{% url access %}">access // diversity</a>
-            </li>
-
-            <li>
-              <a href="{% url contact_us %}">contact</a>
-            </li>
-          </ul>
-        </div>
-
+          <h1>
+            <span>PyGotham II</span>
+            <span>June 8th &amp; 9th 2012</span>
+            <span>St Barts // 204 5th Ave // New York NY</span>
+         </h1>
       </div>
 
+      <div id="main-nav">
+        <ul>
+          <li>
+            <a href="/">home</a>
+          </li>
 
+          <li>
+            <a href="{% url talks %}">scheduled talks // floor plan</a>
+          </li>
 
-      <div id="main-content">
+          <li>
+            <a href="{% url registration_register %}">register</a>
+          </li>
+
+          <!--
+              <li>
+                <a href="{% url login %}">login</a>
+              </li>
+              -->
+
+          <li>
+            <a href="{% url sponsors %}">sponsorship</a>
+          </li>
+
+          <li>
+            <a href="{% url access %}">access // diversity</a>
+          </li>
+
+          <li>
+            <a href="{% url contact_us %}">contact</a>
+          </li>
+        </ul>
+      </div>
+
+     <div id="main-content">
         {% block main_content %}{% endblock %}
       </div>
 
