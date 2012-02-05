@@ -10,9 +10,7 @@
 }
 
 @mixin fade-in {
-    @include transition-property(background-color color);
-    @include transition-duration(0.1s);
-    @include transition-timing-function(ease-in);
+    @include single-transition("background-color, color", 0.1s, ease-in, 0s);
 }
 
 @mixin fade-hover {
@@ -26,9 +24,10 @@
 @mixin nav-decoration {
     @include border-radius(2px);
 
-    padding: 2px 6px 2px 6px;
+    padding: 2px 5px 3px 5px;
     color: $ink-normal;
     text-decoration: none;
+    white-space: nowrap;
 
     font-family: $std-font;
     font-size: 14px;

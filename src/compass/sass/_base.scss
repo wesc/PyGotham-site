@@ -49,26 +49,34 @@ body {
     @include column(24, true);
 
     margin-top: span(1) / 2;
-    @include std-colors;
+
+    #logo {
+        @include column(6);
+    }
 
     h1 {
-        padding: 16px 24px 16px 24px;
-        border: 8px solid $ink-normal;
-
-        // fix these styles
-        text-align: center;
+        text-align: right;
         font-size: 27px;
         font-weight: bold;
         letter-spacing: 1px;
         font-family: $logo-font;
+
+        color: white;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
     }
+
 }
 
 #main-nav {
-    @include column(24, true);
+    @include push(1);
+    @include column(17, true);
 
     ul {
         margin: span(1)/2 0 span(1)/2 0;
+
+        text-align: right;
+        line-height: 28px;
     }
 
     li {
@@ -77,13 +85,19 @@ body {
         a {
             @include nav-decoration;
             @include reverse-colors;
-            margin-right: 8px;
+            font-size: 11px;
+
+            margin-right: 6px;
+
+            &:last-child {
+                margin-right: 0;
+            }
 
             &:hover {
                 @include std-colors;
             }
-        } 
-   }
+        }
+    }
 
     @include clearfix;
 }
@@ -91,7 +105,6 @@ body {
 
 #main-content {
     @include column(24, true);
-    //@include std-colors;
 
     margin-top: span(1);
 }
