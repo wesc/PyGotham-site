@@ -1,10 +1,10 @@
 
 @mixin heading {
-    @include std-colors;
+    @include reverse-colors;
 
     font-family: $std-font;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     padding: 1px 2px 2px 3px;
 }
@@ -24,14 +24,13 @@
 @mixin nav-decoration {
     @include border-radius(2px);
 
-    padding: 2px 5px 3px 5px;
-    color: $ink-normal;
+    font-family: $std-font;
+    font-weight: bold;
+
+    padding: 0 0.5em 0.08em 0.5em;
     text-decoration: none;
     white-space: nowrap;
 
-    font-family: $std-font;
-    font-size: 14px;
-    font-weight: bold;
 
     @include fade-in;
     &:hover {
@@ -52,7 +51,7 @@
     }
 
     &:hover {
-        background-color: $ink-normal;
+        background-color: white;
     }
 
     @include clearfix;

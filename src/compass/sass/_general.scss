@@ -2,7 +2,7 @@
 // general styles for pages.
 
 .general-page {
-    @include reverse-colors;
+    @include std-colors;
 
     h2 {
         @include heading;

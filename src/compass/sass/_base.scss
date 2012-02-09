@@ -86,27 +86,25 @@ body {
     @include column(24, true);
 
     ul {
-        margin: span(1)/2 0 span(1)/2 0;
-
-        text-align: right;
-        line-height: 28px;
+        margin: span(1) 0 span(1) 0;
     }
 
     li {
         display: inline;
 
+        margin-right: 0.6em;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        font-size: 16px;
+
         a {
             @include nav-decoration;
-            @include reverse-colors;
-
-            margin-right: 6px;
-
-            &:last-child {
-                margin-right: 0;
-            }
+            @include std-colors;
 
             &:hover {
-                @include std-colors;
+                @include reverse-colors;
             }
         }
     }

@@ -29,14 +29,16 @@
     <div id="bp-container">
       <div id="main-header">
         <div id="logo">
-          <img src="{{ STATIC_URL }}/images/logo-small.png" />
+          <a href="/">
+            <img src="{{ STATIC_URL }}/images/logo-small.png" />
+          </a>
         </div>
 
-          <h1>
-            <span>PyGotham II</span>
-            <span>June 8th &amp; 9th 2012</span>
-            <span>St Barts // 204 5th Ave // New York NY</span>
-         </h1>
+        <h1>
+          <span>PyGotham II</span>
+          <span>June 8th &amp; 9th 2012</span>
+          <span>New York, NY</span>
+        </h1>
       </div>
 
       <div id="main-nav">
@@ -46,7 +48,11 @@
           </li>
 
           <li>
-            <a href="{% url talks %}">scheduled talks // floor plan</a>
+            <a href="#">logistics</a>
+          </li>
+
+          <li>
+            <a href="{% url talks %}">scheduled talks</a>
           </li>
 
           <li>

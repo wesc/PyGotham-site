@@ -11,11 +11,15 @@
 }
 
 
+$white: rgb(255, 255, 255);
+$white-t: rgba(255, 255, 255, 0.85);
+
 $ink-normal: rgb(255, 255, 255);
 $ink-normal-t: rgba(255, 255, 255, 0.85);
 $ink-soft: darken($ink-normal, 25%);
 
 $smokey-gray: rgb(59, 55, 55);
+$smokey-gray-t: rgba(59, 55, 55, 0.85);
 $bg-color: rgb(59, 55, 55);
 $bg-color-t: rgba(59, 55, 55, 0.85);
 
@@ -26,13 +30,13 @@ $highlight-color: darken(#f4a73d, 25%);
    compatability styles for the following mixins */
 
 @mixin std-colors {
-    background-color: $bg-color-t;
-    color: $ink-normal;
+    color: $smokey-gray;
+    background-color: $white-t;
 }
 
 @mixin reverse-colors {
-    background-color: $ink-normal-t;
-    color: black;
+    color: $white;
+    background-color: $smokey-gray-t;
 }
 
 

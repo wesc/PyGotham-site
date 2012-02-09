@@ -7,7 +7,7 @@ $news-col-width: 24 - $sponsor-col-width - 1;
 
     #sponsors {
         @include column($sponsor-col-width);
-        @include reverse-colors;
+        @include std-colors;
 
         h2 {
             @include heading;
@@ -30,7 +30,7 @@ $news-col-width: 24 - $sponsor-col-width - 1;
         @include push(1);
         @include column($news-col-width, true);
 
-        @include reverse-colors;
+        @include std-colors;
 
         font-family: $std-font;
 
