@@ -27,6 +27,8 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    font-family: $std-font;
 }
 
 @media (min-width: 500px) {

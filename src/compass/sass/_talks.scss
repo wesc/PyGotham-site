@@ -14,7 +14,6 @@ $talks-blurb-width: 24 - $talks-profile-width;
 
 #talks-listing li {
     @extend .striped-list;
-    font-family: $std-font;
 
     .i-profile {
         @include column($talks-profile-width);
@@ -37,7 +36,7 @@ $talks-blurb-width: 24 - $talks-profile-width;
 
         color: $bg-color;
         font-size: 18px;
-        line-height: 18px * 1.2;
+        line-height: 1.3em;
 
         .i-title {
             @include column($talks-title-width);

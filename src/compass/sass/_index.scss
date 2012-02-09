@@ -19,7 +19,6 @@ $news-col-width: 24 - $sponsor-col-width - 1;
         }
 
         ul li {
-            // display:none should be set when we put the slide back in
             display: none;
 
             background-color: white;
@@ -31,8 +30,6 @@ $news-col-width: 24 - $sponsor-col-width - 1;
         @include column($news-col-width, true);
 
         @include std-colors;
-
-        font-family: $std-font;
 
         h2 {
             @include heading;
@@ -53,7 +50,7 @@ $news-col-width: 24 - $sponsor-col-width - 1;
 
                 color: $bg-color;
                 font-size: 18px;
-                line-height: 18px * 1.2;
+                line-height: 1.3em;
             }
         }
     }
