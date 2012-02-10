@@ -1,36 +1,6 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 
-{% block main_content %}
-
-<div id="sponsors">
-  <h2>Sponsors</h2>
-
-  <ul id="sponsorsContent">
-    <li class="sponsorsImage">
-      <a href="http://www.knewton.com/">
-        <img src="{{ STATIC_URL }}/images/sponsors/knewton-logo-slide.jpg" />
-      </a>
-      <span></span>
-    </li>
-
-
-    <li class="sponsorsImage">
-      <a href="http://www.knewton.com/">
-        <img src="{{ STATIC_URL }}/images/sponsors/knewton-logo-slide.jpg" />
-      </a>
-      <span></span>
-    </li>
-
-<!--
-    <li class="sponsorsImage">
-      <img src="https://us.pycon.org/2012/site_media/media/cache/fc/06/fc06e128d2af149f3ce6596d653b53b4.png" />
-      <span></span>
-    </li>
--->
-
-    <div class="clear sponsorsImage"></div>
-  </ul>
-</div>
+{% block sponsor_base_content %}
 
 <div id="news">
   <h2>News</h2>
@@ -77,17 +47,4 @@
 
 </div>
 
-{% endblock %}
-
-
-{% block main_js_includes %}
-    <script type="text/javascript" src="{{ STATIC_URL }}/js/s3Slider.js"></script>
-{% endblock %}
-
-{% block main_js %}
-$(function() {
-    $("#sponsors").s3Slider({
-        timeOut: 4000
-    });
-});
 {% endblock %}

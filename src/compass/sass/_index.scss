@@ -1,31 +1,11 @@
 
-$sponsor-col-width: 9;
-$news-col-width: 24 - $sponsor-col-width - 1;
+$news-col-width: 24 - $sponsor-col-width;
 
 
 #main-content {
-
-    #sponsors {
-        @extend .general-page-content;
-
-        @include column($sponsor-col-width);
-
-        ul {
-            height: 95px;
-            background-color: white;
-        }
-
-        ul li {
-            display: none;
-
-            background-color: white;
-        }
-    }
-
     #news {
         @extend .general-page-content;
 
-        @include push(1);
         @include column($news-col-width, true);
 
         #news-items li {

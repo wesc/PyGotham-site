@@ -1,7 +1,7 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 {% load i18n %}
 
-{% block main_content %}
+{% block sponsor_base_content %}
 <div id="registration-page">
   <h2>Registration</h2>
 
@@ -9,7 +9,7 @@
     We will be accepting registrations soon.
   </p>
 
-  {% if 0 %}
+  {% if debug %}
   <p>
     Already created a login? Already activated it via email
     link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.

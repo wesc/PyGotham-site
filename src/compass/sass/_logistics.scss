@@ -1,7 +1,10 @@
 
+$logistics-col-width: 24 - $sponsor-col-width;
+
+
 #logistics-page {
     @extend .general-page;
-    @include column(18, true);
+    @include column($logistics-col-width, true);
 
     .i-address {
         margin: 0 0 span(0.5) span(2);

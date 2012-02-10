@@ -1,6 +1,6 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 
-{% block main_content %}
+{% block sponsor_base_content %}
 <ul id="access-page-tabs">
   <li><a href="#accessibility-content" class="selected">accessibility</a></li>
   <li><a href="#diversity-content">diversity</a></li>
@@ -127,7 +127,7 @@
 {% endblock %}
 
 
-{% block main_js %}
+{% block sponsor_base_js %}
 $(function() {
     $("#access-page-tabs li a").pgtabs();
 });

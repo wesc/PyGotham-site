@@ -1,7 +1,6 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 
-{% block main_content %}
-
+{% block sponsor_base_content %}
 <ul id="sponsors-page-tabs">
   <li><a href="#sponsors-content" class="selected">sponsors</a></li>
   <li><a href="#sponsored-content">be sponsored</a></li>
@@ -83,7 +82,7 @@
 {% endblock %}
 
 
-{% block main_js %}
+{% block sponsor_base_js %}
 $(function() {
     $("#sponsors-page-tabs li a").pgtabs();
 });

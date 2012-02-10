@@ -324,6 +324,32 @@ body {
   overflow-x: hidden;
 }
 
+/* line 127, ../../sass/_base.scss */
+#sponsors {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 270px;
+}
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #sponsors {
+  overflow-x: hidden;
+}
+/* line 131, ../../sass/_base.scss */
+#sponsors ul {
+  height: 95px;
+  background-color: white;
+}
+/* line 136, ../../sass/_base.scss */
+#sponsors ul li {
+  display: none;
+  background-color: white;
+}
+/* line 140, ../../sass/_base.scss */
+#sponsors ul li img {
+  width: 100%;
+}
+
 /* line 4, ../../sass/_general.scss */
 .general-page, #talks-page, #sponsors-page, #access-diversity-page, #registration-page, #password-reset-page, #login-page, #contact-page, #logistics-page, #page-not-found-page {
   -moz-border-radius: 3px 3px 0 0;
@@ -447,7 +473,7 @@ body {
 }
 
 /* line 80, ../../sass/_general.scss */
-.general-page-content, #main-content #sponsors, #main-content #news {
+.general-page-content, #sponsors, #main-content #news {
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
   -o-border-radius: 3px 3px 0 0;
@@ -458,7 +484,7 @@ body {
   background-color: rgba(255, 255, 255, 0.85);
 }
 /* line 84, ../../sass/_general.scss */
-.general-page-content h2, #main-content #sponsors h2, #main-content #news h2 {
+.general-page-content h2, #sponsors h2, #main-content #news h2 {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
   -moz-border-radius: 3px 3px 0 0;
@@ -547,43 +573,18 @@ body {
   display: block;
 }
 
-/* line 8, ../../sass/_index.scss */
-#main-content #sponsors {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 350px;
-}
-/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #main-content #sponsors {
-  overflow-x: hidden;
-}
-/* line 13, ../../sass/_index.scss */
-#main-content #sponsors ul {
-  height: 95px;
-  background-color: white;
-}
-/* line 18, ../../sass/_index.scss */
-#main-content #sponsors ul li {
-  display: none;
-  background-color: white;
-}
-/* line 25, ../../sass/_index.scss */
+/* line 6, ../../sass/_index.scss */
 #main-content #news {
   display: inline;
   float: left;
-  position: relative;
-  margin: 0 -40px 1.5em 40px;
-  display: inline;
-  float: left;
   margin-right: 0;
-  width: 550px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-content #news {
   overflow-x: hidden;
 }
-/* line 34, ../../sass/_index.scss */
+/* line 14, ../../sass/_index.scss */
 #main-content #news #news-items li .i-date {
   display: inline;
   float: left;
@@ -597,12 +598,12 @@ body {
 * html #main-content #news #news-items li .i-date {
   overflow-x: hidden;
 }
-/* line 41, ../../sass/_index.scss */
+/* line 21, ../../sass/_index.scss */
 #main-content #news #news-items li .i-blurb {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 430px;
+  width: 550px;
   color: #3b3737;
   font-size: 18px;
   line-height: 1.3em;
@@ -781,7 +782,7 @@ body {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #sponsors-page {
@@ -793,7 +794,7 @@ body {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #access-diversity-page {
@@ -805,7 +806,7 @@ body {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #registration-page {
@@ -817,7 +818,7 @@ body {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 470px;
+  width: 190px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #password-reset-page {
@@ -829,7 +830,7 @@ body {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #login-page {
@@ -845,30 +846,30 @@ body {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #contact-page {
   overflow-x: hidden;
 }
 
-/* line 2, ../../sass/_logistics.scss */
+/* line 5, ../../sass/_logistics.scss */
 #logistics-page {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 670px;
 }
 /* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #logistics-page {
   overflow-x: hidden;
 }
-/* line 6, ../../sass/_logistics.scss */
+/* line 9, ../../sass/_logistics.scss */
 #logistics-page .i-address {
   margin: 0 0 10px 70px;
   font-size: 1.2em;
 }
-/* line 10, ../../sass/_logistics.scss */
+/* line 13, ../../sass/_logistics.scss */
 #logistics-page .i-address span {
   display: block;
   line-height: 1.3em;

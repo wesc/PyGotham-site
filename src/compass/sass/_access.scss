@@ -1,7 +1,7 @@
 
 #access-diversity-page {
     @extend .general-page;
-    @include column(18, true);
+    @include column(24 - $sponsor-col-width, true);
 
     #accessibility-content, #diversity-content {
         @extend .general-page-tab-content;

@@ -120,3 +120,25 @@ body {
 
     margin-top: span(1);
 }
+
+
+$sponsor-col-width: 7;
+
+#sponsors {
+    @extend .general-page-content;
+    @include column($sponsor-col-width);
+
+    ul {
+        height: 95px;
+        background-color: white;
+    }
+
+    ul li {
+        display: none;
+
+        background-color: white;
+        img {
+            width: 100%;
+        }
+    }
+}
