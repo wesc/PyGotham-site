@@ -1,0 +1,15 @@
+
+#logistics-page {
+    @extend .general-page;
+    @include column(18, true);
+
+    .i-address {
+        margin: 0 0 span(0.5) span(2);
+        font-size: 1.2em;
+
+        span {
+            display: block;
+            line-height: 1.3em;
+        }
+    }
+}
