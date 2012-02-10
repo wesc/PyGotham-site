@@ -6,12 +6,9 @@ $news-col-width: 24 - $sponsor-col-width - 1;
 #main-content {
 
     #sponsors {
-        @include column($sponsor-col-width);
-        @include std-colors;
+        @extend .general-page-content;
 
-        h2 {
-            @include heading;
-        }
+        @include column($sponsor-col-width);
 
         ul {
             height: 95px;
@@ -26,14 +23,10 @@ $news-col-width: 24 - $sponsor-col-width - 1;
     }
 
     #news {
+        @extend .general-page-content;
+
         @include push(1);
         @include column($news-col-width, true);
-
-        @include std-colors;
-
-        h2 {
-            @include heading;
-        }
 
         #news-items li {
             @extend .striped-list;

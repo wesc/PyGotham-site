@@ -2,6 +2,7 @@
 // general styles for pages.
 
 .general-page {
+    @include rounded-top;
     @include std-colors;
 
     h2 {
@@ -73,6 +74,15 @@
             background-color: $highlight-color;
         }
 
+    }
+}
+
+.general-page-content {
+    @include rounded-top;
+    @include std-colors;
+
+    h2 {
+        @include heading;
     }
 }
 
