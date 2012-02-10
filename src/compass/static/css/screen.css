@@ -73,8 +73,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
-  font-family: "DejaVu Sans Bold";
+  font-family: "DejaVu Sans";
   src: url("../ttf/DejaVuSans-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 /* fixme: rgba won't work in IE < 9, so we need to make IE
@@ -157,7 +158,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 @media (min-width: 500px) {
@@ -217,7 +218,7 @@ body {
   font-size: 27px;
   font-weight: bold;
   letter-spacing: 1px;
-  font-family: "DejaVu Sans Bold", sans-serif;
+  font-family: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;
   color: white;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
@@ -263,7 +264,7 @@ body {
   -khtml-border-radius: 3px;
   border-radius: 3px;
   font-weight: bold;
-  padding: 0 0.5em 0.07em 0.5em;
+  padding: 0.1em 0.5em 0.07em 0.5em;
   text-decoration: none;
   white-space: nowrap;
   -moz-transition-property: background-color, color;
@@ -490,7 +491,7 @@ body {
   -khtml-border-radius: 3px;
   border-radius: 3px;
   font-weight: bold;
-  padding: 0 0.5em 0.07em 0.5em;
+  padding: 0.1em 0.5em 0.07em 0.5em;
   text-decoration: none;
   white-space: nowrap;
   -moz-transition-property: background-color, color;

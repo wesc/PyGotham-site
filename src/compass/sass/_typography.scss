@@ -6,8 +6,9 @@
 }
 
 @font-face {
-  font-family: "DejaVu Sans Bold";
+  font-family: "DejaVu Sans";
   src: url('../ttf/DejaVuSans-Bold.ttf') format('truetype');
+  font-weight: bold;
 }
 
 
@@ -40,5 +41,5 @@ $highlight-color: darken(#f4a73d, 25%);
 }
 
 
-$std-font: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-$logo-font: "DejaVu Sans Bold", sans-serif;
+$std-font: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;
+$logo-font: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;

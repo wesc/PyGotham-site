@@ -11,8 +11,6 @@
         <link href="{{ STATIC_URL }}/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
     <script type="text/javascript" src="{{ STATIC_URL }}/js/jquery-1.6.1.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}/js/pygotham.js"></script>
 
@@ -25,7 +23,7 @@
 
   </head>
 
-  <body>
+  <body{% if debug %} class="debug"{% endif %}>
     <div id="bp-container">
       <div id="main-header">
         <div id="logo">
