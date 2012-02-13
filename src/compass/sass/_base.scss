@@ -124,9 +124,15 @@ body {
 
 $sponsor-col-width: 7;
 
+#main-sidebar {
+    @include column($sponsor-col-width);
+}
+
 #sponsors {
     @extend .general-page-content;
-    @include column($sponsor-col-width);
+    @include column($sponsor-col-width, true);
+
+    margin-bottom: span(1);
 
     ul {
         height: 95px;
@@ -141,4 +147,54 @@ $sponsor-col-width: 7;
             width: 100%;
         }
     }
+}
+
+#tweetshow {
+    @extend .general-page-content;
+    @include column($sponsor-col-width, true);
+}
+
+#tweets {
+    font-family: $std-font;
+
+	.tweet_list li {
+        font-size: 13px;
+        line-height: 1.3em;
+
+        padding: 8px 8px 8px 8px;
+        border-bottom: 1px solid #bbbbbb;
+
+        &:last {
+            border-bottom: none;
+        }
+	}
+
+	.tweet_time a { 
+        color: $smokey-gray;
+        font-weight: bold;
+        text-decoration: none;
+	}
+
+    .tweet_text {
+        a {
+            @include fade-hover;
+
+            color: $highlight-color;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom: 1px dashed $highlight-color;
+            }
+        }
+    }
+
+
+	.tweet_list .tweet_avatar {
+		padding-right: .5em; 
+        float: left;
+	}
+
+	.tweet_list .tweet_avatar img {
+		vertical-align: middle;
+	}
 }
