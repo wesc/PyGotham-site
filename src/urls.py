@@ -39,4 +39,5 @@ urlpatterns += patterns('',
     (r'^sponsors/$', direct_to_template, { 'template': 'sponsors.html' }, 'sponsors'),
     (r'^access/$', direct_to_template, { 'template': 'access.html' }, 'access'),
     (r'^contact_us/$', direct_to_template, { 'template': 'contact_us.html' }, 'contact_us'),
+    (r'^logistics/$', direct_to_template, { 'template': 'logistics.html' }, 'logistics'),
 )

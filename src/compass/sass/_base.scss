@@ -1,4 +1,8 @@
 
+html {
+    overflow-y: scroll;
+}
+
 
 /*
 
@@ -18,16 +22,28 @@ We've produced an image for displays smaller and greater than 500px.
 
 // cribbed from: http://css-tricks.com/perfect-full-page-background-image/ (has other methods that aren't CSS3 dependent
 body {
-    background: url(../images/q-bg-500.jpg) no-repeat center center fixed;
+    background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    font-family: $std-font;
 }
 
 @media (min-width: 500px) {
     body {
-        background: url(../images/q-bg-800.jpg) no-repeat center center fixed;
+        background: url(../images/cityscape-800.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -45,48 +61,55 @@ body {
     @include column(24, true);
 
     margin-top: span(1) / 2;
-    @include std-colors;
+
+    #logo {
+        @include column(6);
+    }
 
     h1 {
-        padding: 16px 24px 16px 24px;
-        border: 8px solid $ink-normal;
-
-        // fix these styles
-        text-align: center;
-        font-size: 28px;
+        text-align: right;
+        font-size: 27px;
         font-weight: bold;
         letter-spacing: 1px;
         font-family: $logo-font;
+
+        color: white;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+
+        span {
+            display: block;
+        }
     }
+
 }
 
 #main-nav {
     @include column(24, true);
 
-    font-family: $std-font;
-    font-size: 16px;
-    font-weight: bold;
-
     ul {
-        margin: span(1)/2 0 span(1)/2 0;
+        margin: span(1) 0 span(1) 0;
     }
 
     li {
         display: inline;
 
-        a {
-            @include fade-in;
-            @include reverse-colors;
+        margin-right: 0.6em;
+        &:last-child {
+            margin-right: 0;
+        }
 
-            margin-right: 8px;
-            padding: 4px 6px 4px 6px;
-            text-decoration: none;
+        font-size: 16px;
+
+        a {
+            @include nav-decoration;
+            @include std-colors;
 
             &:hover {
-                @include std-colors;
-            } 
-        } 
-   }
+                @include reverse-colors;
+            }
+        }
+    }
 
     @include clearfix;
 }
@@ -94,7 +117,84 @@ body {
 
 #main-content {
     @include column(24, true);
-    //@include std-colors;
 
     margin-top: span(1);
+}
+
+
+$sponsor-col-width: 7;
+
+#main-sidebar {
+    @include column($sponsor-col-width);
+}
+
+#sponsors {
+    @extend .general-page-content;
+    @include column($sponsor-col-width, true);
+
+    margin-bottom: span(1);
+
+    ul {
+        height: 95px;
+        background-color: white;
+    }
+
+    ul li {
+        display: none;
+
+        background-color: white;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#tweetshow {
+    @extend .general-page-content;
+    @include column($sponsor-col-width, true);
+}
+
+#tweets {
+    font-family: $std-font;
+
+	.tweet_list li {
+        font-size: 13px;
+        line-height: 1.3em;
+
+        padding: 8px 8px 8px 8px;
+        border-bottom: 1px solid #bbbbbb;
+
+        &:last {
+            border-bottom: none;
+        }
+	}
+
+	.tweet_time a { 
+        color: $smokey-gray;
+        font-weight: bold;
+        text-decoration: none;
+	}
+
+    .tweet_text {
+        a {
+            @include fade-hover;
+
+            color: $highlight-color;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom: 1px dashed $highlight-color;
+            }
+        }
+    }
+
+
+	.tweet_list .tweet_avatar {
+		padding-right: .5em; 
+        float: left;
+	}
+
+	.tweet_list .tweet_avatar img {
+		vertical-align: middle;
+	}
 }

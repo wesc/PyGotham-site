@@ -12,6 +12,9 @@
     <![endif]-->
 
     <script type="text/javascript" src="{{ STATIC_URL }}/js/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/pygotham.js"></script>
+
 {% block main_js_includes %}
 {% endblock %}
 
@@ -21,10 +24,20 @@
 
   </head>
 
-  <body>
+  <body{% if debug %} class="debug"{% endif %}>
     <div id="bp-container">
       <div id="main-header">
-        <h1>PyGotham // Sept 16th & 17th 2011 // New York NY</h1>
+        <div id="logo">
+          <a href="/">
+            <img src="{{ STATIC_URL }}/images/logo-small.png" />
+          </a>
+        </div>
+
+        <h1>
+          <span>PyGotham II</span>
+          <span>June 8th &amp; 9th 2012</span>
+          <span>New York, NY</span>
+        </h1>
       </div>
 
       <div id="main-nav">
@@ -34,19 +47,25 @@
           </li>
 
           <li>
-            <a href="{% url talks %}">scheduled talks // floor plan</a>
+            <a href="{% url logistics %}">logistics</a>
+          </li>
+
+          <li>
+            <a href="{% url talks %}">scheduled talks</a>
           </li>
 
           <li>
             <a href="{% url registration_register %}">register</a>
           </li>
 
-          <li>
-            <a href="{% url login %}">login</a>
-          </li>
+          <!--
+              <li>
+                <a href="{% url login %}">login</a>
+              </li>
+              -->
 
           <li>
-            <a href="{% url sponsors %}">sponsor // be sponsored</a>
+            <a href="{% url sponsors %}">sponsorship</a>
           </li>
 
           <li>
@@ -59,8 +78,7 @@
         </ul>
       </div>
 
-
-      <div id="main-content">
+     <div id="main-content">
         {% block main_content %}{% endblock %}
       </div>
 

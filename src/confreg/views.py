@@ -1,5 +1,6 @@
 # Create your views here.
 import re
+import mechanize
 
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
@@ -112,6 +113,23 @@ def conf_register(request):
 
 @login_required
 def payment(request):
+    m = mechanize.Browser()
+    m.add_password(settings.WEPAY_URL, "Bearer", "secret", settings.WEPAY_API)
+    m.open(settings.WEPAY_URL + '/checkout/create')
+    payment_json = {
+       "account_id":"54321",
+       "short_description":"Donation to Smith Cancer Fund",
+       "long_description":"This is a donation to help Bob Smith get the treatment",
+       "type":"DONATION",
+       "reference_id":"abc123",
+       "amount":"100.75",
+       "app_fee":"5.5",
+       "fee_payer":"payee",
+       "redirect_uri":"http://www.everribbon.com/callback/donation_success/1531",
+       "callback_uri":"http://www.everribbon.com/callback/status/1531",
+       "auto_capture":false,
+       "mode":"iframe"
+    }
     confreg = ConfRegModel.objects.get(user=request.user)
     if confreg.payment_amount_method == 'student_amt':
         template_name = 'confreg/paypal_103.html'

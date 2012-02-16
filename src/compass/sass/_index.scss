@@ -1,42 +1,15 @@
 
-$sponsor-col-width: 7;
-$news-col-width: 24 - $sponsor-col-width - 1;
+$news-col-width: 24 - $sponsor-col-width;
 
 
 #main-content {
-
-    #sponsors {
-        @include column($sponsor-col-width);
-        @include reverse-colors;
-
-        h2 {
-            @include heading;
-        }
-
-        ul li {
-            display: none;
-
-            img {
-                padding: 4px 8px 4px 8px;
-                width: span(6);
-            }
-        }
-    }
-
     #news {
-        @include push(1);
+        @extend .general-page-content;
+
         @include column($news-col-width, true);
 
-        @include reverse-colors;
-
-        font-family: $std-font;
-
-        h2 {
-            @include heading;
-        }
-
         #news-items li {
-            @include striped-list;
+            @extend .striped-list;
 
             .i-date {
                 @include column(3);
@@ -50,7 +23,7 @@ $news-col-width: 24 - $sponsor-col-width - 1;
 
                 color: $bg-color;
                 font-size: 18px;
-                line-height: 18px * 1.2;
+                line-height: 1.3em;
             }
         }
     }

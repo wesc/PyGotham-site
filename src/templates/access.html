@@ -1,10 +1,16 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 
-{% block main_content %}
-<div id="sponsors-page">
+{% block sponsor_base_content %}
+<ul id="access-page-tabs">
+  <li><a href="#accessibility-content" class="selected">accessibility</a></li>
+  <li><a href="#diversity-content">diversity</a></li>
+</ul>
+
+<div id="access-diversity-page">
+
+  <div id="accessibility-content" class="selected">
 
   <h2>Accessibility</h2>
-
 
   <p>
     We are serious about serving the accessibility needs of this
@@ -29,6 +35,9 @@
     early as possible.
   </p>
 
+  </div>
+
+  <div id="diversity-content">
 
   <h2>Diversity</h2>
 
@@ -112,5 +121,14 @@
     venues and conference-related social events.
   </p>
 
+  </div>
+
 </div>
+{% endblock %}
+
+
+{% block sponsor_base_js %}
+$(function() {
+    $("#access-page-tabs li a").pgtabs();
+});
 {% endblock %}

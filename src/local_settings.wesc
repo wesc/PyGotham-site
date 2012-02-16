@@ -1,6 +1,9 @@
 import os
 EMAIL_HOST_PASSWORD='no_way'
 
+DEBUG = True
+INTERNAL_IPS = ['127.0.0.1']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -24,8 +27,6 @@ SECRET_KEY="aspfdvu98 4985y[928y43rhfsdvn ahg9 9834pyrhg pwjrf[pjq]mc4 of["
 
 MEDIA_URL = 'http://localhost:8080'
 SSL_MEDIA_URL = 'http://localhost:8080'
-
-DEBUG = True
 
 EMAIL_BACKEND='django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH='/tmp/email/'

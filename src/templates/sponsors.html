@@ -1,69 +1,89 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 
-{% block main_content %}
+{% block sponsor_base_content %}
+<ul id="sponsors-page-tabs">
+  <li><a href="#sponsors-content" class="selected">sponsors</a></li>
+  <li><a href="#sponsored-content">be sponsored</a></li>
+</ul>
+
 <div id="sponsors-page">
 
-  <h2>Sponsor</h2>
+  <div id="sponsors-content" class="selected">
 
-  <p>
-    This conference was specifically priced to make it affordable for
-    individual software developers. This would not be possible without
-    corporate sponsorship.
-  </p>
+    <h2>Sponsors</h2>
 
-  <p>
-    This conference was also arranged as a non-profit event to
-    encourage sponsorship and community support.
-  </p>
+    <p>
+      This conference was specifically priced to make it affordable for
+      individual software developers. This would not be possible without
+      corporate sponsorship.
+    </p>
 
-  <p>
-    We are accepting donations >= $3K in exchange for corporate logo
-    placement on our slideshow page.
-  </p>
+    <p>
+      We are accepting donations &gt;= $3K in exchange for corporate logo
+      placement on our sponsorship slideshow to the left, and one registration ticket.
+    </p>
 
-  <p>
-    We thank our current sponsors, and we thank you for considering
-    sponsorship.
-  </p>
+    <p>
+      &gt;= $5K gets a dedicated room for a day, and five registration tickets. 
+      The room for a day has to be filled with classes based on your company's area of expertise. Tactful marketing and recruiting are allowed, but the focus of your presence has to be at least four quality tech talks.  
+    </p>
 
-  <p>
-    Please contact board at thepeoplesconference com to sponsor
-    PyGotham.
-  </p>
+    <p>
+      We thank our current sponsors, and we thank you for considering
+      sponsorship.
+    </p>
 
+    <p>
+      Please contact aagg at comcast dot net to sponsor
+      PyGotham.
+    </p>
 
-  <h2>Be Sponsored</h2>
+  </div>
 
-  <p>
-    There's no shame in asking for a free pass. Many people who can
-    benefit most from this conference happen to be under/unemployed or
-    in school full-time. If this is your situation, we will try our
-    best to accommodate you.
-  </p>
+  <div id="sponsored-content">
 
-  <p>
-    We are currently raising money to offer free entry to PyGotham for
-    those in need.  This will be available to those who apply for
-    assistance during registration.
-  </p>
+    <h2>Be Sponsored</h2>
 
-  <p>
-    Because this is a new conference, and we're still raising money
-    for this conference, we don't yet know how many free entry passes
-    we can provide.
-  </p>
+    <p>
+      There's no shame in asking for a free pass. Many people who can
+      benefit most from this conference happen to be under/unemployed or
+      in school full-time. If this is your situation, we will try our
+      best to accommodate you.
+    </p>
 
-  <p>
-    For this reason, your registration is not guaranteed. We will
-    place your registration on hold, and get back to you once we have
-    funding for your free pass. If we do not have funding by August,
-    we will contact you and let you know the situation.
-  </p>
+    <p>
+      We are currently raising money to offer free entry to PyGotham for
+      those in need.  This will be available to those who apply for
+      assistance during registration.
+    </p>
 
-  <p>
-    The primary purpose of the conference is to serve the Python
-    community. Please know that we are serious about getting funding
-    for those in need, and we are working on it!
-  </p>
+    <p>
+      Because this is a new conference, and we're still raising money
+      for this conference, we don't yet know how many free entry passes
+      we can provide.
+    </p>
+
+    <p>
+      For this reason, your registration is not guaranteed. We will
+      place your registration on hold, and get back to you once we have
+      funding for your free pass. If we do not have funding by August,
+      we will contact you and let you know the situation.
+    </p>
+
+    <p>
+      The primary purpose of the conference is to serve the Python
+      community. Please know that we are serious about getting funding
+      for those in need, and we are working on it!
+    </p>
+
+  </div>
+
 </div>
+{% endblock %}
+
+
+{% block sponsor_base_js %}
+$(function() {
+    $("#sponsors-page-tabs li a").pgtabs();
+});
 {% endblock %}

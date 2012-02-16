@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-<div id="talks">
+<div id="talks-page">
   <h2>Talks</h2>
 
-  <ul id="items">
+  <p>
+    We are currently taking submissions for talks. Please contact us
+    at pygotham at thepeoplesconference dot com if interested.
+  </p>
+
+
+  {% if debug %}
+
+  <!-- the following markup is intended to illustrate what talk data
+       needs to be filled in -->
+
+  <ul id="talks-listing">
     <li>
       <div class="i-profile">
         <img src="/static/images/profile.jpg" />
@@ -13,6 +24,11 @@
       <div class="i-blurb">
         <div class="i-title">
           Extracting musical information from sound
+       </div>
+
+        <div class="i-thumbs">
+          <a href="#" class="i-up selected">up</a>
+          <a href="#" class="i-down">down</a>
         </div>
 
         <div class="i-when">
@@ -41,6 +57,11 @@
           Cross-Compiling Python & C Extensions for Embedded Systems
         </div>
 
+        <div class="i-thumbs">
+          <a href="#" class="i-up">up</a>
+          <a href="#" class="i-down">down</a>
+        </div>
+
         <div class="i-when">
           <span>Sept 16 // 2pm // Room 104</span>
         </div>
@@ -65,6 +86,11 @@
         <div class="i-title">
           The Pyed Piper: A Modern Python Alternative to awk, sed and
           Other Unix Text Manipulation Utilities
+       </div>
+
+        <div class="i-thumbs">
+          <a href="#" class="i-up">up</a>
+          <a href="#" class="i-down selected">down</a>
         </div>
 
         <div class="i-when">
@@ -83,6 +109,7 @@
     </li>
 
   </ul>
+  {% endif %}
 
 </div>
 {% endblock %}

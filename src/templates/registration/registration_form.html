@@ -1,20 +1,29 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 {% load i18n %}
 
-{% block main_content %}
+{% block sponsor_base_content %}
 <div id="registration-page">
   <h2>Registration</h2>
 
+  <p>
+    We will be accepting registrations soon.
+<a href="https://www.wepay.com/events/48436"  target="_blank" ><img src="https://www.wepay.com/img/widgets/pay_with_wepay.png" alt="Pay with WePay" /></a>
+  </p>
+
+  {% if debug %}
   <p>
     Already created a login? Already activated it via email
     link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
   </p>
 
   <p>
-    <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
+    <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">
+      {% csrf_token %}
       {{ form.as_p }}
       <input type="submit" value="{% trans 'Submit' %}" />
     </form>
   </p>
+  {% endif %}
+
 </div>
 {% endblock %}

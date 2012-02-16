@@ -1,80 +1,122 @@
 
 $talks-profile-width: 2;
-$talks-title-width: 17;
+$talks-title-width: 15;
+$talks-thumbs-width: 2;
+$talks-when-width: 5;
 $talks-blurb-width: 24 - $talks-profile-width;
 
-#talks {
+
+#talks-page {
+    @extend .general-page;
     @include column(24, true);
+}
 
-    @include reverse-colors;
 
-    font-family: $std-font;
+#talks-listing li {
+    @extend .striped-list;
 
-    h2 {
-        @include heading;
+    .i-profile {
+        @include column($talks-profile-width);
+
+        img {
+            /* image should be roughly 65 pixels across:
+               convert -resize 65x 247.png -background gray -mosaic profile.jpg
+               */
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            border: 2px solid white;
+        }
     }
 
-    #items li {
-        @include striped-list;
+    .i-blurb {
+        @include column($talks-blurb-width, true);
 
-        .i-profile {
-            @include column($talks-profile-width);
+        color: $bg-color;
+        font-size: 18px;
+        line-height: 1.3em;
 
-            img {
+        .i-title {
+            @include column($talks-title-width);
+            font-weight: bold;
+        }
 
-                /* image should be roughly 65 pixels across:
+        .i-thumbs {
+            @include column($talks-thumbs-width);
 
-                   convert -resize 65x 247.png -background gray -mosaic profile.jpg
-                   */
-
+            .i-up, .i-down {
+                @include reset-image-anchor-border;
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
+                float: left;
+                width: 16px;
+                height: 16px;
+                text-indent: -1000000px;
+                left: -1000000px;
+            }
 
-                border: 2px solid white;
+            .i-up {
+                margin-right: 8px;
+            }
+
+            // our thumbs up/down image is b&w, this command colors it orange:
+            // convert -fill "#A8650A" -colorize 100%  thumbs-down.png thumbs-down-neg.png
+
+            .i-up {
+                background-image: url(../images/thumbs-up.png);
+                &:hover {
+                    background-image: url(../images/thumbs-up-neg.png);
+                }
+            }
+
+            .i-up.selected {
+                background-image: url(../images/thumbs-up-neg.png);
+                &:hover {
+                    background-image: url(../images/thumbs-up.png);
+                }
+            }
+
+            .i-down {
+                background-image: url(../images/thumbs-down.png);
+                &:hover {
+                    background-image: url(../images/thumbs-down-neg.png);
+                }
+            }
+
+            .i-down.selected {
+                background-image: url(../images/thumbs-down-neg.png);
+                &:hover {
+                    background-image: url(../images/thumbs-down.png);
+                }
+            }
+        }
+            
+        .i-when {
+            @include column($talks-when-width, true);
+
+            font-size: 12px;
+            font-weight: bold;
+            text-align: right;
+            span {
+                padding-right: 4px;
             }
         }
 
-        .i-blurb {
+        .i-author {
             @include column($talks-blurb-width, true);
 
+            color: $highlight-color;
+            margin-bottom: 8px;
 
-            color: $bg-color;
-            font-size: 18px;
-            line-height: 18px * 1.2;
-
-            .i-title {
-                @include column($talks-title-width);
-                font-weight: bold;
-            }
-
-            .i-when {
-                @include column($talks-blurb-width - $talks-title-width,
-                                true);
-
-                font-size: 12px;
-                font-weight: bold;
-                text-align: right;
-                span {
-                    padding-right: 4px;
-                }
-            }
-
-            .i-author {
-                @include column($talks-blurb-width, true);
-
+            a {
                 color: $highlight-color;
-                margin-bottom: 8px;
-
-                a {
-                    color: $highlight-color;
-                    text-decoration: none;
-                }
+                text-decoration: none;
             }
+        }
 
-            .i-abstract {
-                @include column($talks-blurb-width, true);
-            }
+        .i-abstract {
+            @include column($talks-blurb-width, true);
         }
     }
 }
