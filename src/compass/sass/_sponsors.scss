@@ -1,0 +1,15 @@
+
+#sponsors-page {
+    @extend .general-page;
+    @include column(24 - $sponsor-col-width, true);
+
+    #sponsors-content, #sponsored-content {
+        @extend .general-page-tab-content;
+    }
+}
+
+
+#sponsors-page-tabs {
+    @extend .general-page-tabs;
+}
+

@@ -1,0 +1,5 @@
+
+#contact-page {
+    @extend .general-page;
+    @include column(24 - $sponsor-col-width, true);
+}
