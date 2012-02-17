@@ -3,7 +3,6 @@ from django.views.generic.simple import direct_to_template
 from django.views.generic.simple import redirect_to
 from django.contrib import admin
 from forms import ProfileForm
-import settings
 admin.autodiscover()
 
 
@@ -42,15 +41,3 @@ urlpatterns += patterns('',
     (r'^contact_us/$', direct_to_template, { 'template': 'contact_us.html' }, 'contact_us'),
     (r'^logistics/$', direct_to_template, { 'template': 'logistics.html' }, 'logistics'),
 )
-
-if settings.DEBUG:
-    '''
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': settings.STATIC_ROOT, 'show_indexes':True,}),
-    )
-    '''
-    urlpatterns += patterns('',
-        (r'^static/(.*)$', 'django.views.static.serve',
-            {'document_root': settings.STATIC_ROOT, 'show_indexes':True,}),
-    )
