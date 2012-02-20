@@ -16,6 +16,13 @@ from confreg.forms import ConfRegForm
 from talksub.models import UserTalkProfile
 from decimal import Decimal
 
+PAYMENT_TYPES = {
+    'EBI':150, # Early Bird Individual
+    'EBC':250, # Early Bird Corporate
+    'I':250,   # Individual
+    'C':350    # Corporate
+}
+
 def payment_required(f):
     def wrap(request, *args, **kwargs):
             # Payment, or request for sponsorship, or some free code required
@@ -113,40 +120,33 @@ def conf_register(request):
 
 @login_required
 def payment(request):
+    payment_type = request.GET['payment_type']
+    payment_amount = PAYMENT_TYPES[payment_type]
     m = mechanize.Browser()
     m.add_password(settings.WEPAY_URL, "Bearer", "secret", settings.WEPAY_API)
-    m.open(settings.WEPAY_URL + '/checkout/create')
+    #m.addheaders = [("Authentication": "Bearer", "secret", settings.WEPAY_API)]
     payment_json = {
-       "account_id":"54321",
-       "short_description":"Donation to Smith Cancer Fund",
-       "long_description":"This is a donation to help Bob Smith get the treatment",
-       "type":"DONATION",
-       "reference_id":"abc123",
-       "amount":"100.75",
-       "app_fee":"5.5",
+       "account_id":request.user.username,
+       "short_description":"PyGotham II payment %s" % payment_type,
+       "long_description":"PyGotham II conference registration",
+       "type":"GOODS",
+       "reference_id":payment_type,
+       "amount":payment_amount,
        "fee_payer":"payee",
-       "redirect_uri":"http://www.everribbon.com/callback/donation_success/1531",
-       "callback_uri":"http://www.everribbon.com/callback/status/1531",
-       "auto_capture":false,
+       "redirect_uri":"https://pygotham.org/confreg/paid/request.username",
+       "prefill_info":{"email":request.user.email},
+       "funding_sources":"bank,cc",
        "mode":"iframe"
     }
-    confreg = ConfRegModel.objects.get(user=request.user)
-    if confreg.payment_amount_method == 'student_amt':
-        template_name = 'confreg/paypal_103.html'
-    elif confreg.payment_amount_method == 'indiv_amt':
-        #template_name = 'confreg/paypal_103.html'
-        template_name = 'confreg/paypal_206.html'
-    elif confreg.payment_amount_method == 'corp_amt':
-        #template_name = 'confreg/paypal_205.html'
-        template_name = 'confreg/paypal_309.html'
-    else:
-        #default
-        template_name = 'confreg/paypal_206.html'
-    context = RequestContext(request)
-
-    return render_to_response(template_name,
-          {'SSL_MEDIA_URL': SSL_MEDIA_URL},
-          context_instance=context)
+    m.open(settings.WEPAY_URL + '/checkout/create',payment_json)
+    result = m.read()
+    #confreg = ConfRegModel.objects.get(user=request.user)
+    
+    {
+      "checkout_id":12345,
+      "checkout_uri":"http://stage.wepay.com/api/checkout/12345"
+    }
+    redirect(checkout_uri)
 
 
 @login_required
