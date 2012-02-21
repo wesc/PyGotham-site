@@ -26,23 +26,21 @@ NOTIFY_CHOICES = (
 )
 
 PAY_CHOICES = (
-    ('student_amt', 'I\'m registering as a student, and will donate $100 + $3 PayPal fee.'),
-    ('indiv_amt', 'I\'m registering as an individual, and will donate $200 + $6 PayPal fee.'),
-    ('corp_amt', 'My company is paying, and will donate $300 + $9 PayPal fee.'),
-    ('need_sponsorship', mark_safe(_("I cannot afford this fee. I need my registration sponsored,<br>and I've read <a href=\"%s/get_sponsored\">this sponsorship statement</a>." % settings.SSL_MEDIA_URL))),
-    ('freebee_code', 'I have a discount code, and will enter it below.'),
+    #('student_amt', 'I\'m registering as a student, and will pay $100 + 3% WePay fee.'),
+    ('indiv_amt', 'I\'m registering as an individual, and will pay $150 + 3% WePay fee.'),
+    ('corp_amt', 'My company is paying, and will pay $250 + 3% WePay fee.'),
+    ('need_sponsorship', mark_safe(_("I cannot afford this fee. I need my registration sponsored,<br>and I've read <a href=\"%s/sponsors/#sponsored-content\">this sponsorship statement</a>." % settings.SSL_MEDIA_URL))),
+    ('freebee_code', 'I have a registration code, and will enter it below.'),
 )
-
-class FreeCodes(models.Model):
-    code = models.CharField(max_length=500,unique=True,null=False,blank=False)
 
 class EmailNotifications(models.Model):
     notification = models.CharField(max_length=100,choices=NOTIFY_CHOICES)
     outbound_text = models.CharField(max_length=1000,null=False,blank=False)
 
-class FreeCodesUsers(models.Model):
-    user = models.ForeignKey(User, unique=True, verbose_name=_('user'))
-    code = models.ForeignKey(FreeCodes, unique=True, verbose_name=_('freecode'))
+class FreeCodesAssigned(models.Model): # One code per user. Companies get blocks of codes.
+    intended_for = models.CharField(max_length=200,blank=False)
+    code = models.CharField(max_length=500,unique=True,null=False,blank=False)
+    user = models.ForeignKey(User, unique=True, verbose_name=_('user'),blank=True,null=True,default=None) # filled in when used.
 
 class ConfRegModel(models.Model):
     user = models.ForeignKey(User, unique=True, verbose_name=_('user'))

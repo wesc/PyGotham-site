@@ -1,9 +1,8 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "sponsor_base.html" %}
+{% load i18n %}
 
-<div id="content-wrapper">
-<div id="content">
-
+{% block sponsor_base_content %}
+<div id="confreg-page">
 <h3>Activation is Required:</h3>
 
 Check your email for an activation link. Once you're activated, you can <a href="{{ SSL_MEDIA_URL }}/accounts/login">log in</a> and register.
@@ -11,11 +10,10 @@ Check your email for an activation link. Once you're activated, you can <a href=
 {% if key %}
 <br/>
 <br/>
-If email fails for some reason (on this system our email is being throttled),
+If email fails for some reason (on this system our email is ocasionally throttled),
 click <a href="{{ SSL_MEDIA_URL }}/{% url registration_activate key %}">here instead:{{ SSL_MEDIA_URL }}/{% url registration_activate key %}</a>
 {% endif %}
-</div>
-</div>
 
-
+</div>
 {% endblock %}
+

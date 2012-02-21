@@ -11,7 +11,7 @@ from settings import MEDIA_URL,SSL_MEDIA_URL,MAX_SPONSORED,MAX_PAID
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
-from confreg.models import ConfRegModel,FreeCodes,FreeCodesUsers,EmailNotifications
+from confreg.models import ConfRegModel,FreeCodesAssigned,EmailNotifications
 from confreg.forms import ConfRegForm
 from talksub.models import UserTalkProfile
 from decimal import Decimal
@@ -85,21 +85,28 @@ def conf_register(request):
     
                 elif form.cleaned_data['payment_amount_method'] == 'freebee_code':
                     try:
-                        legit_code = FreeCodes.objects.get(code = form.cleaned_data['discount_code'])
-                        FreeCodesUsers.objects.get_or_create(user = request.user, code = legit_code)
-                        template_name = 'confreg/in_default.html'
-                        confreg,created = ConfRegModel.objects.get_or_create(user=request.user)
-                        confreg.freebee = True
-                        newform = ConfRegForm(request.POST,instance=confreg)
-                        newform.save()
+                        # See if this code has been assigned: did someone leak their code?
+                        fc_assigned = FreeCodesAssigned.objects.get(code = form.cleaned_data['discount_code'])
+                        if fc_assigned.user and fc_assgined.user != request.user:
+                            generic_error = 'Sorry, this registration code was already used.'
+                        else:
+                            fc_assigned.user = request.user
+                            fc_assigned.save()
 
-                        # Keep track of invited speakers.
-                        utp,created = UserTalkProfile.objects.get_or_create(author=request.user)
-                        utp.invited_speaker = True if form.cleaned_data['discount_code'][:4] == "INV_" else False
-                        utp.save()
+                            template_name = 'confreg/youre_in.html'
+                            confreg,created = ConfRegModel.objects.get_or_create(user=request.user)
+                            confreg.freebee = True
+                            newform = ConfRegForm(request.POST,instance=confreg)
+                            newform.save()
+    
+                            # Keep track of invited speakers.
+                            utp,created = UserTalkProfile.objects.get_or_create(author=request.user)
+                            utp.invited_speaker = True if form.cleaned_data['discount_code'][:4] == "INV_" else False
+                            utp.save()
 
-                    except FreeCodes.DoesNotExist:
-                        generic_error = 'Sorry, this discount code doesn\'t exist.'
+                    except FreeCodesAssigned.DoesNotExist:
+                        generic_error = 'Sorry, this registration code doesn\'t exist.'
+
                 else:
                     confreg,created = ConfRegModel.objects.get_or_create(user=request.user)
                     newform = ConfRegForm(request.POST,instance=confreg)
@@ -178,17 +185,17 @@ def conf_edit(request):
 
 @csrf_exempt
 @login_required
-def check_paypal_success(request,slug=None):
+def check_wepay_success(request,slug=None):
     # Prevent dumb hacking
     referer = request.META.get('HTTP_REFERER', '')
-    if not re.match('https://www.paypal.com.*$',referer):
+    if not re.match('https://www.wepay.com.*$',referer):
         return redirect(SSL_MEDIA_URL + '/')
 
     amount = slug
     confreg = ConfRegModel.objects.get(user=request.user)
     confreg.paid = Decimal(amount)
     confreg.save()
-    template_name = 'confreg/in_default.html'
+    template_name = 'confreg/youre_in.html'
     context = RequestContext(request)
     
     return render_to_response(template_name,
@@ -196,7 +203,7 @@ def check_paypal_success(request,slug=None):
           context_instance=context)
 
 @login_required
-def check_paypal_fail(request):
+def check_wepay_fail(request):
     template_name = 'confreg/pay_later.html'
     context = RequestContext(request)
     

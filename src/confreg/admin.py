@@ -1,8 +1,7 @@
 from django.contrib import admin
-from confreg.models import FreeCodes,FreeCodesUsers,ConfRegModel,EmailNotifications
+from confreg.models import FreeCodesAssigned,ConfRegModel,EmailNotifications
 
-admin.site.register(FreeCodes)
-admin.site.register(FreeCodesUsers)
+admin.site.register(FreeCodesAssigned)
 admin.site.register(ConfRegModel)
 admin.site.register(EmailNotifications)
 
