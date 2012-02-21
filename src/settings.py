@@ -1,18 +1,16 @@
 import os
+import local_settings
 
-RECAPTCHA_PRIVATE_KEY='6LcD9MQSAAAAAAD26iRITwm083gElTsK-Ep3d3g6'
+DOMAIN=getattr(local_settings,"DOMAIN","https://pygotham.org")
 
-DOMAIN="http://localhost:8000"
 BASE_DIR = os.path.dirname(__file__)
 
-
 # Django settings for mysite project.
-DEBUG = False
+DEBUG = getattr(local_settings,'DEBUG',False)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
      ('Gloria W', 'strangest@comcast.net'),
-     ('gabe', 'gad2103@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -27,8 +25,7 @@ CACHES = {
 AUTHENTICATION_BACKENDS = ('custom_auth.custom_auth.EmailOrUsernameModelBackend',)
 
 
-
-DATABASES = {
+TEST_DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'pygotham',# Or path to database file if using sqlite3.
@@ -44,6 +41,8 @@ DATABASES = {
         #'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+DATABASES = getattr(local_settings,'DATABASES',TEST_DATABASES)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -75,8 +74,8 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://pygotham.org'
-SSL_MEDIA_URL = 'https://pygotham.org'
+MEDIA_URL = getattr(local_settings,'MEDIA_URL','https://pygotham.org')
+SSL_MEDIA_URL = getattr(local_settings,'SSL_MEDIA_URL','https://pygotham.org')
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -111,7 +110,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'see local_settings'
+SECRET_KEY = getattr(local_settings,'SECRET_KEY','see local_settings')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -203,21 +202,21 @@ LOGGING = {
 
 #EMAIL_BACKEND='django.core.mail.backends.filebased.EmailBackend'
 #EMAIL_FILE_PATH='/tmp/email/'
+#EMAIL_BACKEND='custom_email_backend.logging_smtp.LoggingSmtp'
 
-#EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND='custom_email_backend.logging_smtp.LoggingSmtp'
+EMAIL_BACKEND=getattr(local_settings,'EMAIL_BACKEND','django.core.mail.backends.smtp.EmailBackend')
+EMAIL_FILE_PATH = getattr(local_settings,'EMAIL_FILE_PATH','/tmp/email')
+if 'file' not in EMAIL_BACKEND:
+    EMAIL_HOST= getattr(local_settings,'EMAIL_HOST','smtp-auth.no-ip.com')
+    EMAIL_HOST_PASSWORD=getattr(local_settings,'EMAIL_HOST_PASSWORD','see_local_settings_file')
+    EMAIL_HOST_USER=getattr(local_settings,'EMAIL_HOST_USER','pygotham@thepeoplesconference.com')
+    EMAIL_PORT= getattr(local_settings,'EMAIL_PORT',25)
+    EMAIL_USE_TLS = getattr(local_settings,'EMAIL_USE_TLS',True)
 
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emaildata')
-EMAIL_HOST='smtp-auth.no-ip.com'
-EMAIL_HOST_PASSWORD='see_local_settings_file'
-EMAIL_HOST_USER='pygotham@thepeoplesconference.com'
-EMAIL_PORT=25
-DEFAULT_FROM_EMAIL = "pygotham@thepeoplesconference.com"
-SERVER_EMAIL = "pygotham@thepeoplesconference.com"
-EMAIL_SUBJECT_PREFIX='Pygotham Site: '
-EMAIL_USE_TLS=True
-EMAIL_DEBUG=True
-SEND_BROKEN_LINK_EMAILS=True
+SERVER_EMAIL = getattr(local_settings,'SERVER_EMAIL',"pygotham@thepeoplesconference.com")
+EMAIL_SUBJECT_PREFIX = getattr(local_settings,'EMAIL_SUBJECT_PREFIX','Pygotham Site: ')
+DEFAULT_FROM_EMAIL= getattr(local_settings,'DEFAULT_FROM_EMAIL',"pygotham@thepeoplesconference.com")
+SEND_BROKEN_LINKS_EMAILS = getattr(local_settings,'SEND_BROKEN_LINKS_EMAILS',True)
 
 """Affects the global state of all PyGotham talks.
 Not currently implemented.
@@ -229,8 +228,9 @@ Possible states of talks
 (4) Talk voting is on
 (5) Talk voting is complete
 """
-TALK_STATE = 1
+TALK_STATE = getattr(local_settings,'TALK_STATE',1)
 
 TALK_SUBMISSION_LIMIT_PER_PERSON = 3
 
-from local_settings import *
+WEPAY_URL = getattr(local_settings,'WEPAY_URL','None')
+WEPAY_ACCESS_TOKEN = getattr(local_settings,'WEPAY_ACCESS_TOKEN','None')

@@ -6,23 +6,16 @@
   <h2>Registration</h2>
 
   <p>
-    We will be accepting registrations soon.
-  </p>
-
-  {% if debug %}
-  <p>
     Already created a login? Already activated it via email
     link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
   </p>
 
   <p>
-    <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">
-      {% csrf_token %}
+    <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
       {{ form.as_p }}
       <input type="submit" value="{% trans 'Submit' %}" />
     </form>
   </p>
-  {% endif %}
 
 </div>
 {% endblock %}

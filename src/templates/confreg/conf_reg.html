@@ -1,10 +1,10 @@
-{% extends "ssl_safe_base.html" %}
+{% extends "sponsor_base.html" %}
 {% load i18n %}
 
-{% block content %}
+{% block sponsor_base_content %}
+<div id="registration-page">
+  <h2>Registration</h2>
 
-<div id="content-wrapper">
-<div id="content">
 
 {% if generic_error %}
 <font color="red">{{ generic_error }}</font>
@@ -13,12 +13,11 @@
 <p>
 <form action="{{ SSL_MEDIA_URL }}/confreg/conf_register/" method="post">{% csrf_token %}
 
-  {{ form.as_p }}
+  <table>
+  <td>{{ form.as_table }}</td>
+  </table>
 
   <input type="submit" value="{% trans 'Submit' %}" />
 </form>
-
-</div>
-</div>
 
 {% endblock %}
