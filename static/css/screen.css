@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, /usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -80,7 +80,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* fixme: rgba won't work in IE < 9, so we need to make IE
    compatability styles for the following mixins */
-/* line 45, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 45, ../../sass/_common.scss */
 .striped-list, #main-content #news #news-items li, #talks-listing li {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -104,7 +104,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   overflow: hidden;
   *zoom: 1;
 }
-/* line 23, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 23, ../../sass/_common.scss */
 .striped-list:hover, #main-content #news #news-items li:hover, #talks-listing li:hover {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -123,16 +123,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 52, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 52, ../../sass/_common.scss */
 .striped-list:last-child, #main-content #news #news-items li:last-child, #talks-listing li:last-child {
   border-bottom: none;
 }
-/* line 56, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 56, ../../sass/_common.scss */
 .striped-list:hover, #main-content #news #news-items li:hover, #talks-listing li:hover {
   background-color: white;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 2, ../../sass/_base.scss */
 html {
   overflow-y: scroll;
 }
@@ -151,7 +151,7 @@ convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
 
 We've produced an image for displays smaller and greater than 500px.
 */
-/* line 24, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 24, ../../sass/_base.scss */
 body {
   background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -162,7 +162,7 @@ body {
 }
 
 @media (min-width: 500px) {
-  /* line 35, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+  /* line 35, ../../sass/_base.scss */
   body {
     background: url(../images/cityscape-800.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -172,7 +172,7 @@ body {
   }
 }
 @media (min-width: 1024px) {
-  /* line 45, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+  /* line 45, ../../sass/_base.scss */
   body {
     background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -181,7 +181,7 @@ body {
     background-size: cover;
   }
 }
-/* line 55, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 55, ../../sass/_base.scss */
 #bp-container {
   width: 950px;
   margin: 0 auto;
@@ -189,7 +189,7 @@ body {
   *zoom: 1;
 }
 
-/* line 60, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 60, ../../sass/_base.scss */
 #main-header {
   display: inline;
   float: left;
@@ -197,22 +197,22 @@ body {
   width: 950px;
   margin-top: 15px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-header {
   overflow-x: hidden;
 }
-/* line 65, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 65, ../../sass/_base.scss */
 #main-header #logo {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 230px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-header #logo {
   overflow-x: hidden;
 }
-/* line 69, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 69, ../../sass/_base.scss */
 #main-header h1 {
   text-align: right;
   font-size: 27px;
@@ -223,12 +223,12 @@ body {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
-/* line 80, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 80, ../../sass/_base.scss */
 #main-header h1 span {
   display: block;
 }
 
-/* line 87, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 87, ../../sass/_base.scss */
 #main-nav {
   display: inline;
   float: left;
@@ -237,25 +237,25 @@ body {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-nav {
   overflow-x: hidden;
 }
-/* line 90, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 90, ../../sass/_base.scss */
 #main-nav ul {
   margin: 30px 0 30px 0;
 }
-/* line 94, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 94, ../../sass/_base.scss */
 #main-nav li {
   display: inline;
   margin-right: 0.6em;
   font-size: 16px;
 }
-/* line 98, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 98, ../../sass/_base.scss */
 #main-nav li:last-child {
   margin-right: 0;
 }
-/* line 104, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 104, ../../sass/_base.scss */
 #main-nav li a {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -286,7 +286,7 @@ body {
   color: #3b3737;
   background-color: rgba(255, 255, 255, 0.85);
 }
-/* line 39, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 39, ../../sass/_common.scss */
 #main-nav li a:hover {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -305,13 +305,13 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 108, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 108, ../../sass/_base.scss */
 #main-nav li a:hover {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
 }
 
-/* line 118, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 118, ../../sass/_base.scss */
 #main-content {
   display: inline;
   float: left;
@@ -319,24 +319,24 @@ body {
   width: 950px;
   margin-top: 30px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-content {
   overflow-x: hidden;
 }
 
-/* line 127, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 127, ../../sass/_base.scss */
 #main-sidebar {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 270px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-sidebar {
   overflow-x: hidden;
 }
 
-/* line 131, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 131, ../../sass/_base.scss */
 #supersponsors, #sponsors {
   display: inline;
   float: left;
@@ -344,59 +344,59 @@ body {
   width: 270px;
   margin-bottom: 30px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #supersponsors, * html #sponsors {
   overflow-x: hidden;
 }
-/* line 137, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 137, ../../sass/_base.scss */
 #supersponsors ul, #sponsors ul {
   height: 95px;
   background-color: white;
 }
-/* line 142, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 142, ../../sass/_base.scss */
 #supersponsors ul li, #sponsors ul li {
   display: none;
   background-color: white;
 }
-/* line 146, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 146, ../../sass/_base.scss */
 #supersponsors ul li img, #sponsors ul li img {
   width: 100%;
 }
 
-/* line 152, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 152, ../../sass/_base.scss */
 #tweetshow {
   display: inline;
   float: left;
   margin-right: 0;
   width: 270px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #tweetshow {
   overflow-x: hidden;
 }
 
-/* line 157, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 157, ../../sass/_base.scss */
 #tweets {
   font-family: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
-/* line 160, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 160, ../../sass/_base.scss */
 #tweets .tweet_list li {
   font-size: 13px;
   line-height: 1.3em;
   padding: 8px 8px 8px 8px;
   border-bottom: 1px solid #bbbbbb;
 }
-/* line 167, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 167, ../../sass/_base.scss */
 #tweets .tweet_list li:last {
   border-bottom: none;
 }
-/* line 172, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 172, ../../sass/_base.scss */
 #tweets .tweet_time a {
   color: #3b3737;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 179, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 179, ../../sass/_base.scss */
 #tweets .tweet_text a {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -417,7 +417,7 @@ body {
   color: #a8650a;
   text-decoration: none;
 }
-/* line 23, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 23, ../../sass/_common.scss */
 #tweets .tweet_text a:hover {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -436,21 +436,21 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 185, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 185, ../../sass/_base.scss */
 #tweets .tweet_text a:hover {
   border-bottom: 1px dashed #a8650a;
 }
-/* line 192, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 192, ../../sass/_base.scss */
 #tweets .tweet_list .tweet_avatar {
   padding-right: .5em;
   float: left;
 }
-/* line 197, /home/wesc/src/PyGotham-site/src/compass/sass/_base.scss */
+/* line 197, ../../sass/_base.scss */
 #tweets .tweet_list .tweet_avatar img {
   vertical-align: middle;
 }
 
-/* line 4, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 4, ../../sass/_general.scss */
 .general-page, #talks-page, #sponsors-page, #access-diversity-page, #registration-page, #password-reset-page, #login-page, #contact-page, #logistics-page, #page-not-found-page {
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -461,7 +461,7 @@ body {
   color: #3b3737;
   background-color: rgba(255, 255, 255, 0.85);
 }
-/* line 8, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 8, ../../sass/_general.scss */
 .general-page h2, #talks-page h2, #sponsors-page h2, #access-diversity-page h2, #registration-page h2, #password-reset-page h2, #login-page h2, #contact-page h2, #logistics-page h2, #page-not-found-page h2 {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
@@ -479,21 +479,21 @@ body {
   margin-bottom: 10px;
   margin-top: 50px;
 }
-/* line 15, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 15, ../../sass/_general.scss */
 .general-page h2:first-child, #talks-page h2:first-child, #sponsors-page h2:first-child, #access-diversity-page h2:first-child, #registration-page h2:first-child, #password-reset-page h2:first-child, #login-page h2:first-child, #contact-page h2:first-child, #logistics-page h2:first-child, #page-not-found-page h2:first-child {
   margin-top: 0;
 }
-/* line 20, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 20, ../../sass/_general.scss */
 .general-page p, #talks-page p, #sponsors-page p, #access-diversity-page p, #registration-page p, #password-reset-page p, #login-page p, #contact-page p, #logistics-page p, #page-not-found-page p, .general-page form, #talks-page form, #sponsors-page form, #access-diversity-page form, #registration-page form, #password-reset-page form, #login-page form, #contact-page form, #logistics-page form, #page-not-found-page form {
   padding: 0 30px 0 30px;
   margin: 0 2px 12px 2px;
 }
-/* line 25, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 25, ../../sass/_general.scss */
 .general-page p, #talks-page p, #sponsors-page p, #access-diversity-page p, #registration-page p, #password-reset-page p, #login-page p, #contact-page p, #logistics-page p, #page-not-found-page p {
   font-size: 17px;
   line-height: 1.3em;
 }
-/* line 30, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 30, ../../sass/_general.scss */
 .general-page a, #talks-page a, #sponsors-page a, #access-diversity-page a, #registration-page a, #password-reset-page a, #login-page a, #contact-page a, #logistics-page a, #page-not-found-page a {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -514,7 +514,7 @@ body {
   color: #a8650a;
   text-decoration: none;
 }
-/* line 23, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 23, ../../sass/_common.scss */
 .general-page a:hover, #talks-page a:hover, #sponsors-page a:hover, #access-diversity-page a:hover, #registration-page a:hover, #password-reset-page a:hover, #login-page a:hover, #contact-page a:hover, #logistics-page a:hover, #page-not-found-page a:hover {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -533,11 +533,11 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 36, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 36, ../../sass/_general.scss */
 .general-page a:hover, #talks-page a:hover, #sponsors-page a:hover, #access-diversity-page a:hover, #registration-page a:hover, #password-reset-page a:hover, #login-page a:hover, #contact-page a:hover, #logistics-page a:hover, #page-not-found-page a:hover {
   border-bottom: 1px dashed #a8650a;
 }
-/* line 42, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 42, ../../sass/_general.scss */
 .general-page form p, #talks-page form p, #sponsors-page form p, #access-diversity-page form p, #registration-page form p, #password-reset-page form p, #login-page form p, #contact-page form p, #logistics-page form p, #page-not-found-page form p {
   padding: 0 0 0 30px;
   margin: 0 0 4px 0;
@@ -546,25 +546,25 @@ body {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 49, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 49, ../../sass/_general.scss */
 .general-page form p label, #talks-page form p label, #sponsors-page form p label, #access-diversity-page form p label, #registration-page form p label, #password-reset-page form p label, #login-page form p label, #contact-page form p label, #logistics-page form p label, #page-not-found-page form p label {
   font-weight: bold;
   display: block;
   float: left;
   width: 30%;
 }
-/* line 56, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 56, ../../sass/_general.scss */
 .general-page form p input, #talks-page form p input, #sponsors-page form p input, #access-diversity-page form p input, #registration-page form p input, #password-reset-page form p input, #login-page form p input, #contact-page form p input, #logistics-page form p input, #page-not-found-page form p input {
   display: block;
   float: right;
   width: 45%;
 }
-/* line 65, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 65, ../../sass/_general.scss */
 .general-page form input[type=submit], #talks-page form input[type=submit], #sponsors-page form input[type=submit], #access-diversity-page form input[type=submit], #registration-page form input[type=submit], #password-reset-page form input[type=submit], #login-page form input[type=submit], #contact-page form input[type=submit], #logistics-page form input[type=submit], #page-not-found-page form input[type=submit] {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 70, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 70, ../../sass/_general.scss */
 .general-page form ul.errorlist li, #talks-page form ul.errorlist li, #sponsors-page form ul.errorlist li, #access-diversity-page form ul.errorlist li, #registration-page form ul.errorlist li, #password-reset-page form ul.errorlist li, #login-page form ul.errorlist li, #contact-page form ul.errorlist li, #logistics-page form ul.errorlist li, #page-not-found-page form ul.errorlist li {
   padding: 2px 2px 3px 2px;
   margin: 10px 0 2px 0;
@@ -572,7 +572,7 @@ body {
   background-color: #a8650a;
 }
 
-/* line 80, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 80, ../../sass/_general.scss */
 .general-page-content, #supersponsors, #sponsors, #tweetshow, #main-content #news {
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -583,7 +583,7 @@ body {
   color: #3b3737;
   background-color: rgba(255, 255, 255, 0.85);
 }
-/* line 84, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 84, ../../sass/_general.scss */
 .general-page-content h2, #supersponsors h2, #sponsors h2, #tweetshow h2, #main-content #news h2 {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
@@ -599,16 +599,16 @@ body {
   padding: 2px 3px 2px 3px;
 }
 
-/* line 90, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 90, ../../sass/_general.scss */
 .general-page-tabs, #sponsors-page-tabs, #access-page-tabs {
   background-color: transparent;
   margin-bottom: 14px;
 }
-/* line 94, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 94, ../../sass/_general.scss */
 .general-page-tabs li, #sponsors-page-tabs li, #access-page-tabs li {
   display: inline;
 }
-/* line 97, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 97, ../../sass/_general.scss */
 .general-page-tabs li a, #sponsors-page-tabs li a, #access-page-tabs li a {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -639,7 +639,7 @@ body {
   color: #3b3737;
   background-color: rgba(255, 255, 255, 0.85);
 }
-/* line 39, /home/wesc/src/PyGotham-site/src/compass/sass/_common.scss */
+/* line 39, ../../sass/_common.scss */
 .general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -658,33 +658,33 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 101, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 101, ../../sass/_general.scss */
 .general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, .general-page-tabs li a.selected, #sponsors-page-tabs li a.selected, #access-page-tabs li a.selected {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
 }
 
-/* line 108, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 108, ../../sass/_general.scss */
 .general-page-tab-content, #sponsors-page #sponsors-content, #sponsors-page #sponsored-content, #access-diversity-page #accessibility-content, #access-diversity-page #diversity-content {
   display: none;
 }
-/* line 109, /home/wesc/src/PyGotham-site/src/compass/sass/_general.scss */
+/* line 109, ../../sass/_general.scss */
 .general-page-tab-content.selected, #sponsors-page .selected#sponsors-content, #sponsors-page .selected#sponsored-content, #access-diversity-page .selected#accessibility-content, #access-diversity-page .selected#diversity-content {
   display: block;
 }
 
-/* line 6, /home/wesc/src/PyGotham-site/src/compass/sass/_index.scss */
+/* line 6, ../../sass/_index.scss */
 #main-content #news {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-content #news {
   overflow-x: hidden;
 }
-/* line 14, /home/wesc/src/PyGotham-site/src/compass/sass/_index.scss */
+/* line 14, ../../sass/_index.scss */
 #main-content #news #news-items li .i-date {
   display: inline;
   float: left;
@@ -694,11 +694,11 @@ body {
   color: #a8650a;
   text-align: center;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-content #news #news-items li .i-date {
   overflow-x: hidden;
 }
-/* line 21, /home/wesc/src/PyGotham-site/src/compass/sass/_index.scss */
+/* line 21, ../../sass/_index.scss */
 #main-content #news #news-items li .i-blurb {
   display: inline;
   float: left;
@@ -708,35 +708,35 @@ body {
   font-size: 18px;
   line-height: 1.3em;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #main-content #news #news-items li .i-blurb {
   overflow-x: hidden;
 }
 
-/* line 9, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 9, ../../sass/_talks.scss */
 #talks-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 950px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-page {
   overflow-x: hidden;
 }
 
-/* line 18, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 18, ../../sass/_talks.scss */
 #talks-listing li .i-profile {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 70px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-profile {
   overflow-x: hidden;
 }
-/* line 21, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 21, ../../sass/_talks.scss */
 #talks-listing li .i-profile img {
   /* image should be roughly 65 pixels across:
      convert -resize 65x 247.png -background gray -mosaic profile.jpg
@@ -746,7 +746,7 @@ body {
   margin-right: auto;
   border: 2px solid white;
 }
-/* line 34, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 34, ../../sass/_talks.scss */
 #talks-listing li .i-blurb {
   display: inline;
   float: left;
@@ -756,11 +756,11 @@ body {
   font-size: 18px;
   line-height: 1.3em;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-blurb {
   overflow-x: hidden;
 }
-/* line 41, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 41, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-title {
   display: inline;
   float: left;
@@ -768,22 +768,22 @@ body {
   width: 590px;
   font-weight: bold;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-blurb .i-title {
   overflow-x: hidden;
 }
-/* line 46, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 46, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs {
   display: inline;
   float: left;
   margin-right: 10px;
   width: 70px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-blurb .i-thumbs {
   overflow-x: hidden;
 }
-/* line 49, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 49, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-up, #talks-listing li .i-blurb .i-thumbs .i-down {
   border: none;
   display: block;
@@ -793,43 +793,43 @@ body {
   text-indent: -1000000px;
   left: -1000000px;
 }
-/* line 59, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 59, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-up {
   margin-right: 8px;
 }
-/* line 66, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 66, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-up {
   background-image: url(../images/thumbs-up.png);
 }
-/* line 68, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 68, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-up:hover {
   background-image: url(../images/thumbs-up-neg.png);
 }
-/* line 73, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 73, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-up.selected {
   background-image: url(../images/thumbs-up-neg.png);
 }
-/* line 75, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 75, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-up.selected:hover {
   background-image: url(../images/thumbs-up.png);
 }
-/* line 80, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 80, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-down {
   background-image: url(../images/thumbs-down.png);
 }
-/* line 82, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 82, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-down:hover {
   background-image: url(../images/thumbs-down-neg.png);
 }
-/* line 87, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 87, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-down.selected {
   background-image: url(../images/thumbs-down-neg.png);
 }
-/* line 89, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 89, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-thumbs .i-down.selected:hover {
   background-image: url(../images/thumbs-down.png);
 }
-/* line 95, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 95, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-when {
   display: inline;
   float: left;
@@ -839,15 +839,15 @@ body {
   font-weight: bold;
   text-align: right;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-blurb .i-when {
   overflow-x: hidden;
 }
-/* line 101, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 101, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-when span {
   padding-right: 4px;
 }
-/* line 106, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 106, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-author {
   display: inline;
   float: left;
@@ -856,133 +856,133 @@ body {
   color: #a8650a;
   margin-bottom: 8px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-blurb .i-author {
   overflow-x: hidden;
 }
-/* line 112, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 112, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-author a {
   color: #a8650a;
   text-decoration: none;
 }
-/* line 118, /home/wesc/src/PyGotham-site/src/compass/sass/_talks.scss */
+/* line 118, ../../sass/_talks.scss */
 #talks-listing li .i-blurb .i-abstract {
   display: inline;
   float: left;
   margin-right: 0;
   width: 870px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #talks-listing li .i-blurb .i-abstract {
   overflow-x: hidden;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_sponsors.scss */
+/* line 2, ../../sass/_sponsors.scss */
 #sponsors-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #sponsors-page {
   overflow-x: hidden;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_access.scss */
+/* line 2, ../../sass/_access.scss */
 #access-diversity-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #access-diversity-page {
   overflow-x: hidden;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_registration.scss */
+/* line 2, ../../sass/_registration.scss */
 #registration-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #registration-page {
   overflow-x: hidden;
 }
 
-/* line 7, /home/wesc/src/PyGotham-site/src/compass/sass/_registration.scss */
+/* line 7, ../../sass/_registration.scss */
 #password-reset-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 190px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #password-reset-page {
   overflow-x: hidden;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_login.scss */
+/* line 2, ../../sass/_login.scss */
 #login-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #login-page {
   overflow-x: hidden;
 }
-/* line 6, /home/wesc/src/PyGotham-site/src/compass/sass/_login.scss */
+/* line 6, ../../sass/_login.scss */
 #login-page form {
   width: 470px;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_contact.scss */
+/* line 2, ../../sass/_contact.scss */
 #contact-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #contact-page {
   overflow-x: hidden;
 }
 
-/* line 5, /home/wesc/src/PyGotham-site/src/compass/sass/_logistics.scss */
+/* line 5, ../../sass/_logistics.scss */
 #logistics-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 670px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #logistics-page {
   overflow-x: hidden;
 }
-/* line 9, /home/wesc/src/PyGotham-site/src/compass/sass/_logistics.scss */
+/* line 9, ../../sass/_logistics.scss */
 #logistics-page .i-address {
   margin: 0 0 10px 70px;
   font-size: 1.2em;
 }
-/* line 13, /home/wesc/src/PyGotham-site/src/compass/sass/_logistics.scss */
+/* line 13, ../../sass/_logistics.scss */
 #logistics-page .i-address span {
   display: block;
   line-height: 1.3em;
 }
 
-/* line 2, /home/wesc/src/PyGotham-site/src/compass/sass/_404.scss */
+/* line 2, ../../sass/_404.scss */
 #page-not-found-page {
   display: inline;
   float: left;
   margin-right: 0;
   width: 710px;
 }
-/* line 147, /usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../../../../usr/share/compass/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #page-not-found-page {
   overflow-x: hidden;
 }
