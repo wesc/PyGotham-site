@@ -2,20 +2,53 @@
 {% load i18n %}
 
 {% block sponsor_base_content %}
+<ul id="registration-page-tabs">
+  <li><a href="#login-content" class="selected">sponsors</a></li>
+  <li><a href="#register-content">register</a></li>
+  <li><a href="#your-talks-content">your talks</a></li>
+</ul>
+
 <div id="registration-page">
-  <h2>Registration</h2>
 
-  <p>
-    Already created a login? Already activated it via email
-    link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
-  </p>
+  <div id="login-content">
+    <h2>Login</h2>
+  </div>
 
-  <p>
-    <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="{% trans 'Submit' %}" />
-    </form>
-  </p>
+  <div id="register-content">
+    <h2>Registration</h2>
+
+    <p>
+      Already created a login? Already activated it via email
+      link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
+    </p>
+
+    <p>
+      <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Submit' %}" />
+      </form>
+    </p>
+
+  </div>
+
+  <div id="your-talks-content">
+    <h2>Your Talks</h2>
+
+    {% comment %}
+    you can insert the markup in mytalks.html like so...
+    {% include "talksub/mytalks.html" %}
+    {% endcomment %}
+
+  </div>
 
 </div>
+
+{% endblock %}
+
+
+
+{% block sponsor_base_js %}
+$(function() {
+    $("#registration-page-tabs li a").pgtabs();
+});
 {% endblock %}
