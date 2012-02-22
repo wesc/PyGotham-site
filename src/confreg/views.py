@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from settings import MEDIA_URL,SSL_MEDIA_URL,MAX_SPONSORED,MAX_PAID
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+import settings
 
 from confreg.models import ConfRegModel,FreeCodesAssigned,EmailNotifications
 from confreg.forms import ConfRegForm
@@ -17,10 +18,12 @@ from talksub.models import UserTalkProfile
 from decimal import Decimal
 
 PAYMENT_TYPES = {
-    'EBI':150, # Early Bird Individual
-    'EBC':250, # Early Bird Corporate
-    'I':250,   # Individual
-    'C':350    # Corporate
+    'indiv_amt':150, # Early Bird Individual
+    'corp_amount':250, # Early Bird Corporate
+    'need_sponsorship':0,
+    'freebee_code':0,
+    #'indiv_amt':250,   # Individual
+    #'corp_amount':350    # Corporate
 }
 
 def payment_required(f):
@@ -54,7 +57,7 @@ def conf_register(request):
         confreg = ConfRegModel.objects.get(user=request.user)
         if confreg.paid <= Decimal('0') and not confreg.got_sponsored \
             and not confreg.freebee and not confreg.payment_amount_method == 'need_sponsorship':
-            return redirect(SSL_MEDIA_URL + '/confreg/payment')
+            return redirect(SSL_MEDIA_URL + '/confreg/payment?payment_type=%s' % confreg.payment_amount_method)
 
         template_name = 'confreg/more_options.html'
         form = ConfRegForm()
@@ -115,7 +118,7 @@ def conf_register(request):
                     utp,created = UserTalkProfile.objects.get_or_create(author=request.user)
                     utp.save()
 
-                    return redirect(SSL_MEDIA_URL + '/confreg/payment')
+                    return redirect(SSL_MEDIA_URL + '/confreg/payment?payment_type=%s' % confreg.payment_amount_method)
         else:
             form = ConfRegForm()
     
@@ -130,8 +133,8 @@ def payment(request):
     payment_type = request.GET['payment_type']
     payment_amount = PAYMENT_TYPES[payment_type]
     m = mechanize.Browser()
-    m.add_password(settings.WEPAY_URL, "Bearer", "secret", settings.WEPAY_API)
-    #m.addheaders = [("Authentication": "Bearer", "secret", settings.WEPAY_API)]
+    m.add_password(settings.WEPAY_URL, "Bearer", "secret", settings.WEPAY_ACCESS_TOKEN)
+    #m.addheaders = [("Authentication": "Bearer", "secret", settings.WEPAY_ACCESS_TOKEN)]
     payment_json = {
        "account_id":request.user.username,
        "short_description":"PyGotham II payment %s" % payment_type,
@@ -148,16 +151,22 @@ def payment(request):
     m.open(settings.WEPAY_URL + '/checkout/create',payment_json)
     result = m.read()
     #confreg = ConfRegModel.objects.get(user=request.user)
-    
+    '''
     {
       "checkout_id":12345,
       "checkout_uri":"http://stage.wepay.com/api/checkout/12345"
     }
-    redirect(checkout_uri)
+    '''
+    redirect(result['checkout_uri'])
 
 
 @login_required
 def user_state(request):
+    context = RequestContext(request)
+    return render_to_response('confreg/wepay.html',
+          {'SSL_MEDIA_URL': SSL_MEDIA_URL},
+          context_instance=context)
+
     # If user already registered, see if they paid, etc.
     try:
         confreg = ConfRegModel.objects.get(user=request.user)
@@ -165,11 +174,10 @@ def user_state(request):
             and not confreg.freebee and confreg.payment_amount_method != 'need_sponsorship':
             #import pprint
             #return HttpResponse(pprint.pformat(confreg.__dict__))
-            return redirect(SSL_MEDIA_URL + '/confreg/payment')
+            return redirect(SSL_MEDIA_URL + '/confreg/payment?payment_type=%s' % confreg.payment_amount_method)
 
         request.session['ok_to_proceed'] = True
         template_name = 'confreg/more_options.html'
-        context = RequestContext(request)
     
         return render_to_response(template_name,
               {'SSL_MEDIA_URL': SSL_MEDIA_URL},

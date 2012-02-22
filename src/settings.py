@@ -204,18 +204,19 @@ LOGGING = {
 #EMAIL_FILE_PATH='/tmp/email/'
 #EMAIL_BACKEND='custom_email_backend.logging_smtp.LoggingSmtp'
 
-EMAIL_BACKEND=getattr(local_settings,'EMAIL_BACKEND','django.core.mail.backends.smtp.EmailBackend')
+EMAIL_BACKEND=getattr(local_settings,'EMAIL_BACKEND','custom_email_backend.logging_smtp.LoggingSmtp')
 EMAIL_FILE_PATH = getattr(local_settings,'EMAIL_FILE_PATH','/tmp/email')
+
 if 'file' not in EMAIL_BACKEND:
     EMAIL_HOST= getattr(local_settings,'EMAIL_HOST','smtp-auth.no-ip.com')
     EMAIL_HOST_PASSWORD=getattr(local_settings,'EMAIL_HOST_PASSWORD','see_local_settings_file')
-    EMAIL_HOST_USER=getattr(local_settings,'EMAIL_HOST_USER','pygotham@thepeoplesconference.com')
+    EMAIL_HOST_USER=getattr(local_settings,'EMAIL_HOST_USER','pygotham@pygotham.org')
     EMAIL_PORT= getattr(local_settings,'EMAIL_PORT',25)
     EMAIL_USE_TLS = getattr(local_settings,'EMAIL_USE_TLS',True)
 
-SERVER_EMAIL = getattr(local_settings,'SERVER_EMAIL',"pygotham@thepeoplesconference.com")
+SERVER_EMAIL = getattr(local_settings,'SERVER_EMAIL',"pygotham@pygotham.org")
 EMAIL_SUBJECT_PREFIX = getattr(local_settings,'EMAIL_SUBJECT_PREFIX','Pygotham Site: ')
-DEFAULT_FROM_EMAIL= getattr(local_settings,'DEFAULT_FROM_EMAIL',"pygotham@thepeoplesconference.com")
+DEFAULT_FROM_EMAIL= getattr(local_settings,'DEFAULT_FROM_EMAIL',"pygotham@pygotham.org")
 SEND_BROKEN_LINKS_EMAILS = getattr(local_settings,'SEND_BROKEN_LINKS_EMAILS',True)
 
 """Affects the global state of all PyGotham talks.
