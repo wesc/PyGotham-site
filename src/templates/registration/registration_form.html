@@ -3,18 +3,14 @@
 
 {% block sponsor_base_content %}
 <ul id="registration-page-tabs">
-  <li><a href="#login-content" class="selected">login</a></li>
-  <li><a href="#register-content">register</a></li>
-  <li><a href="#your-talks-content">your talks</a></li>
+  <li><a href="{% url login %}">login</a></li>
+  <li class="i-tab"><a href="#register-content" class="selected">register</a></li>
+  <li class="i-tab"><a href="#your-talks-content">your talks</a></li>
 </ul>
 
 <div id="registration-page">
 
-  <div id="login-content">
-    <h2>Login</h2>
-  </div>
-
-  <div id="register-content">
+  <div id="register-content" class="selected">
     <h2>Registration</h2>
 
     <p>
@@ -49,6 +45,6 @@
 
 {% block sponsor_base_js %}
 $(function() {
-    $("#registration-page-tabs li a").pgtabs();
+    $("#registration-page-tabs li.i-tab a").pgtabs();
 });
 {% endblock %}
