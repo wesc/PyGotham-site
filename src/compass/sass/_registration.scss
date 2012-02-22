@@ -8,3 +8,9 @@
     @extend .general-page;
     @include column(12 - $sponsor-col-width, true);
 }
+
+
+#confreg-page {
+    @extend .general-page;
+    @include column(24 - $sponsor-col-width, true);
+}
