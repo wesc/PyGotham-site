@@ -6,7 +6,7 @@
 
 #password-reset-page {
     @extend .general-page;
-    @include column(12 - $sponsor-col-width, true);
+    @include column(24 - $sponsor-col-width, true);
 }
 
 
