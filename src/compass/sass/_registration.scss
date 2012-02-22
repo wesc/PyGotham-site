@@ -2,7 +2,16 @@
 #registration-page {
     @extend .general-page;
     @include column(24 - $sponsor-col-width, true);
+
+    #login-content, #register-content, #your-talks-content {
+        @extend .general-page-tab-content;
+    }
 }
+
+#registration-page-tabs {
+    @extend .general-page-tabs;
+}
+
 
 #password-reset-page {
     @extend .general-page;
