@@ -128,7 +128,7 @@ $sponsor-col-width: 7;
     @include column($sponsor-col-width);
 }
 
-#sponsors {
+#supersponsors,#sponsors {
     @extend .general-page-content;
     @include column($sponsor-col-width, true);
 

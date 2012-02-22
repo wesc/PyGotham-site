@@ -162,6 +162,11 @@ def payment(request):
 
 @login_required
 def user_state(request):
+    context = RequestContext(request)
+    return render_to_response('confreg/wepay.html',
+          {'SSL_MEDIA_URL': SSL_MEDIA_URL},
+          context_instance=context)
+
     # If user already registered, see if they paid, etc.
     try:
         confreg = ConfRegModel.objects.get(user=request.user)
@@ -173,7 +178,6 @@ def user_state(request):
 
         request.session['ok_to_proceed'] = True
         template_name = 'confreg/more_options.html'
-        context = RequestContext(request)
     
         return render_to_response(template_name,
               {'SSL_MEDIA_URL': SSL_MEDIA_URL},
