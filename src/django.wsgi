@@ -3,6 +3,7 @@ import sys
 
 for path in ('/app/pygotham/django',
     '/app/pygotham/src',
+    '/app/pygotham/src/utils',
     '/app/pygotham'):
     if path not in sys.path:
         sys.path.insert(0,path)
