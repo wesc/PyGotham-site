@@ -494,7 +494,11 @@ body {
   font-size: 17px;
   line-height: 1.3em;
 }
-/* line 30, ../../src/compass/sass/_general.scss */
+/* line 29, ../../src/compass/sass/_general.scss */
+.general-page p em, #talks-page p em, #sponsors-page p em, #access-diversity-page p em, #registration-page p em, #password-reset-page p em, #confreg-page p em, #login-page p em, #contact-page p em, #logistics-page p em, #page-not-found-page p em {
+  font-style: italic;
+}
+/* line 34, ../../src/compass/sass/_general.scss */
 .general-page a, #talks-page a, #sponsors-page a, #access-diversity-page a, #registration-page a, #password-reset-page a, #confreg-page a, #login-page a, #contact-page a, #logistics-page a, #page-not-found-page a {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -534,11 +538,11 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 36, ../../src/compass/sass/_general.scss */
+/* line 40, ../../src/compass/sass/_general.scss */
 .general-page a:hover, #talks-page a:hover, #sponsors-page a:hover, #access-diversity-page a:hover, #registration-page a:hover, #password-reset-page a:hover, #confreg-page a:hover, #login-page a:hover, #contact-page a:hover, #logistics-page a:hover, #page-not-found-page a:hover {
   border-bottom: 1px dashed #a8650a;
 }
-/* line 42, ../../src/compass/sass/_general.scss */
+/* line 46, ../../src/compass/sass/_general.scss */
 .general-page form p, #talks-page form p, #sponsors-page form p, #access-diversity-page form p, #registration-page form p, #password-reset-page form p, #confreg-page form p, #login-page form p, #contact-page form p, #logistics-page form p, #page-not-found-page form p {
   padding: 0 0 0 30px;
   margin: 0 0 4px 0;
@@ -547,25 +551,25 @@ body {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 49, ../../src/compass/sass/_general.scss */
+/* line 53, ../../src/compass/sass/_general.scss */
 .general-page form p label, #talks-page form p label, #sponsors-page form p label, #access-diversity-page form p label, #registration-page form p label, #password-reset-page form p label, #confreg-page form p label, #login-page form p label, #contact-page form p label, #logistics-page form p label, #page-not-found-page form p label {
   font-weight: bold;
   display: block;
   float: left;
   width: 30%;
 }
-/* line 56, ../../src/compass/sass/_general.scss */
+/* line 60, ../../src/compass/sass/_general.scss */
 .general-page form p input, #talks-page form p input, #sponsors-page form p input, #access-diversity-page form p input, #registration-page form p input, #password-reset-page form p input, #confreg-page form p input, #login-page form p input, #contact-page form p input, #logistics-page form p input, #page-not-found-page form p input {
   display: block;
   float: right;
   width: 45%;
 }
-/* line 65, ../../src/compass/sass/_general.scss */
+/* line 69, ../../src/compass/sass/_general.scss */
 .general-page form input[type=submit], #talks-page form input[type=submit], #sponsors-page form input[type=submit], #access-diversity-page form input[type=submit], #registration-page form input[type=submit], #password-reset-page form input[type=submit], #confreg-page form input[type=submit], #login-page form input[type=submit], #contact-page form input[type=submit], #logistics-page form input[type=submit], #page-not-found-page form input[type=submit] {
   margin-left: 30px;
   font-size: 12px;
 }
-/* line 70, ../../src/compass/sass/_general.scss */
+/* line 74, ../../src/compass/sass/_general.scss */
 .general-page form ul.errorlist li, #talks-page form ul.errorlist li, #sponsors-page form ul.errorlist li, #access-diversity-page form ul.errorlist li, #registration-page form ul.errorlist li, #password-reset-page form ul.errorlist li, #confreg-page form ul.errorlist li, #login-page form ul.errorlist li, #contact-page form ul.errorlist li, #logistics-page form ul.errorlist li, #page-not-found-page form ul.errorlist li {
   padding: 2px 2px 3px 2px;
   margin: 10px 0 2px 0;
@@ -573,7 +577,7 @@ body {
   background-color: #a8650a;
 }
 
-/* line 80, ../../src/compass/sass/_general.scss */
+/* line 84, ../../src/compass/sass/_general.scss */
 .general-page-content, #supersponsors, #sponsors, #tweetshow, #main-content #news {
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -584,7 +588,7 @@ body {
   color: #3b3737;
   background-color: rgba(255, 255, 255, 0.85);
 }
-/* line 84, ../../src/compass/sass/_general.scss */
+/* line 88, ../../src/compass/sass/_general.scss */
 .general-page-content h2, #supersponsors h2, #sponsors h2, #tweetshow h2, #main-content #news h2 {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
@@ -600,16 +604,16 @@ body {
   padding: 2px 3px 2px 3px;
 }
 
-/* line 90, ../../src/compass/sass/_general.scss */
+/* line 94, ../../src/compass/sass/_general.scss */
 .general-page-tabs, #sponsors-page-tabs, #access-page-tabs, #registration-page-tabs {
   background-color: transparent;
   margin-bottom: 14px;
 }
-/* line 94, ../../src/compass/sass/_general.scss */
+/* line 98, ../../src/compass/sass/_general.scss */
 .general-page-tabs li, #sponsors-page-tabs li, #access-page-tabs li, #registration-page-tabs li {
   display: inline;
 }
-/* line 97, ../../src/compass/sass/_general.scss */
+/* line 101, ../../src/compass/sass/_general.scss */
 .general-page-tabs li a, #sponsors-page-tabs li a, #access-page-tabs li a, #registration-page-tabs li a {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -659,17 +663,17 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 101, ../../src/compass/sass/_general.scss */
+/* line 105, ../../src/compass/sass/_general.scss */
 .general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, #registration-page-tabs li a:hover, .general-page-tabs li a.selected, #sponsors-page-tabs li a.selected, #access-page-tabs li a.selected, #registration-page-tabs li a.selected {
   color: white;
   background-color: rgba(59, 55, 55, 0.85);
 }
 
-/* line 108, ../../src/compass/sass/_general.scss */
+/* line 112, ../../src/compass/sass/_general.scss */
 .general-page-tab-content, #sponsors-page #sponsors-content, #sponsors-page #sponsored-content, #access-diversity-page #accessibility-content, #access-diversity-page #diversity-content, #registration-page #login-content, #registration-page #register-content, #registration-page #your-talks-content {
   display: none;
 }
-/* line 109, ../../src/compass/sass/_general.scss */
+/* line 113, ../../src/compass/sass/_general.scss */
 .general-page-tab-content.selected, #sponsors-page .selected#sponsors-content, #sponsors-page .selected#sponsored-content, #access-diversity-page .selected#accessibility-content, #access-diversity-page .selected#diversity-content, #registration-page .selected#login-content, #registration-page .selected#register-content, #registration-page .selected#your-talks-content {
   display: block;
 }
