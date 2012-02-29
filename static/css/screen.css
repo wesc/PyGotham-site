@@ -217,9 +217,9 @@ html {
 We're using a compress quality of 75, so:
 convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
 */
-/* line 15, ../../src/compass/sass/_base.scss */
+/* line 14, ../../src/compass/sass/_base.scss */
 body {
-  background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
+  background: url(../images/cityscape-1024.jpg) no-repeat center top fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -227,7 +227,7 @@ body {
 }
 
 @media (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 26, ../../src/compass/sass/_base.scss */
+  /* line 25, ../../src/compass/sass/_base.scss */
   body {
     background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -237,7 +237,7 @@ body {
   }
 }
 @media (min-device-width: 480px) and (max-device-width: 1024px) {
-  /* line 37, ../../src/compass/sass/_base.scss */
+  /* line 36, ../../src/compass/sass/_base.scss */
   body {
     background: url(../images/cityscape-800.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -246,12 +246,12 @@ body {
     background-size: cover;
   }
 }
-/* line 47, ../../src/compass/sass/_base.scss */
+/* line 46, ../../src/compass/sass/_base.scss */
 body {
   font-family: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/* line 52, ../../src/compass/sass/_base.scss */
+/* line 51, ../../src/compass/sass/_base.scss */
 #bp-container {
   width: 950px;
   margin: 0 auto;
@@ -259,7 +259,7 @@ body {
   *zoom: 1;
 }
 
-/* line 57, ../../src/compass/sass/_base.scss */
+/* line 56, ../../src/compass/sass/_base.scss */
 #main-header {
   display: inline;
   float: left;
@@ -271,7 +271,7 @@ body {
 * html #main-header {
   overflow-x: hidden;
 }
-/* line 62, ../../src/compass/sass/_base.scss */
+/* line 61, ../../src/compass/sass/_base.scss */
 #main-header #logo {
   display: inline;
   float: left;
@@ -282,7 +282,7 @@ body {
 * html #main-header #logo {
   overflow-x: hidden;
 }
-/* line 66, ../../src/compass/sass/_base.scss */
+/* line 65, ../../src/compass/sass/_base.scss */
 #main-header h1 {
   text-align: right;
   font-size: 27px;
@@ -293,12 +293,12 @@ body {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
-/* line 77, ../../src/compass/sass/_base.scss */
+/* line 76, ../../src/compass/sass/_base.scss */
 #main-header h1 span {
   display: block;
 }
 
-/* line 84, ../../src/compass/sass/_base.scss */
+/* line 83, ../../src/compass/sass/_base.scss */
 #main-nav {
   display: inline;
   float: left;
@@ -311,22 +311,22 @@ body {
 * html #main-nav {
   overflow-x: hidden;
 }
-/* line 87, ../../src/compass/sass/_base.scss */
+/* line 86, ../../src/compass/sass/_base.scss */
 #main-nav ul {
   margin: 30px 0 30px 0;
 }
-/* line 91, ../../src/compass/sass/_base.scss */
+/* line 90, ../../src/compass/sass/_base.scss */
 #main-nav li {
   display: inline;
   margin-right: 0.6em;
   font-size: 16px;
 }
-/* line 95, ../../src/compass/sass/_base.scss */
+/* line 94, ../../src/compass/sass/_base.scss */
 #main-nav li:last-child {
   margin-right: 0;
 }
 
-/* line 115, ../../src/compass/sass/_base.scss */
+/* line 114, ../../src/compass/sass/_base.scss */
 #main-content {
   display: inline;
   float: left;
@@ -339,7 +339,7 @@ body {
   overflow-x: hidden;
 }
 
-/* line 124, ../../src/compass/sass/_base.scss */
+/* line 123, ../../src/compass/sass/_base.scss */
 #main-sidebar {
   display: inline;
   float: left;
@@ -351,7 +351,7 @@ body {
   overflow-x: hidden;
 }
 
-/* line 128, ../../src/compass/sass/_base.scss */
+/* line 127, ../../src/compass/sass/_base.scss */
 #supersponsors, #sponsors {
   display: inline;
   float: left;
@@ -363,23 +363,23 @@ body {
 * html #supersponsors, * html #sponsors {
   overflow-x: hidden;
 }
-/* line 134, ../../src/compass/sass/_base.scss */
+/* line 133, ../../src/compass/sass/_base.scss */
 #supersponsors ul, #sponsors ul {
   height: 95px;
   background-color: white;
 }
-/* line 139, ../../src/compass/sass/_base.scss */
+/* line 138, ../../src/compass/sass/_base.scss */
 #supersponsors ul li, #sponsors ul li {
   display: none;
   background-color: white;
 }
-/* line 144, ../../src/compass/sass/_base.scss */
+/* line 143, ../../src/compass/sass/_base.scss */
 #supersponsors ul li img, #sponsors ul li img {
   margin-top: 14px;
   width: 100%;
 }
 
-/* line 151, ../../src/compass/sass/_base.scss */
+/* line 150, ../../src/compass/sass/_base.scss */
 #tweetshow {
   display: inline;
   float: left;
@@ -391,28 +391,28 @@ body {
   overflow-x: hidden;
 }
 
-/* line 156, ../../src/compass/sass/_base.scss */
+/* line 155, ../../src/compass/sass/_base.scss */
 #tweets {
   font-family: "DejaVu Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
-/* line 159, ../../src/compass/sass/_base.scss */
+/* line 158, ../../src/compass/sass/_base.scss */
 #tweets .tweet_list li {
   font-size: 13px;
   line-height: 1.3em;
   padding: 8px 8px 8px 8px;
   border-bottom: 1px solid #bbbbbb;
 }
-/* line 166, ../../src/compass/sass/_base.scss */
+/* line 165, ../../src/compass/sass/_base.scss */
 #tweets .tweet_list li:last {
   border-bottom: none;
 }
-/* line 171, ../../src/compass/sass/_base.scss */
+/* line 170, ../../src/compass/sass/_base.scss */
 #tweets .tweet_time a {
   color: #3b3737;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 178, ../../src/compass/sass/_base.scss */
+/* line 177, ../../src/compass/sass/_base.scss */
 #tweets .tweet_text a {
   -moz-transition-property: background-color, color;
   -webkit-transition-property: background-color, color;
@@ -452,16 +452,16 @@ body {
   -o-transition-delay: 0s;
   transition-delay: 0s;
 }
-/* line 184, ../../src/compass/sass/_base.scss */
+/* line 183, ../../src/compass/sass/_base.scss */
 #tweets .tweet_text a:hover {
   border-bottom: 1px dashed #a8650a;
 }
-/* line 191, ../../src/compass/sass/_base.scss */
+/* line 190, ../../src/compass/sass/_base.scss */
 #tweets .tweet_list .tweet_avatar {
   padding-right: .5em;
   float: left;
 }
-/* line 196, ../../src/compass/sass/_base.scss */
+/* line 195, ../../src/compass/sass/_base.scss */
 #tweets .tweet_list .tweet_avatar img {
   vertical-align: middle;
 }

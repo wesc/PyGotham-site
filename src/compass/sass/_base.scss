@@ -10,10 +10,9 @@ convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
 */
 
 
-
 // default & all desktops
 body {
-    background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
+    background: url(../images/cityscape-1024.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
