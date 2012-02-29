@@ -3,7 +3,7 @@
 
 .general-page {
     @include rounded-top;
-    @include std-colors;
+    @extend .std-colors-style;
 
     h2 {
         @include heading;
@@ -83,7 +83,7 @@
 
 .general-page-content {
     @include rounded-top;
-    @include std-colors;
+    @extend .std-colors-style;
 
     h2 {
         @include heading;
@@ -99,11 +99,11 @@
         display: inline;
 
         a {
-            @include nav-decoration;
-            @include std-colors;
+            @extend .nav-decoration-style;
+            @extend .std-colors-style;
 
             &:hover, &.selected {
-                @include reverse-colors;
+                @extend .reverse-colors-style;
             }
         }
     }

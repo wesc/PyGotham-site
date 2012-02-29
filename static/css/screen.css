@@ -93,6 +93,69 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* fixme: rgba won't work in IE < 9, so we need to make IE
    compatability styles for the following mixins */
+/* line 55, ../../src/compass/sass/_typography.scss */
+.std-colors-style, #main-nav li a, .general-page, #talks-page, #sponsors-page, #access-diversity-page, #registration-page, #password-reset-page, #confreg-page, #login-page, #contact-page, #logistics-page, #page-not-found-page, .general-page-content, #supersponsors, #sponsors, #tweetshow, #main-content #news, .general-page-tabs li a, #sponsors-page-tabs li a, #access-page-tabs li a, #registration-page-tabs li a {
+  color: #3b3737;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* line 61, ../../src/compass/sass/_typography.scss */
+.reverse-colors-style, #main-nav li a:hover, .general-page h2, #talks-page h2, #sponsors-page h2, #access-diversity-page h2, #registration-page h2, #password-reset-page h2, #confreg-page h2, #login-page h2, #contact-page h2, #logistics-page h2, #page-not-found-page h2, .general-page-content h2, #supersponsors h2, #sponsors h2, #tweetshow h2, #main-content #news h2, .general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, #registration-page-tabs li a:hover, .general-page-tabs li a.selected, #sponsors-page-tabs li a.selected, #access-page-tabs li a.selected, #registration-page-tabs li a.selected {
+  color: white;
+  background-color: #3b3737;
+  background-color: rgba(59, 55, 55, 0.85);
+}
+
+/* line 28, ../../src/compass/sass/_common.scss */
+.nav-decoration-style, #main-nav li a, .general-page-tabs li a, #sponsors-page-tabs li a, #access-page-tabs li a, #registration-page-tabs li a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 0.1em 0.5em 0.07em 0.5em;
+  text-decoration: none;
+  white-space: nowrap;
+  -moz-transition-property: background-color, color;
+  -webkit-transition-property: background-color, color;
+  -o-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -moz-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+/* line 39, ../../src/compass/sass/_common.scss */
+.nav-decoration-style:hover, #main-nav li a:hover, .general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, #registration-page-tabs li a:hover {
+  -moz-transition-property: background-color, color;
+  -webkit-transition-property: background-color, color;
+  -o-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -moz-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
 /* line 45, ../../src/compass/sass/_common.scss */
 .striped-list, #main-content #news #news-items li, #talks-listing li {
   -moz-transition-property: background-color, color;
@@ -262,61 +325,6 @@ body {
 #main-nav li:last-child {
   margin-right: 0;
 }
-/* line 101, ../../src/compass/sass/_base.scss */
-#main-nav li a {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-  font-weight: bold;
-  padding: 0.1em 0.5em 0.07em 0.5em;
-  text-decoration: none;
-  white-space: nowrap;
-  -moz-transition-property: background-color, color;
-  -webkit-transition-property: background-color, color;
-  -o-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -moz-transition-delay: 0s;
-  -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
-  color: #3b3737;
-  background-color: rgba(255, 255, 255, 0.85);
-}
-/* line 39, ../../src/compass/sass/_common.scss */
-#main-nav li a:hover {
-  -moz-transition-property: background-color, color;
-  -webkit-transition-property: background-color, color;
-  -o-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -moz-transition-delay: 0s;
-  -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
-}
-/* line 105, ../../src/compass/sass/_base.scss */
-#main-nav li a:hover {
-  color: white;
-  background-color: rgba(59, 55, 55, 0.85);
-}
 
 /* line 115, ../../src/compass/sass/_base.scss */
 #main-content {
@@ -466,13 +474,9 @@ body {
   -ms-border-radius: 3px 3px 0 0;
   -khtml-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
-  color: #3b3737;
-  background-color: rgba(255, 255, 255, 0.85);
 }
 /* line 8, ../../src/compass/sass/_general.scss */
 .general-page h2, #talks-page h2, #sponsors-page h2, #access-diversity-page h2, #registration-page h2, #password-reset-page h2, #confreg-page h2, #login-page h2, #contact-page h2, #logistics-page h2, #page-not-found-page h2 {
-  color: white;
-  background-color: rgba(59, 55, 55, 0.85);
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
   -o-border-radius: 3px 3px 0 0;
@@ -592,13 +596,9 @@ body {
   -ms-border-radius: 3px 3px 0 0;
   -khtml-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
-  color: #3b3737;
-  background-color: rgba(255, 255, 255, 0.85);
 }
 /* line 88, ../../src/compass/sass/_general.scss */
 .general-page-content h2, #supersponsors h2, #sponsors h2, #tweetshow h2, #main-content #news h2 {
-  color: white;
-  background-color: rgba(59, 55, 55, 0.85);
   -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
   -o-border-radius: 3px 3px 0 0;
@@ -619,61 +619,6 @@ body {
 /* line 98, ../../src/compass/sass/_general.scss */
 .general-page-tabs li, #sponsors-page-tabs li, #access-page-tabs li, #registration-page-tabs li {
   display: inline;
-}
-/* line 101, ../../src/compass/sass/_general.scss */
-.general-page-tabs li a, #sponsors-page-tabs li a, #access-page-tabs li a, #registration-page-tabs li a {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-  font-weight: bold;
-  padding: 0.1em 0.5em 0.07em 0.5em;
-  text-decoration: none;
-  white-space: nowrap;
-  -moz-transition-property: background-color, color;
-  -webkit-transition-property: background-color, color;
-  -o-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -moz-transition-delay: 0s;
-  -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
-  color: #3b3737;
-  background-color: rgba(255, 255, 255, 0.85);
-}
-/* line 39, ../../src/compass/sass/_common.scss */
-.general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, #registration-page-tabs li a:hover {
-  -moz-transition-property: background-color, color;
-  -webkit-transition-property: background-color, color;
-  -o-transition-property: background-color, color;
-  transition-property: background-color, color;
-  -moz-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  -moz-transition-delay: 0s;
-  -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
-}
-/* line 105, ../../src/compass/sass/_general.scss */
-.general-page-tabs li a:hover, #sponsors-page-tabs li a:hover, #access-page-tabs li a:hover, #registration-page-tabs li a:hover, .general-page-tabs li a.selected, #sponsors-page-tabs li a.selected, #access-page-tabs li a.selected, #registration-page-tabs li a.selected {
-  color: white;
-  background-color: rgba(59, 55, 55, 0.85);
 }
 
 /* line 112, ../../src/compass/sass/_general.scss */

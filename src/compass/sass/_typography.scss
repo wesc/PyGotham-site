@@ -52,13 +52,15 @@ $highlight-color: darken(#f4a73d, 25%);
 /* fixme: rgba won't work in IE < 9, so we need to make IE
    compatability styles for the following mixins */
 
-@mixin std-colors {
+.std-colors-style {
     color: $smokey-gray;
+    background-color: white;
     background-color: $white-t;
 }
 
-@mixin reverse-colors {
+.reverse-colors-style {
     color: $white;
+    background-color: $smokey-gray;
     background-color: $smokey-gray-t;
 }
 

@@ -99,11 +99,11 @@ body {
         font-size: 16px;
 
         a {
-            @include nav-decoration;
-            @include std-colors;
+            @extend .nav-decoration-style;
+            @extend .std-colors-style;
 
             &:hover {
-                @include reverse-colors;
+                @extend .reverse-colors-style;
             }
         }
     }
