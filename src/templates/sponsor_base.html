@@ -3,33 +3,33 @@
 {% block main_content %}
 
 <div id="main-sidebar">
-  <div id="supersponsors">
+  <div id="supersponsor-logos">
     <h2>Super-Sponsors</h2>
 
-    <ul id="supersponsorsContent">
-      <li class="supersponsorsImage">
+    <ul id="supersponsor-logosContent">
+      <li class="supersponsor-logosImage">
         <a href="http://www.infor.com/">
           <img src="{{ STATIC_URL }}/images/sponsors/infor-logo-slide.jpg" />
         </a>
         <span></span>
       </li>
 
-      <li class="supersponsorsImage">
+      <li class="supersponsor-logosImage">
         <a href="http://www.infor.com/">
           <img src="{{ STATIC_URL }}/images/sponsors/infor-logo-slide.jpg" />
         </a>
         <span></span>
       </li>
 
-      <div class="clear supersponsorsImage"></div>
+      <div class="clear supersponsor-logosImage"></div>
     </ul>
   </div>
 
-  <div id="sponsors">
+  <div id="sponsor-logos">
     <h2>Sponsors</h2>
 
-    <ul id="sponsorsContent">
-      <li class="sponsorsImage">
+    <ul id="sponsor-logosContent">
+      <li class="sponsor-logosImage">
         <a href="http://www.knewton.com/">
           <img src="{{ STATIC_URL }}/images/sponsors/knewton-logo-slide.jpg" />
         </a>
@@ -37,14 +37,14 @@
       </li>
 
 
-      <li class="sponsorsImage">
+      <li class="sponsor-logosImage">
         <a href="http://www.knewton.com/">
           <img src="{{ STATIC_URL }}/images/sponsors/knewton-logo-slide.jpg" />
         </a>
         <span></span>
       </li>
 
-      <div class="clear sponsorsImage"></div>
+      <div class="clear sponsor-logosImage"></div>
     </ul>
 
   </div>
@@ -74,11 +74,11 @@
 
 {% block main_js %}
 $(function() {
-    $("#supersponsors").s3Slider({
+    $("#supersponsor-logos").s3Slider({
         timeOut: 4000
     });
 
-    $("#sponsors").s3Slider({
+    $("#sponsor-logos").s3Slider({
         timeOut: 4000
     });
 
