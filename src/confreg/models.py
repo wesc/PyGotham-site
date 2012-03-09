@@ -29,7 +29,7 @@ PAY_CHOICES = (
     #('student_amt', 'I\'m registering as a student, and will pay $100 + 3% WePay fee.'),
     ('indiv_amt', 'I\'m registering as an individual, and will pay $150 + 3% WePay fee.'),
     ('corp_amt', 'My company is paying, and will pay $250 + 3% WePay fee.'),
-    ('need_sponsorship', mark_safe(_("I cannot afford this fee. I need my registration sponsored,<br>and I've read <a href=\"%s/sponsors/#sponsored-content\">this sponsorship statement</a>." % settings.SSL_MEDIA_URL))),
+    ('need_sponsorship', mark_safe(_("I cannot afford this fee. I need my registration sponsored, and I've read <a href=\"%s/sponsors/#sponsored-content\">this sponsorship statement</a>." % settings.SSL_MEDIA_URL))),
     ('freebee_code', 'I have a registration code, and will enter it below.'),
 )
 

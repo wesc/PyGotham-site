@@ -9,13 +9,9 @@
 {% if generic_error %}
 <font color="red">{{ generic_error }}</font>
 {% endif %}
-<p>
-<p>
-<form action="{{ SSL_MEDIA_URL }}/confreg/conf_register/" method="post">{% csrf_token %}
 
-  <table>
-  <td>{{ form.as_table }}</td>
-  </table>
+<form id="confreg-form" action="{{ SSL_MEDIA_URL }}/confreg/conf_register/" method="post">{% csrf_token %}
+  {{ form.as_p }}
 
   <input type="submit" value="{% trans 'Submit' %}" />
 </form>

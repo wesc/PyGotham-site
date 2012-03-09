@@ -6,6 +6,47 @@
     #login-content, #register-content, #your-talks-content, #talk-vote-content {
         @extend .general-page-tab-content;
     }
+
+    #confreg-form {
+        // override the default form label and input stylings
+
+        font-weight: normal;
+        font-size: 12px;
+
+        p {
+            margin-bottom: 1.4em;
+        }
+
+        label {
+            display: block;
+            float: left;
+            width: 60%;
+
+
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        input, textarea, select {
+            display: block;
+            float: right;
+            width: 35%;
+        }
+
+        ul {
+            margin-left: span(2);
+
+            label {
+                width: 100%;
+                margin-bottom: 0.8em;
+            }
+
+            input {
+                display: inline;
+                //width: 10%;
+            }
+        }
+    }
 }
 
 #registration-page-tabs {
