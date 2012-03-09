@@ -5,33 +5,34 @@ html {
 
 
 /*
-
-background image processed with imagemagick like so:
-
-convert -sepia-tone 80% -sketch 100 -brightness-contrast -20 inp.jpg out.jpg
-
-(this thing takes a while to run, primarily because of -sketch)
-
-
 We're using a compress quality of 75, so:
 convert -resize 500x -quality 75 q-bg-1024.jpg q-bg-500.jpg
-
-We've produced an image for displays smaller and greater than 500px.
 */
 
 
-// cribbed from: http://css-tricks.com/perfect-full-page-background-image/ (has other methods that aren't CSS3 dependent
+// default & all desktops
 body {
-    background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
+    background: url(../images/cityscape-1024.jpg) no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    font-family: $std-font;
 }
 
-@media (min-width: 500px) {
+
+// smartphones
+@media (min-device-width: 320px) and (max-device-width: 480px) {
+    body {
+        background: url(../images/cityscape-500.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+// tablets
+@media (min-device-width: 480px) and (max-device-width: 1024px) {
     body {
         background: url(../images/cityscape-800.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -41,14 +42,9 @@ body {
     }
 }
 
-@media (min-width: 1024px) {
-    body {
-        background: url(../images/cityscape-1024.jpg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
+
+body {
+    font-family: $std-font;
 }
 
 
@@ -102,11 +98,11 @@ body {
         font-size: 16px;
 
         a {
-            @include nav-decoration;
-            @include std-colors;
+            @extend .nav-decoration-style;
+            @extend .std-colors-style;
 
             &:hover {
-                @include reverse-colors;
+                @extend .reverse-colors-style;
             }
         }
     }
@@ -128,7 +124,7 @@ $sponsor-col-width: 7;
     @include column($sponsor-col-width);
 }
 
-#supersponsors,#sponsors {
+#supersponsors, #sponsors {
     @extend .general-page-content;
     @include column($sponsor-col-width, true);
 
@@ -143,7 +139,9 @@ $sponsor-col-width: 7;
         display: none;
 
         background-color: white;
+
         img {
+            margin-top: 14px;
             width: 100%;
         }
     }

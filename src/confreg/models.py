@@ -27,9 +27,9 @@ NOTIFY_CHOICES = (
 
 PAY_CHOICES = (
     #('student_amt', 'I\'m registering as a student, and will pay $100 + 3% WePay fee.'),
-    ('indiv_amt', 'I\'m registering as an individual, and will pay $150 + 3% WePay fee.'),
-    ('corp_amt', 'My company is paying, and will pay $250 + 3% WePay fee.'),
-    ('need_sponsorship', mark_safe(_("I cannot afford this fee. I need my registration sponsored,<br>and I've read <a href=\"%s/sponsors/#sponsored-content\">this sponsorship statement</a>." % settings.SSL_MEDIA_URL))),
+    ('indiv_amt', 'I\'m registering as an individual, and have paid/will pay $150 + 3% WePay fee.'),
+    ('corp_amt', 'My company is paying, and have paid/will pay $250 + 3% WePay fee.'),
+    ('need_sponsorship', mark_safe(_("I cannot afford this fee. I need my registration sponsored,<br>and I've read <a class=\"\" href=\"%s/sponsors/#sponsored-content\">this sponsorship statement</a>." % settings.SSL_MEDIA_URL))),
     ('freebee_code', 'I have a registration code, and will enter it below.'),
 )
 
@@ -42,6 +42,12 @@ class FreeCodesAssigned(models.Model): # One code per user. Companies get blocks
     code = models.CharField(max_length=500,unique=True,null=False,blank=False)
     user = models.ForeignKey(User, unique=True, verbose_name=_('user'),blank=True,null=True,default=None) # filled in when used.
 
+class PaidUser(models.Model):
+    user = models.ForeignKey(User, unique=True, verbose_name=_('user'))
+    paid = models.DecimalField(max_digits=5,decimal_places=2,default=Decimal("0.00"))
+    got_sponsored = models.BooleanField(verbose_name=_("got sponsorship"))
+    freebee = models.BooleanField(verbose_name=_("free invited guest"))
+
 class ConfRegModel(models.Model):
     user = models.ForeignKey(User, unique=True, verbose_name=_('user'))
 
@@ -53,7 +59,7 @@ class ConfRegModel(models.Model):
     babysitting = models.CharField(
         max_length=500,null=True,blank=True)
 
-    spneeds = models.CharField(
+    assistance = models.CharField(
         max_length=500,null=True,blank=True)
 
     payment_amount_method = models.CharField(
@@ -65,8 +71,3 @@ class ConfRegModel(models.Model):
     email_subjects = models.CharField(
         null=True, blank=False, max_length=100,choices=NOTIFY_CHOICES,default='everything')
 
-    paid = models.DecimalField(max_digits=5,decimal_places=2,default=Decimal("0.00"))
-
-    got_sponsored = models.BooleanField(verbose_name=_("got sponsorship"))
-
-    freebee = models.BooleanField(verbose_name=_("free invited guest"))

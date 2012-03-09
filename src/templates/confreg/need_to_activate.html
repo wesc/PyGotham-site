@@ -3,17 +3,22 @@
 
 {% block sponsor_base_content %}
 <div id="confreg-page">
-<h3>Activation is Required:</h3>
+  <h2>Activation is Required</h2>
 
-Check your email for an activation link. Once you're activated, you can <a href="{{ SSL_MEDIA_URL }}/accounts/login">log in</a> and register.
+  <p>
+    Check your email for an activation link. Once you're activated,
+    you can <a href="{{ SSL_MEDIA_URL }}/accounts/login">log in</a>
+    and register.
+  </p>
 
-{% if key %}
-<br/>
-<br/>
-If email fails for some reason (on this system our email is ocasionally throttled),
-click <a href="{{ SSL_MEDIA_URL }}/{% url registration_activate key %}">here instead:{{ SSL_MEDIA_URL }}/{% url registration_activate key %}</a>
-{% endif %}
-
+  {% if key %}
+  <p>
+    If email fails for some reason (on this system our email is
+    ocasionally throttled), click
+    <a href="{{ SSL_MEDIA_URL }}/{% url registration_activate key %}">
+      here instead:{{ SSL_MEDIA_URL }}/{% url registration_activate key %}</a>
+  </p>
+  {% endif %}
 </div>
 {% endblock %}
 

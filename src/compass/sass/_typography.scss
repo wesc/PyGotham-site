@@ -1,15 +1,37 @@
-//@include font-face("DejaVu Sans", font-files("../ttf/DejaVuSans-Bold.ttf", truetype));
 
 @font-face {
-  font-family: "DejaVu Sans";
-  src: url('../ttf/DejaVuSans.ttf') format('truetype');
+    font-family: 'DejaVu Sans';
+    src: url('../fonts/DejaVuSans-webfont.eot');
+    src: url('../fonts/DejaVuSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DejaVuSans-webfont.woff') format('woff'),
+         url('../fonts/DejaVuSans-webfont.ttf') format('truetype'),
+         url('../fonts/DejaVuSans-webfont.svg#DejaVuSansBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "DejaVu Sans";
-  src: url('../ttf/DejaVuSans-Bold.ttf') format('truetype');
-  font-weight: bold;
+    font-family: 'DejaVu Sans';
+    src: url('../fonts/DejaVuSans-Bold-webfont.eot');
+    src: url('../fonts/DejaVuSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DejaVuSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/DejaVuSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/DejaVuSans-Bold-webfont.svg#DejaVuSansBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'DejaVu Sans';
+    src: url('../fonts/DejaVuSans-Oblique-webfont.eot');
+    src: url('../fonts/DejaVuSans-Oblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DejaVuSans-Oblique-webfont.woff') format('woff'),
+         url('../fonts/DejaVuSans-Oblique-webfont.ttf') format('truetype'),
+         url('../fonts/DejaVuSans-Oblique-webfont.svg#DejaVuSansOblique') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
 
 
 $white: rgb(255, 255, 255);
@@ -30,13 +52,15 @@ $highlight-color: darken(#f4a73d, 25%);
 /* fixme: rgba won't work in IE < 9, so we need to make IE
    compatability styles for the following mixins */
 
-@mixin std-colors {
+.std-colors-style {
     color: $smokey-gray;
+    background-color: white;
     background-color: $white-t;
 }
 
-@mixin reverse-colors {
+.reverse-colors-style {
     color: $white;
+    background-color: $smokey-gray;
     background-color: $smokey-gray-t;
 }
 

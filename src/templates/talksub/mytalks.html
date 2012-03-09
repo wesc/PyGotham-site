@@ -1,10 +1,8 @@
-{% extends "base.html" %}
+{% extends "sponsor_base.html" %}
 {% load i18n %}
 
-{% block content %}
-
-<div id="content-wrapper">
-<div id="content">
+{% block sponsor_base_content %}
+<div id="registration-page">
 
 <h3>Your Proposed Talks/Classes</h3>
 
@@ -34,7 +32,7 @@
 {% else %}
     {% if talks %}
         {% for t in talks %}
-        Edit talk/class: <a href="{{ MEDIA_URL }}/talksub/edit/{{ t.id }}/" style="color:#666666">{{ t.title }}</a>
+        Edit talk/class: <a href="{{ MEDIA_URL }}/talksub/edit/{{ t.id }}/" >{{ t.title }}</a>
         <br/>
         <br/>
         {% endfor %}
@@ -45,12 +43,11 @@
 {% endif %}
 
 {% if addtalks %}
-<a href="{{ MEDIA_URL }}/talksub/add/" style="color:#666666">Click here to add a talk/class</a>
+<a href="{{ MEDIA_URL }}/talksub/add/">Click here to add a talk/class</a>
 {% endif %}
 
 {% endif %}
 
-</div>
 </div>
 
 {% endblock %}
