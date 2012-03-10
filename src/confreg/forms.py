@@ -24,10 +24,10 @@ attrs_dict = {'class': 'required'}
 class ConfRegForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ConfRegForm, self).__init__(*args, **kwargs)
-        self.fields['read_the_policy'].label = mark_safe(_("Yes, I've read <a class=\"selected\" href=\"%s/access/#diversity-content\">this conference policy statement</a>." % settings.SSL_MEDIA_URL))
+        self.fields['read_the_policy'].label = mark_safe(_("Yes, I've read <a href=\"%s/access/#diversity-content\">this conference policy statement</a>." % settings.SSL_MEDIA_URL))
         self.fields['full_name'].label = _('Your full name, necessary to get into the facility')
-        self.fields['babysitting'].label = mark_safe(_('Need babysitting during conference hours?<br/>Tell us the ages of your children, and any related needs'))
-        self.fields['assistance'].label = mark_safe(_('Please list any accessibility accomodations you may need.<br>This could be as simple as needing a reserved seat at the front of each talk/class. Read <a href=\"%s/access/#accessibility-content\"> this </a>for details.' % settings.SSL_MEDIA_URL))
+        self.fields['babysitting'].label = mark_safe(_('Need babysitting during conference hours? Tell us the ages of your children, and any related needs'))
+        self.fields['assistance'].label = mark_safe(_('Please list any accessibility accomodations you may need. This could be as simple as needing a reserved seat at the front of each talk/class. Read <a href=\"%s/access/#accessibility-content\"> this </a>for details.' % settings.SSL_MEDIA_URL))
         self.fields['payment_amount_method'].label = mark_safe(_('Payment is required to complete registration:'))
         self.fields['discount_code'].label = mark_safe(_('Registration code, if you have one'))
         self.fields['email_subjects'].label = mark_safe(_('Send me e-mail notifications related to:'))

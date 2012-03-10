@@ -57,7 +57,7 @@
                 width: 30%;
             }
 
-            input {
+            input, textarea {
                 display: block;
                 float: right;
                 width: 45%;
@@ -77,7 +77,6 @@
             color: white;
             background-color: $highlight-color;
         }
-
     }
 }
 

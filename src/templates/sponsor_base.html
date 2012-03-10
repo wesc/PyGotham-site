@@ -3,48 +3,48 @@
 {% block main_content %}
 
 <div id="main-sidebar">
-  <div id="supersponsors">
+  <div id="supersponsor-logos">
     <h2>Super-Sponsors</h2>
 
-    <ul id="supersponsorsContent">
-      <li class="supersponsorsImage">
+    <ul id="supersponsor-logosContent">
+      <li class="supersponsor-logosImage">
         <a href="http://www.infor.com/">
-          <img src="{{ STATIC_URL }}/images/sponsors/infor-logo-slide.jpg" />
-        </a>
+         <img src="/static/images/sponsors/infor-logo-slide.jpg" />
+       </a>
         <span></span>
       </li>
 
-      <li class="supersponsorsImage">
+     <li class="supersponsor-logosImage">
         <a href="http://www.infor.com/">
-          <img src="{{ STATIC_URL }}/images/sponsors/infor-logo-slide.jpg" />
-        </a>
+          <img src="/static/images/sponsors/infor-logo-slide.jpg" />
+       </a>
         <span></span>
       </li>
 
-      <div class="clear supersponsorsImage"></div>
+      <div class="clear supersponsor-logosImage"></div>
     </ul>
   </div>
 
-  <div id="sponsors">
+  <div id="sponsor-logos">
     <h2>Sponsors</h2>
 
-    <ul id="sponsorsContent">
-      <li class="sponsorsImage">
+    <ul id="sponsor-logosContent">
+      <li class="sponsor-logosImage">
         <a href="http://www.knewton.com/">
-          <img src="{{ STATIC_URL }}/images/sponsors/knewton-logo-slide.jpg" />
+          <img src="/static/images/sponsors/knewton-logo-slide.jpg" />
         </a>
         <span></span>
       </li>
 
 
-      <li class="sponsorsImage">
+      <li class="sponsor-logosImage">
         <a href="http://www.knewton.com/">
-          <img src="{{ STATIC_URL }}/images/sponsors/knewton-logo-slide.jpg" />
+          <img src="/static/images/sponsors/knewton-logo-slide.jpg" />
         </a>
         <span></span>
       </li>
 
-      <div class="clear sponsorsImage"></div>
+      <div class="clear sponsor-logosImage"></div>
     </ul>
 
   </div>
@@ -52,11 +52,6 @@
   <div id="tweetshow">
     <h2>Tweets</h2>
     <div id="tweets"></div>
-
-{% comment %}
-<div id="tweets"><ul class="tweet_list"><li class="tweet_first tweet_odd"><a class="tweet_avatar" href="http://twitter.com/Monikaijp"><img src="http://a1.twimg.com/profile_images/1817054894/fiysjf45iv_126846712-2_normal.jpg" height="32" width="32" alt="Monikaijp's avatar" title="Monikaijp's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/Monikaijp/status/169113405272231937" title="view tweet on twitter">about 6 minutes ago</a></span> <span class="tweet_text">Wesc Young Men's Emiliano Beanie, Black, One Size: Unisex knitted beanie. 9 guage. stripes at bottom <a href="http://amzn.to/w33yAX">amzn.to/w33yAX</a></span></li><li class="tweet_even"><a class="tweet_avatar" href="http://twitter.com/Vadanpn"><img src="http://a3.twimg.com/profile_images/1817474381/e3v2mcml2r_134431661-2_normal.jpg" height="32" width="32" alt="Vadanpn's avatar" title="Vadanpn's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/Vadanpn/status/169112803528019969" title="view tweet on twitter">about 9 minutes ago</a></span> <span class="tweet_text">WeSC Tambourine Headphone (Hot Orange): "Music is the key to hearts all over the world." Clint Peterson, WeActiv... <a href="http://amzn.to/yyhX0D">amzn.to/yyhX0D</a></span></li><li class="tweet_odd"><a class="tweet_avatar" href="http://twitter.com/xMichelax"><img src="http://a1.twimg.com/profile_images/1796517559/6_normal.png" height="32" width="32" alt="xMichelax's avatar" title="xMichelax's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/xMichelax/status/169111173952847873" title="view tweet on twitter">about 15 minutes ago</a></span> <span class="tweet_text">@<a href="http://twitter.com/BillieJoe727">BillieJoe727</a> :D <a href="http://bobizzo.com/media/wesc/oboe/blanery_green/main5.jpg">bobizzo.com/media/wesc/obo…</a></span></li><li class="tweet_even"><a class="tweet_avatar" href="http://twitter.com/kefear_wesc"><img src="http://a1.twimg.com/profile_images/1711392928/Un______normal.jpg" height="32" width="32" alt="kefear_wesc's avatar" title="kefear_wesc's avatar" border="0"></a><span class="tweet_time"><a href="http://twitter.com/kefear_wesc/status/169110188350128131" title="view tweet on twitter">about 19 minutes ago</a></span> <span class="tweet_text">WeSC - WeSC Friend Skrillex wins 3 Grammys! – News Entry <a href="http://wesc.com/post/wesc-friend-skrillex-wins-3-grammys">wesc.com/post/wesc-frie…</a> via @<a href="http://twitter.com/wesc1999">wesc1999</a></span></li></ul></div>
-{% endcomment %}
-
   </div>
 </div>
 
@@ -68,17 +63,17 @@
 
 
 {% block main_js_includes %}
-    <script type="text/javascript" src="{{ STATIC_URL }}/js/s3Slider.js"></script>
+    <script type="text/javascript" src="/static/js/s3Slider.js"></script>
 {% endblock %}
 
 
 {% block main_js %}
 $(function() {
-    $("#supersponsors").s3Slider({
+    $("#supersponsor-logos").s3Slider({
         timeOut: 4000
     });
 
-    $("#sponsors").s3Slider({
+    $("#sponsor-logos").s3Slider({
         timeOut: 4000
     });
 
