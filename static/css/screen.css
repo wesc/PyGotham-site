@@ -885,6 +885,7 @@ body {
   width: 60%;
   font-weight: normal;
   font-size: 14px;
+  line-height: 1.3em;
 }
 /* line 30, ../../src/compass/sass/_registration.scss */
 #registration-page #confreg-form input, #registration-page #confreg-form textarea, #registration-page #confreg-form select {
@@ -906,7 +907,7 @@ body {
   display: inline;
 }
 
-/* line 57, ../../src/compass/sass/_registration.scss */
+/* line 56, ../../src/compass/sass/_registration.scss */
 #password-reset-page {
   display: inline;
   float: left;
@@ -918,7 +919,7 @@ body {
   overflow-x: hidden;
 }
 
-/* line 63, ../../src/compass/sass/_registration.scss */
+/* line 62, ../../src/compass/sass/_registration.scss */
 #confreg-page {
   display: inline;
   float: left;
