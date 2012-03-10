@@ -1,16 +1,16 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "sponsor_base.html" %}
+{% load i18n %}
 
-<div id="content-wrapper">
-<div id="content">
+{% block sponsor_base_content %}
+<div id="registration-page">
 
+<h3>You've completed conference registration.</h3>
+<p></p>
 <h3>Current Options:</h3>
 <a href="{{ MEDIA_URL }}/talksub/">Offer a talk/class</a>
 <br/>
 <br/>
 <!---a href="{{ MEDIA_URL }}/talkvote/">Vote on talks/classes (voting closes 9/10/11).</a--->
 </div>
-</div>
-
 
 {% endblock %}

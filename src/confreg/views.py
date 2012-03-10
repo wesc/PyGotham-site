@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 import settings
 
-from confreg.models import ConfRegModel,FreeCodesAssigned,EmailNotifications
+from confreg.models import *
 from confreg.forms import ConfRegForm
 from talksub.models import UserTalkProfile
 from decimal import Decimal
@@ -40,9 +40,10 @@ def payment_required(f):
 @login_required
 def conf_register(request):
     generic_error = None
+    context = RequestContext(request)
 
     # Count current number of registered. If we exceed max, get out.
-    paid_regs = ConfRegModel.objects.filter(paid__gt = Decimal('0') ).count()
+    paid_regs = PaidUser.objects.filter(paid__gt = Decimal('0') ).count()
     spons_regs = ConfRegModel.objects.filter(payment_amount_method = 'need_sponsorship').count()
 
     template_name = 'confreg/conf_reg.html'
@@ -52,12 +53,20 @@ def conf_register(request):
     if not userobj.is_active:
         return redirect(MEDIA_URL + '/confreg/need_to_activate')
 
+    try:
+        paid = PaidUser.objects.get(user=request.user)
+    except PaidUser.DoesNotExist:
+        paid = None
+
     # If user already registered, see if they paid, etc.
     try:
         confreg = ConfRegModel.objects.get(user=request.user)
-        if confreg.paid <= Decimal('0') and not confreg.got_sponsored \
-            and not confreg.freebee and not confreg.payment_amount_method == 'need_sponsorship':
-            return redirect(SSL_MEDIA_URL + '/confreg/payment?payment_type=%s' % confreg.payment_amount_method)
+        if (not paid) or \
+            (paid and not paid.got_sponsored \
+            and not paid.freebee and confreg.payment_amount_method != 'need_sponsorship'):
+            return render_to_response('confreg/wepay.html',
+                {'SSL_MEDIA_URL': SSL_MEDIA_URL},
+                context_instance=context)
 
         template_name = 'confreg/more_options.html'
         form = ConfRegForm()
@@ -83,6 +92,10 @@ def conf_register(request):
                         newform.save()
                         template_name = 'confreg/on_hold.html'
 
+                        paid,created = PaidUser.objects.get_or_create(user=request.user)
+                        paid.got_sponsored = False
+                        paid.save()
+
                         utp,created = UserTalkProfile.objects.get_or_create(author=request.user)
                         utp.save()
     
@@ -98,7 +111,11 @@ def conf_register(request):
 
                             template_name = 'confreg/youre_in.html'
                             confreg,created = ConfRegModel.objects.get_or_create(user=request.user)
-                            confreg.freebee = True
+
+                            paid,created = PaidUser.objects.get_or_create(user=request.user)
+                            paid.freebee = True
+                            paid.save()
+
                             newform = ConfRegForm(request.POST,instance=confreg)
                             newform.save()
     
@@ -118,16 +135,23 @@ def conf_register(request):
                     utp,created = UserTalkProfile.objects.get_or_create(author=request.user)
                     utp.save()
 
-                    return redirect(SSL_MEDIA_URL + '/confreg/payment?payment_type=%s' % confreg.payment_amount_method)
+                if (not paid) or \
+                    (paid and not paid.got_sponsored \
+                    and not paid.freebee and confreg.payment_amount_method != 'need_sponsorship'):
+                    return render_to_response('confreg/wepay.html',
+                        {'SSL_MEDIA_URL': SSL_MEDIA_URL},
+                        context_instance=context)
+
+                template_name = 'confreg/youre_in.html'
+
         else:
             form = ConfRegForm()
     
-    context = RequestContext(request)
-
     return render_to_response(template_name,
               {'form': form, 'SSL_MEDIA_URL': SSL_MEDIA_URL,'generic_error':generic_error},
               context_instance=context)
 
+'''
 @login_required
 def payment(request):
     payment_type = request.GET['payment_type']
@@ -151,42 +175,48 @@ def payment(request):
     m.open(settings.WEPAY_URL + '/checkout/create',payment_json)
     result = m.read()
     #confreg = ConfRegModel.objects.get(user=request.user)
-    '''
+'''
+'''
     {
       "checkout_id":12345,
       "checkout_uri":"http://stage.wepay.com/api/checkout/12345"
     }
-    '''
     redirect(result['checkout_uri'])
+'''
 
 
 @login_required
 def user_state(request):
     context = RequestContext(request)
-    return render_to_response('confreg/wepay.html',
-          {'SSL_MEDIA_URL': SSL_MEDIA_URL},
-          context_instance=context)
 
     # If user already registered, see if they paid, etc.
     try:
         confreg = ConfRegModel.objects.get(user=request.user)
-        if confreg.paid <= Decimal('0') and not confreg.got_sponsored \
-            and not confreg.freebee and confreg.payment_amount_method != 'need_sponsorship':
-            #import pprint
-            #return HttpResponse(pprint.pformat(confreg.__dict__))
-            return redirect(SSL_MEDIA_URL + '/confreg/payment?payment_type=%s' % confreg.payment_amount_method)
-
-        request.session['ok_to_proceed'] = True
-        template_name = 'confreg/more_options.html'
-    
-        return render_to_response(template_name,
-              {'SSL_MEDIA_URL': SSL_MEDIA_URL},
-              context_instance=context)
-
     except ConfRegModel.DoesNotExist:
         # They need to register.
         return conf_register(request)
 
+    try:
+        paid = PaidUser.objects.get(user=request.user)
+    except PaidUser.DoesNotExist:
+        paid = None
+
+    if (not paid) or \
+        (paid and not paid.got_sponsored \
+        and not paid.freebee and paid.payment_amount_method != 'need_sponsorship'):
+        return render_to_response('confreg/wepay.html',
+            {'SSL_MEDIA_URL': SSL_MEDIA_URL},
+            context_instance=context)
+
+    request.session['ok_to_proceed'] = True
+    template_name = 'confreg/more_options.html'
+    
+    return render_to_response(template_name,
+          {'SSL_MEDIA_URL': SSL_MEDIA_URL},
+          context_instance=context)
+
+
+'''
 @login_required
 def conf_edit(request):
     pass
@@ -218,3 +248,4 @@ def check_wepay_fail(request):
     return render_to_response(template_name,
           {'SSL_MEDIA_URL': SSL_MEDIA_URL},
           context_instance=context)
+'''

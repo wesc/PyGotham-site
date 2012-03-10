@@ -35,10 +35,10 @@ class ConfRegForm(forms.ModelForm):
 
     class Meta:
         model = ConfRegModel
-        exclude = ('user','paid','got_sponsored','freebee')
+        exclude = ('user')
         widgets = {
             'babysitting': forms.Textarea(attrs={'cols': 60, 'rows': 3}),
-            'spneeds': forms.Textarea(attrs={'cols': 60, 'rows': 3}),
+            'assistance': forms.Textarea(attrs={'cols': 60, 'rows': 3}),
             'payment_amount_method': forms.RadioSelect(choices = PAY_CHOICES),
             #'email_subjects': forms.CheckboxSelectMultiple(choices = NOTIFY_CHOICES),
         }

@@ -15,6 +15,9 @@
     conference to complete this process.
   </p>
 
+  {% if request.user.id %}
+  <p> You're already logged in as {{ request.user }}. <a href="{{ SSL_MEDIA_URL }}/accounts/logout">Log out</a>.</p>
+  {% else %}
   <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -25,6 +28,7 @@
     <input type="hidden" name="next" value="{{ next }}" />
     {% endif %}
   </form>
+  {% endif %}
 
   <div id="login-page-extra">
     <p>

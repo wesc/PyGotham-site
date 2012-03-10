@@ -12,7 +12,6 @@
 
 <form id="confreg-form" action="{{ SSL_MEDIA_URL }}/confreg/conf_register/" method="post">{% csrf_token %}
   {{ form.as_p }}
-
   <input type="submit" value="{% trans 'Submit' %}" />
 </form>
 

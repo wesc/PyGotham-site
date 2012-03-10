@@ -4,7 +4,7 @@
 {% block sponsor_base_content %}
 <ul id="registration-page-tabs">
   <li><a href="{% url login %}">login</a></li>
-  <li class="i-tab"><a href="#register" class="selected">register</a></li>
+ <li class="i-tab"><a href="#register" class="selected">register</a></li>
   <li class="i-tab"><a href="#your-talks">your talks</a></li>
   <li class="i-tab"><a href="#talk-vote">talk vote</a></li>
 </ul>
@@ -19,14 +19,22 @@
       link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
     </p>
 
-    <p>
+   {% if request.user.id %}
+    <p>You're already registered in the system as {{request.user}}. Did you complete the <a href="{{ SSL_MEDIA_URL }}/confreg/conf_register/"> conference registration?</a></p>
+    {% else %}
+   <p>
       <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="{% trans 'Submit' %}" />
       </form>
     </p>
+   {% endif %}
 
-  </div>
+    <p>
+      Want to get outta here?
+      <a href="{{ SSL_MEDIA_URL }}/accounts/logout">Log out</a>.
+    </p>
+ </div>
 
   <div id="your-talks-content">
     <h2>Your Talks</h2>
@@ -35,7 +43,6 @@
 
   <div id="talk-vote-content">
     <h2>Talk Vote</h2>
-
     <p>
       <em>Coming soon!</em>
     </p>
