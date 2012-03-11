@@ -1,71 +1,52 @@
+{% extends "login_base.html" %}
 
-<p>
-  <em>Coming soon!</em>
-</p>
-
-
-
-
-{% comment %}
-
-HEREIN LIES THE OLD mytalks.html MARKUP
-
-
-
-{% extends "base.html" %}
 {% load i18n %}
 
-{% block sponsor_base_content %}
-<div id="registration-page">
+{% block yourtalks_selected %} class="selected"{% endblock %}
 
-<h3>Your Proposed Talks/Classes</h3>
+{% block login_base_content %}
+
+<h2>Your Proposed Talks/Classes</h2>
 
 {% if generic_error %}
 <font color="red">{{ generic_error }}</font>
-<p>
-<p>
 {% endif %}
 
 
 {% if form %}
+
     {% if edit_id %}
-    <form action="{{ MEDIA_URL }}/talksub/edit/{{ edit_id }}" method="post">{% csrf_token %}
-    
-        {{ form.as_p }}
-        <input type="submit" value="{% trans 'Add a talk/class' %}" />
-    
-    </form>
+
+<form action="{{ MEDIA_URL }}/talksub/edit/{{ edit_id }}" method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="{% trans 'Add a talk/class' %}" />
+</form>
+
     {% else %}
-    <form action="{{ MEDIA_URL }}/talksub/add/" method="post">{% csrf_token %}
-    
-        {{ form.as_p }}
-        <input type="submit" value="{% trans 'Add a talk/class' %}" />
-    
-    </form>
+
+<form action="{{ MEDIA_URL }}/talksub/add/" method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="{% trans 'Add a talk/class' %}" />    
+</form>
+
     {% endif %}
+
 {% else %}
+
     {% if talks %}
         {% for t in talks %}
-        Edit talk/class: <a href="{{ MEDIA_URL }}/talksub/edit/{{ t.id }}/" >{{ t.title }}</a>
-        <br/>
-        <br/>
-        {% endfor %}
+        <p>
+          Edit talk/class: <a href="{{ MEDIA_URL }}/talksub/edit/{{ t.id }}/" >{{ t.title }}</a>
+        </p>
+       {% endfor %}
     {% else %}
-        You currently have no talks/classes entered.
-        <br/>
-        <br/>
-{% endif %}
+        <p>You currently have no talks/classes entered.</p>
+   {% endif %}
 
-{% if addtalks %}
-<a href="{{ MEDIA_URL }}/talksub/add/">Click here to add a talk/class</a>
-{% endif %}
+    {% if addtalks %}
+        <p><a href="{{ MEDIA_URL }}/talksub/add/">Click here to add a talk/class</a></p>
+    {% endif %}
 
 {% endif %}
-
-</div>
 
 {% endblock %}
-
-
-
-{% endcomment %}

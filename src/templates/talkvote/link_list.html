@@ -1,11 +1,15 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-<div id="content-wrapper">
-<div id="content">
+{% extends "login_base.html" %}
 
 {% load voting_tags %}
+
+
+{% block talkvote_selected %} class="selected"{% endblock %}
+
+
+{% block login_base_content %}
+
+<h2>Talk Vote</h2>
+
 {% votes_by_user user on talks as vote_dict %}
 {% scores_for_objects talks as score_dict %}
 
@@ -43,9 +47,6 @@ num votes: {{ score.num_votes|default:0}}
 </div>-->
 </div>
 {% endfor %}
-</div>
-
-</div>
 </div>
 {% endblock %}
 

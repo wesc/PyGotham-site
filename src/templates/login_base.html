@@ -1,0 +1,16 @@
+{% extends "sponsor_base.html" %}
+{% load i18n %}
+
+{% block sponsor_base_content %}
+<ul id="registration-page-tabs">
+  <li><a href="{% url login %}"{% block login_selected %}{% endblock %}>login</a></li>
+  <li class="i-tab"><a href="/accounts/register"{% block register_selected %}{% endblock %}>register</a></li>
+  <li class="i-tab"><a href="/talksub"{% block yourtalks_selected %}{% endblock %}>your talks</a></li>
+  <li class="i-tab"><a href="/talkvote"{% block talkvote_selected %}{% endblock %}>talk vote</a></li>
+</ul>
+
+<div id="registration-page">
+  {% block login_base_content %}{% endblock %}
+</div>
+
+{% endblock %}

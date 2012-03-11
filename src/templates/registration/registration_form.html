@@ -1,11 +1,48 @@
+{% extends "login_base.html" %}
+
+{% load i18n %}
+
+{% block register_selected %} class="selected"{% endblock %}
+
+{% block login_base_content %}
+  <div id="register-content" class="selected">
+    <h2>Registration</h2>
+
+    <p>
+      Already created a login? Already activated it via email
+      link? <a href="{{ SSL_MEDIA_URL }}/accounts/login">Log in</a>.
+    </p>
+
+    {% if request.user.id %}
+    <p>You're already registered in the system as {{request.user}}. Did you complete the <a href="{{ SSL_MEDIA_URL }}/confreg/conf_register/"> conference registration?</a></p>
+    {% else %}
+   <p>
+      <form action="{{ SSL_MEDIA_URL }}/accounts/register" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Submit' %}" />
+      </form>
+    </p>
+   {% endif %}
+
+    <p>
+      Want to get outta here?
+      <a href="{{ SSL_MEDIA_URL }}/accounts/logout">Log out</a>.
+    </p>
+ </div>
+{% endblock %}
+
+
+
+{% comment %}
+
 {% extends "sponsor_base.html" %}
 {% load i18n %}
 
 {% block sponsor_base_content %}
 <ul id="registration-page-tabs">
   <li><a href="{% url login %}">login</a></li>
- <li class="i-tab"><a href="#register" class="selected">register</a></li>
-  <li class="i-tab"><a href="#your-talks">your talks</a></li>
+  <li class="i-tab"><a href="#register" class="selected">register</a></li>
+  <li class="i-tab"><a href="#your-talks" rel="/talksub/">your talks</a></li>
   <li class="i-tab"><a href="#talk-vote">talk vote</a></li>
 </ul>
 
@@ -38,7 +75,7 @@
 
   <div id="your-talks-content">
     <h2>Your Talks</h2>
-    {% include "talksub/mytalks.html" %}
+
   </div>
 
   <div id="talk-vote-content">
@@ -59,3 +96,6 @@ $(function() {
     $("#registration-page-tabs li.i-tab a").pgtabs();
 });
 {% endblock %}
+
+
+{% endcomment %}

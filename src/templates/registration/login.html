@@ -1,9 +1,11 @@
-{% extends "sponsor_base.html" %}
+{% extends "login_base.html" %}
+
 {% load i18n %}
 
-{% block sponsor_base_content %}
-<div id="login-page">
-  <h2>Login</h2>
+{% block login_selected %} class="selected"{% endblock %}
+
+{% block login_base_content %}
+ <h2>Login</h2>
 
   <p>
     Use either email address or username to log in.
@@ -36,5 +38,4 @@
       {% trans "Don\'t have a login" %}? <a href="{% url registration_register %}">{% trans "Create one" %}!</a>
     </p>
   </div>
-</div>
 {% endblock %}
